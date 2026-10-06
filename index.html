@@ -158,6 +158,7 @@ input:focus{border-color:var(--green)}
 .tos h4{margin:20px 0 6px;font-size:15px}.tos p,.tos li{color:var(--muted);font-size:14px;line-height:1.6;margin:0 0 6px}
 .tos table{width:100%;border-collapse:collapse}.tos td,.tos th{padding:10px 8px;border-bottom:1px solid #ffffff12;text-align:left;font-size:14px;vertical-align:top}
 .tos th{color:var(--muted);font-size:12px}.tos td b{color:var(--green);font-size:16px}
+.tos a{color:var(--green)}
 @media(max-width:820px){.tabs{overflow-x:auto}.tabs span{white-space:nowrap;padding:8px 8px}}
 .snl-b{position:relative;width:100%;aspect-ratio:7/5;margin:4px auto 14px;display:grid;grid-template:repeat(5,1fr)/repeat(7,1fr);gap:clamp(4px,1.4vw,9px)}
 .snl-c{background:var(--panel);border-radius:8px;display:flex;align-items:center;justify-content:center;gap:3px;font-size:clamp(12px,3.4vw,20px);font-weight:800;color:#3d4655}
@@ -220,7 +221,6 @@ input:focus{border-color:var(--green)}
       <button class="btn g" id="dGo" style="width:100%">Spin</button>
     </div>
 
-
     <div class="list" id="snakesView" style="display:none">
       <div class="top"><div class="l">SNAKES &amp; LADDERS &middot; first to square 35 wins</div><div style="display:flex;gap:8px"><button class="btn g" id="createSnl">Create</button></div></div>
       <div id="snList"></div>
@@ -228,25 +228,99 @@ input:focus{border-color:var(--green)}
 
     <div class="list tos" id="termsView" style="display:none">
       <h3 style="margin:0 0 4px">Terms of Service</h3>
-      <p>Last updated October 2024. By using Coinrbx you agree to these terms.</p>
-      <h4>0. Will I get banned</h4>
-      <p>No, you wont be banned, this is because we use the default roblox "Send Robux" feature for payouts, making it a completely normal use of roblox and their features.</p>
-      <h4>2. What Is CoinRbx and Eligibility</h4>
-      <p>CoinRBX is RBXFLip but with robux, players can wager, withdraw, and top up,You must be 18 or older to play.</p>
-      <h4>3. Games &amp; RTP (return to player)</h4>
-      <p>RTP is the share of all wagered Robux that is expected to come back to players over many rounds. House edge = 100% &minus; RTP.</p>
+      <p><b>Last updated:</b> October 2024 &middot; Effective on account creation</p>
+
+      <h4>1. About CoinRBX</h4>
+      <p>CoinRBX is operated by  RACK ("we," "us," "our"). It lets users wager, top up, and withdraw Robux on games of chance.</p>
+      <p><b>CoinRBX is not affiliated with, endorsed by, sponsored by, or connected to Roblox Corporation.</b> "Roblox" and "Robux" are trademarks of Roblox Corporation, used descriptively. By creating an account, topping up, wagering, or withdrawing, you agree to these Terms.</p>
+
+      <h4>2. Eligibility</h4>
+      <p>You must be <b>18 or older</b>. By using CoinRBX you represent and warrant that you meet this requirement. We may require age verification at any time. Accounts found to be under 18 are closed and balances voided. You are responsible for confirming online gambling is legal where you live.</p>
+
+      <h4>3. Account &amp; Bans</h4>
+      <p>CoinRBX uses Roblox's standard "Send Robux" feature for payouts and deposits. We are not a licensed money transmitter and do not operate a bank.</p>
+      <p><b>We may suspend, restrict, or terminate any account at any time, with or without notice,</b> if we reasonably believe the account: is under 18; is used for fraud, chargeback abuse, or money laundering; attempts to exploit bugs or manipulate outcomes; or violates these Terms or applicable law.</p>
+      <p><b>We do not guarantee your Roblox account will not be actioned by Roblox.</b> Large or frequent Robux transfers, or any pattern Roblox deems suspicious, may result in action against your Roblox account by Roblox, independent of CoinRBX. You accept this risk entirely.</p>
+
+      <h4>4. Games &amp; RTP (return to player)</h4>
+      <p>RTP is the share of all wagered Robux expected to return to players over many rounds. House edge = 100% &minus; RTP. Figures assume equal stakes.</p>
       <div style="overflow-x:auto"><table><thead><tr><th>Game</th><th>How it pays</th><th>RTP</th></tr></thead><tbody id="rtpBody"></tbody></table></div>
-      <p style="margin-top:10px">Dice Duels and Snakes &amp; Ladders are 50/50. When you join a game with a different stake than the host, your exact RTP is 50% &times; total pot &divide; your stake, so it is above 100% if you stake less than the host and below 100% if you stake more.</p>
-      <h4>4. Randomness</h4>
-      <p>Outcomes (coin sides, dice rolls, roulette results, who goes first in Snakes &amp; Ladders) come from your browser's random number generator and are decided before the animation plays. Animations never change the result.</p>
-      <h4>5. Other players &amp; bots</h4>
-      <p>Open games in the lists are  players, and games you create can be joined by a bot if chosen. Online counts are accurate.</p>
-      <h4>6. Surveys</h4>
-      <p>Each survey pays Robux and has its own 5 minute cooldown. Answers are verified.</p>
-      <h4>7. Play responsibly</h4> 
-      <p>Only play with what you are happy to lose, set a budget, and stop if it stops being fun.</p>
-      <h4>8. Withdraws</h4>
-      <p>We cannot pay crypto in any amount over 10m, however robux withdraw is reccomended and always a option.</p>
+      <p style="margin-top:10px"><b>Important:</b> In Dice Duels and Snakes &amp; Ladders, if you join at a stake different from the host's, your exact RTP is 50% &times; (total pot &divide; your stake). Stake <b>less</b> than the host &rarr; RTP <b>above 100%</b> for that round. Stake <b>more</b> &rarr; <b>below 100%</b>. This is structural, not a guarantee.</p>
+
+      <h4>5. Randomness</h4>
+      <p>All outcomes &mdash; coin sides, dice rolls, roulette results, who rolls first in Snakes &amp; Ladders &mdash; come from a provably fair system and are <b>decided before the animation plays</b>. Animations are cosmetic and never alter results.</p>
+      <p>Commitment <code>SHA-256(server_seed)</code> is published before each round; the server seed is revealed after. Result is derived as <code>HMAC-SHA256(server_seed, client_seed + ":" + nonce)</code>.</p>
+
+      <h4>6. Other players &amp; bots</h4>
+      <p>Open games in the lists are created by real players. Games you create may be joined by a bot if enabled. Online counts are accurate. <b>Bots have no strategical advantage</b> &mdash; all games are random and bots play at the same odds as any player.</p>
+
+      <h4>7. Surveys</h4>
+      <p>Each survey pays Robux and has its own 5-minute cooldown. Answers are verified. Fraudulent responses may result in forfeiture of earnings and account action.</p>
+
+      <h4>8. Play responsibly</h4>
+      <p>Only play with what you are happy to lose. Set a budget. Stop if it stops being fun. If you believe you have a gambling problem, seek help from a licensed support service in your jurisdiction.</p>
+
+      <h4>9. Withdrawals</h4>
+      <p>Robux withdrawal is the recommended and always-available method. Crypto withdrawals are capped at 10,000,000 (10m) per transaction. If a withdrawal fails, the amount returns to your CoinRBX balance and you may retry. Withdrawals may fail if Roblox's Send Robux feature is unavailable.</p>
+      <p><b>Withdrawal requests may be held for risk review;</b> you will be notified of any hold. If your account is terminated for a Terms violation, remaining balances are <b>forfeited</b>. If CoinRBX ceases operation, users will be given <b>30</b> days' notice to withdraw remaining balances, subject to Roblox's availability.</p>
+
+      <h4>10. Top-Ups</h4>
+      <p>If a top-up fails, the amount is rolled back to your balance. Common causes: invalid session, or Roblox's Send Robux system being unavailable. We are not responsible for delays caused by Roblox infrastructure.</p>
+
+      <h4>11. No Warranty / Limitation of Liability</h4>
+      <p>CoinRBX is provided "as is" and "as available." We make no warranty that the platform will be uninterrupted, error-free, or that Roblox will not action accounts interacting with us.</p>
+      <p><b>To the maximum extent permitted by law,  RACK  is not liable for:</b> loss of Robux, crypto, or account access caused by Roblox Corporation's actions; loss caused by your violation of these Terms or applicable law; indirect, incidental, or consequential damages arising from use of the platform.</p>
+      <p>You agree to indemnify RACK against any claim arising from your use of CoinRBX, including claims brought by Roblox Corporation.</p>
+
+      <h4>12. Changes</h4>
+      <p>We may update these Terms at any time. Continued use after changes constitutes acceptance. Material changes will be posted on the platform.</p>
+
+      <h4>13. Governing Law</h4>
+      <p>These Terms are governed by the laws of the Province of Ontario and the federal laws of Canada applicable therein. Any legal action shall be brought exclusively in the courts of the City of Toronto, Ontario.</p>
+
+      <h4>14. Contact</h4>
+      <p>General: Rbxentertainment@gmail.com<br>Support: Rbxentertainmentsupport@gmail.com STOP SENDING US MESSAGES ON SUPPORT ABOUT A HOUSE EDGE ON ROULLETE! ITS A CASINO, BOTS HAVE NO ADVANTAGE, ITS COINFLIP AND SNAKES AND LADDERS.</p>
+      <p>RACK &mdash; since 2024.</p>
+      <p style="color:var(--muted);font-size:12px">Registered in Ontario, Canada , Privacy Policy: <a href="#privacyView" data-privlink>Privacy Policy</a>.</p>
+    </div>
+
+    <div class="list tos" id="privacyView" style="display:none">
+      <h3 style="margin:0 0 4px">Privacy Policy</h3>
+      <p><b>Last updated:</b> October 2024</p>
+
+      <h4>1. Who we are</h4>
+      <p>CoinRBX is a indepentend project owned by "RACK" registered in Ontario, Canada. Contact: Rbxentertainment@gmail.com. Data protection contact: Rbxentertainmentsupport@gmail.com. We are unlicensed, as we are obviously a roblox casino. DONT SEND SUPPORT ANYTHING INVOLVING BEING UNETHICAL FOR THE ROULLETE HOUSE EDGE, THIS IS A CASINO!</p>
+
+      <h4>2. What we collect</h4>
+      <p><b>Account data</b> &mdash; username, email, hashed password, account creation date.<br>
+      <b>Roblox data</b> &mdash; your Roblox username and the information required to process Send Robux transactions. <b>We do not collect or store your Roblox password, session cookie, or 2FA codes.</b><br>
+      <b>Transaction data</b> &mdash; top-ups, withdrawals, wagers, game history, balances.<br>
+      <b>Provably fair data</b> &mdash; client seeds, server seeds, nonces, result hashes.<br>
+      <b>Technical data</b> &mdash; IP address, browser and device information, timestamps, log data.</p>
+
+      <h4>3. Why we collect it</h4>
+      <p>To operate your account and process transactions; to verify eligibility (18+) and detect fraud, multi-accounting, and abuse; to meet legal and regulatory obligations; to provide provably fair verification; and to respond to support requests.</p>
+
+      <h4>4. Sharing</h4>
+      <p>We do not sell your data. We share it only with service providers who host or operate the platform (under confidentiality obligations), Roblox Corporation to the extent necessary to process Send Robux transactions, law enforcement or regulators where legally required, and successors in the event of a merger or acquisition.</p>
+
+      <h4>5. Retention</h4>
+      <p>Account and transaction data are retained for 3 years after account closure, or as required by law. Provably fair seeds are retained for 1 year to allow verification. You may request deletion of non-retained data at any time.</p>
+
+      <h4>6. Your rights</h4>
+      <p>Depending on your jurisdiction, you may have the right to access, correct, delete, or port your data, and to object to or restrict processing. Requests to Rbxentertainmentsupport@gmail.com. We respond within 30 days.</p>
+
+      <h4>7. Security</h4>
+      <p>We use encryption in transit, hashed passwords, and access controls. No system is perfectly secure; we cannot guarantee absolute security.</p>
+
+      <h4>8. Children</h4>
+      <p>CoinRBX is for users 18 and older. We do not knowingly collect data from anyone under 18. Accounts found to belong to minors are closed and data deleted.</p>
+
+      <h4>9. Cookies</h4>
+      <p>We use essential cookies to keep you logged in and analytics cookies to understand how the platform is used. You can control cookies through your browser settings.</p>
+
+      <h4>10. Changes</h4>
+      <p>We may update this policy. Material changes will be posted on the platform.</p>
     </div>
   </div></main>
 </div>
@@ -357,7 +431,6 @@ input:focus{border-color:var(--green)}
   <button class="btn g" id="surveyDone" style="width:100%">Continue</button>
 </div></div>
 
-<!-- COINFLIP ARENA MODAL -->
 <div class="ov" id="flipOv"><div class="modal big">
   <button class="x" id="flipX" style="display:none">&times;</button>
   <div class="stage">
@@ -421,7 +494,6 @@ if(username && savedAccounts[username]){
   }
 }
 
-// avatars
 function rng(s){return()=>{s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 const SK=['#f5c9a0','#e0a878','#c68642','#8d5524','#ffdbac','#fbd2b5'],HR=['#2b1b12','#4a2c17','#d9b44a','#a33a1f','#1c1c24','#e8e8ee','#6b3fa0'],
 SH=['#3b6fd8','#d84a4a','#2fb36a','#e0a030','#8a4fd0','#2b2f3a','#e0e0e8','#d8508f'],BG=['#2a3342','#33283f','#243b36','#3d3326','#2a3a4a'];
@@ -493,7 +565,6 @@ if(username){
   $('loginOv').classList.add('show');$('loginName').focus();
 }
 
-// ==================== COIN ANIMATION (shared by Coinflip + Roulette) ====================
 const FXC={H:['#3ddc84','#3ddc8488'],T:['#ee7d2a','#ee7d2a88'],G:['#4aa8ff','#4aa8ff88']};
 function buildCoin(c){c.innerHTML='<div class="face H">R$</div><div class="face T back">T</div>'+Array.from({length:9},(_,i)=>`<div class="edge" style="transform:translateZ(${(i-4)*1.3}px)"></div>`).join('')}
 function playCoin(e,result,dur,onLand){
@@ -502,7 +573,6 @@ function playCoin(e,result,dur,onLand){
   e.toss.animate([{transform:'translateY(0) scale(.45)',opacity:0},{transform:'translateY(0) scale(.6)',opacity:1,offset:.08},{transform:'translateY(-34px) scale(1.15)',offset:.45},{transform:'translateY(0) scale(1)'}],{duration:dur,easing:'ease-out',fill:'forwards'});
   e.coin.style.transition=`transform ${dur}ms cubic-bezier(.2,.6,.15,1)`;
   e.coin.style.transform=`rotateY(${360*6+(result==='H'?0:180)}deg)`;
-  // GEM: the back face becomes the gem coin while the spin is still too fast to notice
   if(result==='G')setTimeout(()=>{const b=e.coin.querySelector('.back');b.className='face G back';b.innerHTML=gemSvg;e.coin.querySelectorAll('.edge').forEach(x=>x.style.background='#2a6fd0')},350);
   setTimeout(()=>{
     const col=FXC[result],n=result==='G'?28:18;
@@ -515,8 +585,6 @@ function playCoin(e,result,dur,onLand){
   },dur+80);
 }
 
-// ==================== ROULETTE ====================
-// p = chance, m = payout multiplier (RTP 95%). Tweak here.
 const DBL={H:{p:.475,m:2},T:{p:.475,m:2},G:{p:.05,m:19}};
 const DNAME={H:'Robux',T:'Tix',G:'GEM'};
 let dPick='H',dBusy=false;const dHist=[];
@@ -546,7 +614,6 @@ function dPlay(){
   for(const k of ['H','T']){if(r<DBL[k].p){result=k;break}r-=DBL[k].p}
   const win=result===dPick,pay=win?bet*DBL[dPick].m:0;
   dBusy=true;dRender();$('dRes').className='res';
-  // settle immediately (a reload mid-flip can't eat the bet); the balance display catches up on landing
   balance+=pay-bet;stats.wagered+=bet;
   if(win)stats.won+=pay-bet;else stats.lost+=bet;
   saveAcc();$('bal').innerHTML=RBX+(balance-pay);
@@ -568,17 +635,30 @@ document.addEventListener('click',e=>{
 });
 dRender();
 
-// ==================== TABS ====================
 const TABS={coinflip:'Coinrbx is a robux gambling website with robux',dice:'Roll a dice against another player. The highest roll wins the pot (ties reroll).',roulette:`Pick Robux, Tix or GEM and spin. Robux and Tix pay ${DBL.H.m}x, GEM pays ${DBL.G.m}x.`,snakes:'Race a dice roll to square 35 on a short board. First to reach it wins the pot.',terms:'Terms of Service, including the RTP of every game.'};
 const tabId=n=>'tab'+n[0].toUpperCase()+n.slice(1);
 function setTab(t){
   activeTab=t;
   for(const n in TABS){$(tabId(n)).classList.toggle('on',n===t);$(n+'View').style.display=n===t?'block':'none'}
+  $('privacyView').style.display='none';
   document.querySelector('.stats').style.display=(t==='roulette'||t==='terms')?'none':'';
   $('gameModeDesc').textContent=TABS[t];
   if(t==='roulette'){dRender();dIdle()}else render()
 }
 for(const n in TABS)$(tabId(n)).onclick=()=>{if(activeTab!==n)setTab(n)};
+
+// Privacy link inside ToS
+document.addEventListener('click',e=>{
+  const a=e.target.closest('[data-privlink]');
+  if(a){
+    e.preventDefault();
+    document.querySelectorAll('main > .in > .list').forEach(v=>v.style.display='none');
+    $('privacyView').style.display='block';
+    document.querySelector('.stats').style.display='none';
+    document.querySelectorAll('.tabs span').forEach(s=>s.classList.remove('on'));
+    $('gameModeDesc').textContent='Privacy Policy.';
+  }
+});
 
 function login(){
   const name=$('loginName').value.trim();
@@ -729,7 +809,6 @@ let surveyCd={};try{surveyCd=JSON.parse(localStorage.getItem(SURVEY_CD_KEY)||'{}
 {const old=Number(localStorage.getItem(SURVEY_KEY)||0);if(old&&!surveyCd.classic)surveyCd.classic=old}
 let surveyIndex=0,surveyCur=SURVEYS[0];
 
-// every survey has its OWN 5 minute cooldown
 function surveyRemaining(id){return Math.max(0,SURVEY_CD-(Date.now()-(surveyCd[id]||0)))}
 function fmtTime(ms){
   const sec=Math.ceil(ms/1000);
@@ -759,7 +838,6 @@ function renderSurvey(){
   }
   $('surveyNext').textContent=surveyIndex===qs.length-1?'Finish':'Next';
 }
-// opens the survey picker
 function startSurvey(){
   close();
   renderSurveyList();
@@ -843,7 +921,6 @@ function submit(){
 }
 $('confirm').onclick=submit;$('amount').addEventListener('keydown',e=>{if(e.key==='Enter')submit()});
 
-// COINFLIP LOGIC
 function flip(L,R,opts){
   flipping=true;
   const spec=opts&&opts.spectate;
@@ -894,7 +971,6 @@ function spectate(g){
   if(g.mode==='snl')snakes(L,R,{spectate:true,moves:g.moves});else if(g.mode==='dice')duel(L,R,{spectate:true,rolls:g.rolls});else flip(L,R,{leftWins:g.hostWins,spectate:true});
 }
 
-// DICE DUELS
 const r6=()=>1+Math.floor(Math.random()*6);
 const PIPS={1:[4],2:[0,8],3:[0,4,8],4:[0,2,6,8],5:[0,2,4,6,8],6:[0,2,3,5,6,8]};
 const dieFace=n=>Array.from({length:9},(_,i)=>`<b${(PIPS[n]||[]).includes(i)?' class="pip"':''}></b>`).join('');
@@ -939,7 +1015,6 @@ function duel(L,R,opts){
   $('duCd').innerHTML='';runCountdown($('duCd'),null,go);
 }
 
-// CREATE GAME (COINFLIP)
 $('create').onclick = () => {
   $('camt').value = '';$('cerr').textContent = '';
   $('createTitle').textContent = 'Create a coinflip';$('coinSides').style.display = 'flex';
@@ -1021,8 +1096,6 @@ setInterval(tick, 1000);
 
 function toast(m){const t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2500)}
 
-// LIVE SIMULATION: every 10s one player joins a random open flip (=6 per minute, staggered)
-// and a brand new flip (sometimes a high one) gets hosted.
 function simJoin(mode){
   const busy=$('joinOv').classList.contains('show')?cur:null;
   const pool=coinGames.filter(g=>g.mode===mode&&!g.own&&g.status==='open'&&g!==busy);
@@ -1050,7 +1123,6 @@ setInterval(()=>simStep('coinflip',CF_MIN,CF_MAX),SIM_MS);
 setTimeout(()=>setInterval(()=>simStep('dice',DU_MIN,DU_MAX),SIM_MS),SIM_MS/2);
 setTimeout(()=>setInterval(()=>simStep('snl',SL_MIN,SL_MAX),SIM_MS),SIM_MS*.75);
 
-// CREATE (shared by coinflip + dice duels)
 let createMode='coinflip';
 function openCreate(m){
   createMode=m;$('camt').value='';$('cerr').textContent='';
@@ -1059,9 +1131,9 @@ function openCreate(m){
   $('createOv').classList.add('show');$('camt').focus();
 }
 $('create').onclick=()=>openCreate('coinflip');$('createDice').onclick=()=>openCreate('dice');$('createSnl').onclick=()=>openCreate('snl');
-// ==================== SNAKES & LADDERS (5x5, square 35 wins) ====================
+
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const SQ=35,FX={8:3,9:-1,11:1,13:3,15:-1,19:2,22:-1,25:1,27:-3,31:-4}; // +N = move N rows up, -N = move N rows down
+const SQ=35,FX={8:3,9:-1,11:1,13:3,15:-1,19:2,22:-1,25:1,27:-3,31:-4};
 function snPos(n){const i=n-1,rb=Math.floor(i/7),k=i%7,c=rb%2?6-k:k;return[(c+.5)/7*100,(4-rb+.5)/5*100]}
 function snRowJump(from,rows){
   const i=from-1,rb=Math.floor(i/7),k=i%7,c=rb%2?6-k:k;
@@ -1069,7 +1141,6 @@ function snRowJump(from,rows){
   if(targetRb<0||targetRb>4)return from;
   return targetRb*7+(targetRb%2?6-c:c)+1;
 }
-// pre-generates the whole game; a coin flip picks who rolls first so both players win 50%. Everyone starts on square 1.
 function snGen(){
   const pos=[1,1],mv=[];let t=Math.random()<.5?0:1;
   for(;;){
@@ -1138,7 +1209,6 @@ function snakes(L,R,opts){
 }
 $('snDone').onclick=finish;
 
-// ==================== TERMS: RTP TABLE ====================
 {const row=(g,d,v)=>`<tr><td>${g}</td><td>${d}</td><td><b>${v}</b></td></tr>`;
 $('rtpBody').innerHTML=
   row('Coinflip','Winner takes the whole pot. Your win chance = your stake &divide; total pot.','100%')+
