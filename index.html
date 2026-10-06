@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Coinrbx - Coinflip & Roulette</title>
+<title>Coinrbx - Coinflip, Towers, Mines & Roulette</title>
 <style>
 :root{color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
 --bg:#13171d;--side:#161a21;--panel:#1b2028;--panel2:#262c37;--text:#f1f4f8;--muted:#8a94a3;--green:#3ddc84;--orange:#ee7d2a;--red:#ff4d4d;--purple:#a855f7}
@@ -154,6 +154,59 @@ input:focus{border-color:var(--green)}
 .jp-top{flex-wrap:wrap;gap:12px}
 @media(max-width:820px){aside{display:none}.stats{grid-template-columns:1fr}nav{flex-wrap:wrap;height:auto;padding:8px 14px}.logo{margin-right:0}.tabs{order:3;flex:0 0 100%;justify-around:space-around;gap:0;margin-top:6px}.tabs span{padding:8px 4px}.tabs span.on{padding-bottom:6px}}
 @media(max-width:560px){.stage{grid-template-columns:1fr 130px 1fr}.coinbox{width:130px}.coin{width:90px;height:90px}.face{font-size:38px}.pl .av{width:64px;height:64px}.row{padding:10px}.side2{gap:8px}.av,.item{width:44px;height:44px}.btn{padding:9px 14px}}
+
+select{width:100%;background:var(--panel);border:1px solid #ffffff18;border-radius:8px;color:var(--text);padding:12px 14px;font-size:16px;outline:none;margin-bottom:8px}
+select:focus{border-color:var(--green)}
+/* TOWERS BATTLE */
+#twOv .modal{max-height:94vh;overflow:auto}
+.tw-wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:6px 0 12px}
+.tw-col{background:var(--bg);border:1px solid #ffffff10;border-radius:10px;padding:10px;display:flex;flex-direction:column;align-items:center;gap:8px;transition:box-shadow .2s,opacity .3s}
+.tw-col .nm{font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px;min-width:0}
+.tw-col .nm span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tw-col .av{width:40px;height:40px}
+.tw-col.turn{box-shadow:0 0 0 2px var(--green)}
+.tw-col.dead{opacity:.6;box-shadow:0 0 0 2px var(--red)}
+.tw-board{display:flex;flex-direction:column-reverse;gap:6px;width:100%}
+.tw-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.tw-tile{height:34px;border-radius:7px;border:0;background:var(--panel2);color:var(--text);font-size:16px;font-weight:800;cursor:default;transition:transform .15s,background .2s;padding:0}
+.tw-tile.can{cursor:pointer;background:#34705080;background:#2f4a3c;outline:1px solid #3ddc8466}
+.tw-tile.can:hover{background:#3a6a4e;transform:translateY(-1px)}
+.tw-tile.safe{background:#1f9d54}
+.tw-tile.bomb{background:var(--red)}
+.tw-tile.ghost{opacity:.4}
+/* MINES */
+.mn-wrap{display:grid;grid-template-columns:260px 1fr;gap:18px;align-items:start}
+.mn-side{display:flex;flex-direction:column;gap:8px}
+.mn-side label{color:var(--muted);font-size:12px;font-weight:700;margin-top:2px}
+.mn-side .dbet{margin:0}
+.mn-side .dbet .btn{flex:1;padding:8px 4px}
+.mn-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;max-width:460px;width:100%;margin:0 auto}
+.mn-tile{aspect-ratio:1;border:2px solid transparent;border-radius:10px;background:var(--panel2);font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .12s,background .2s;color:var(--text);padding:0}
+.mn-tile svg{width:58%;height:58%}
+.mn-tile:disabled{cursor:default}
+.mn-tile:not(:disabled):hover{transform:translateY(-2px);background:#323a48}
+.mn-tile.gem{background:#173524;border-color:var(--green);animation:pop .25s ease-out}
+.mn-tile.mine{background:#3a1a1a;border-color:var(--red)}
+.mn-tile.boom{animation:pop .35s ease-out;box-shadow:0 0 22px #ff4d4d99}
+.mn-tile.dim{opacity:.45}
+@keyframes pop{0%{transform:scale(.7)}60%{transform:scale(1.12)}100%{transform:scale(1)}}
+@media(max-width:720px){.mn-wrap{grid-template-columns:1fr}}
+/* ANNIVERSARY */
+#annOv{z-index:30}
+.ann{max-width:480px;text-align:center;background:linear-gradient(160deg,#1d3a2a 0%,#13171d 62%);border:1px solid #3ddc8466;overflow:hidden;padding:30px 26px 26px;max-height:94vh;overflow-y:auto}
+.ann>*:not(.confetti){position:relative}
+.confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.confetti i{position:absolute;top:-16px;width:8px;height:14px;opacity:.95;border-radius:2px;animation:cfall linear forwards}
+@keyframes cfall{to{transform:translateY(640px) rotate(720deg);opacity:.1}}
+.ann-badge{width:104px;height:104px;margin:0 auto 14px;border-radius:50%;background:radial-gradient(circle,#43e888 0,#1fa653 72%);border:7px solid #2fcf6e;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-shadow:0 2px 4px #0006;box-shadow:0 0 34px #3ddc8466;animation:glow 2.4s ease-in-out infinite}
+.ann-badge span{font-size:46px;font-weight:900;line-height:1}
+.ann-badge small{font-size:12px;font-weight:800;letter-spacing:2px;margin-top:2px}
+@keyframes glow{50%{box-shadow:0 0 56px #3ddc84aa}}
+.ann h2{margin:0 0 4px;font-size:24px;font-weight:900;letter-spacing:.5px;background:linear-gradient(90deg,#3ddc84,#ffc45c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ann .sub{color:var(--muted);font-weight:700;font-size:13px;margin-bottom:14px}
+.ann-note{background:#0003;border:1px solid #ffffff12;border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.55;text-align:left;margin-bottom:14px}
+.ann-new{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px}
+.ann-new span{background:var(--panel);border:1px solid #ffffff14;border-radius:99px;padding:6px 12px;font-size:12px;font-weight:800}
 </style>
 </head>
 <body>
@@ -163,6 +216,8 @@ input:focus{border-color:var(--green)}
     <span id="tabCoinflip" class="on">Coinflip</span>
     <span id="tabDice">Dice Duels 🎲</span>
     <span id="tabRoulette">Roulette 💎</span>
+    <span id="tabTowers">Towers Battle 🗼</span>
+    <span id="tabMines">Mines 💣</span>
   </div>
   <div class="bal"><b id="bal"></b><button id="wallet">Wallet</button></div>
 </nav>
@@ -194,6 +249,12 @@ input:focus{border-color:var(--green)}
       <div id="duList"></div>
     </div>
 
+    <!-- TOWERS BATTLE VIEW -->
+    <div class="list" id="towersView" style="display:none">
+      <div class="top"><div class="l">TOWERS BATTLE &middot; 3 tiles a level, hit a bomb and you lose</div><div style="display:flex;gap:8px"><button class="btn g" id="createTowers">Create</button></div></div>
+      <div id="twList"></div>
+    </div>
+
     <!-- ROULETTE VIEW -->
     <div class="list" id="rouletteView" style="display:none">
       <div class="top"><div class="l">LAST RESULTS</div><div class="hist" id="dHist"></div></div>
@@ -203,6 +264,29 @@ input:focus{border-color:var(--green)}
       <div class="dbet"><input id="dAmt" type="number" inputmode="numeric" placeholder="Bet amount (min 10)"><button class="btn s" data-dq="min">Min</button><button class="btn s" data-dq="half">&frac12;</button><button class="btn s" data-dq="dbl">2&times;</button><button class="btn s" data-dq="max">Max</button></div>
       <div class="err" id="dErr"></div>
       <button class="btn g" id="dGo" style="width:100%">Spin</button>
+    </div>
+
+    <!-- MINES VIEW -->
+    <div class="list" id="minesView" style="display:none">
+      <div class="top"><div class="l">MINES &middot; 5&times;5 grid &middot; find gems, dodge mines</div></div>
+      <div class="mn-wrap">
+        <div class="mn-side">
+          <label>Bet amount</label>
+          <input id="mnAmt" type="number" inputmode="numeric" placeholder="Bet amount (min 10)" style="margin:0">
+          <div class="dbet"><button class="btn s" data-mq="min">Min</button><button class="btn s" data-mq="half">&frac12;</button><button class="btn s" data-mq="dbl">2&times;</button><button class="btn s" data-mq="max">Max</button></div>
+          <label>Mines</label>
+          <select id="mnCount"></select>
+          <div class="err" id="mnErr" style="margin:0"></div>
+          <button class="btn g" id="mnStart" style="width:100%">Bet</button>
+          <button class="btn g" id="mnCash" style="width:100%;display:none"></button>
+          <button class="btn" id="mnRand" style="width:100%;display:none">Pick random tile</button>
+          <div class="bars" style="margin-top:4px"><div class="bar" id="mnB1"></div><div class="bar" id="mnB2"></div></div>
+        </div>
+        <div>
+          <div class="mn-grid" id="mnGrid"></div>
+          <div class="res" id="mnRes" style="margin-top:16px"></div>
+        </div>
+      </div>
     </div>
 
   </div></main>
@@ -310,7 +394,7 @@ input:focus{border-color:var(--green)}
 
 <div class="ov" id="surveyDoneOv"><div class="modal">
   <div class="celebrate" id="surveyDoneTitle">🎉 Survey complete!</div>
-  <div class="hint" id="surveyDoneText" style="text-align:center">30 Robux have been added to the <b> balance</b>.</div>
+  <div class="hint" id="surveyDoneText" style="text-align:center">15 Robux have been added to the <b> balance</b>.</div>
   <button class="btn g" id="surveyDone" style="width:100%">Continue</button>
 </div></div>
 
@@ -340,7 +424,30 @@ input:focus{border-color:var(--green)}
   <div class="fair">✔ Provably fair</div>
 </div></div>
 
+<div class="ov" id="twOv"><div class="modal big">
+  <div class="hint" style="text-align:center;margin-bottom:8px;font-weight:700" id="twStatus"></div>
+  <div class="tw-wrap"><div class="tw-col" id="twL"></div><div class="tw-col" id="twR"></div></div>
+  <div class="bars"><div class="bar" id="twBL"></div><div class="bar" id="twBR"></div></div>
+  <div class="res" id="twRes"></div>
+  <div style="text-align:center"><button class="btn g" id="twDone" style="display:none">Close</button></div>
+  <div class="fair">✔ Provably fair</div>
+</div></div>
+
 <div id="toast"></div>
+
+<div class="ov" id="annOv"><div class="modal ann">
+  <div class="confetti" id="annConfetti"></div>
+  <div class="ann-badge"><span>2</span><small>YEARS</small></div>
+  <h2>COINRBX 2 YEARS ANNIVERSARY</h2>
+  <div class="sub">🎉 Two years of Coinrbx 🎉</div>
+  <div class="ann-note">
+    Two years ago I built Coinrbx as a little project, and I never imagined it would grow into something so many of you would come back to. Thank you to everyone who has flipped a coin, rolled a die, and stuck around since the early days.<br><br>
+    💚<br>
+    <b style="color:var(--green)">- The Coinrbx team</b>
+  </div>
+  <div class="ann-new"><span>🗼 New: Towers Battle</span><span>💣 New: Mines</span><span>📋 More surveys</span></div>
+  <button class="btn g" data-ann style="width:100%">Let's celebrate! 🎉</button>
+</div></div>
 <script>
 const $=id=>document.getElementById(id);
 const RBX='<svg class="rbx" viewBox="0 0 16 16"><path d="M8 1l6 3.5v7L8 15l-6-3.5v-7z" fill="none" stroke="#3ddc84" stroke-width="1.8"/><rect x="6" y="6" width="4" height="4" fill="#3ddc84"/></svg>';
@@ -392,14 +499,15 @@ function getRandomPlayerName(){
 }
 
 const fmt=n=>Number(n).toLocaleString('en-US');
-const CF_MIN=25,CF_MAX=30,DU_MIN=15,DU_MAX=20,ACTIVE_MS=8000,REWATCH_MS=60000,SIM_MS=10000;
+const CF_MIN=25,CF_MAX=30,DU_MIN=15,DU_MAX=20,TW_MIN=15,TW_MAX=20,TW_LEVELS=8,ACTIVE_MS=8000,REWATCH_MS=60000,SIM_MS=10000;
 let spectating=false;
 const LOWA=[10,10,12,15,20,25,30,40,50,60,75,80,90,100],MIDA=[120,150,200,250,300,400,500],HIA=[750,1000,1500,2000,3000,5000,10000];
 const pick=a=>a[Math.floor(Math.random()*a.length)];
+const noSide=m=>m==='dice'||m==='towers',runner=m=>m==='dice'?duel:m==='towers'?towers:flip;
 function mkCoin(forceHigh,mode){
   mode=mode||'coinflip';
   const r=Math.random(),a=forceHigh||r>.85?pick(HIA):r>.55?pick(MIDA):pick(LOWA);
-  return{id:nid++,amt:a,seed:Math.floor(Math.random()*1e6),name:getRandomPlayerName(),side:mode==='dice'?null:(Math.random()<.5?'H':'T'),mode,status:'open'}}
+  return{id:nid++,amt:a,seed:Math.floor(Math.random()*1e6),name:getRandomPlayerName(),side:noSide(mode)?null:(Math.random()<.5?'H':'T'),mode,status:'open'}}
 
 function rowHtml(g){
   const i=coinGames.indexOf(g),[lo,hi]=range(g.amt),j=g.joiner,done=g.status==='done';
@@ -411,13 +519,13 @@ function rowHtml(g){
   else if(g.status==='active')act=`<div class="own"><div><span class="badge"><i></i>Active</span>${g.manual?'':`<button class="btn" data-view="${g.id}">View</button>`}</div></div>`;
   else act=`<button class="btn" data-join="${i}">Join</button>`;
   return `<div class="row"><div class="side2">${av(g.seed,g.side,done&&g.hostWins)}<span class="vs">vs</span>${right}</div>
-    <div class="item">${g.mode==='dice'?'<span style="font-size:26px">🎲</span>':RBX}</div>
+    <div class="item">${g.mode==='dice'?'<span style="font-size:26px">🎲</span>':g.mode==='towers'?'<span style="font-size:26px">🗼</span>':RBX}</div>
     <div class="amt"><b${g.amt>=1000?' class="hi"':''}>${RBX}${fmt(g.amt)}</b><small>${sub}</small></div>${act}</div>`}
 
 function render(){
   const list=m=>[...coinGames.filter(g=>g.mode===m&&g.own),...coinGames.filter(g=>g.mode===m&&!g.own)].map(rowHtml).join('');
-  $('list').innerHTML=list('coinflip');$('duList').innerHTML=list('dice');
-  const m=activeTab==='dice'?'dice':'coinflip',live=coinGames.filter(g=>g.mode===m&&g.status!=='done');
+  $('list').innerHTML=list('coinflip');$('duList').innerHTML=list('dice');$('twList').innerHTML=list('towers');
+  const m=activeTab==='dice'?'dice':activeTab==='towers'?'towers':'coinflip',live=coinGames.filter(g=>g.mode===m&&g.status!=='done');
   $('sG').textContent=live.length;
   $('sV').innerHTML=RBX+fmt(live.reduce((t,g)=>t+g.amt,0));
   $('sM').innerHTML=RBX+fmt(Math.max(0,...live.map(g=>g.amt)));
@@ -432,7 +540,7 @@ function saveAcc(){
 }
 function setBal(){$('bal').innerHTML=RBX+balance;saveAcc()}
 
-coinGames=[...Array.from({length:CF_MIN},(_,i)=>mkCoin(i<2)),...Array.from({length:DU_MIN},(_,i)=>mkCoin(i<1,'dice'))];
+coinGames=[...Array.from({length:CF_MIN},(_,i)=>mkCoin(i<2)),...Array.from({length:DU_MIN},(_,i)=>mkCoin(i<1,'dice')),...Array.from({length:TW_MIN},(_,i)=>mkCoin(i<1,'towers'))];
 render();
 
 if(username){
@@ -518,14 +626,14 @@ document.addEventListener('click',e=>{
 dRender();
 
 // ==================== TABS ====================
-const TABS={coinflip:'Coinrbx is a robux gambling website with robux',dice:'Roll a dice against another player. The highest roll wins the pot (ties reroll).',roulette:`Pick Robux, Tix or GEM and spin. Robux and Tix pay ${DBL.H.m}x, GEM pays ${DBL.G.m}x.`};
+const TABS={coinflip:'Coinrbx is a robux gambling website with robux',dice:'Roll a dice against another player. The highest roll wins the pot (ties reroll).',roulette:`Pick Robux, Tix or GEM and spin. Robux and Tix pay ${DBL.H.m}x, GEM pays ${DBL.G.m}x.`,towers:'Towers Battle: every level has 3 tiles and 1 is a bomb. You and your opponent take turns climbing. Whoever hits a bomb first loses and their bet goes to the other player.',mines:'Mines: reveal gems on the 5x5 grid and avoid the mines. Cash out any time to lock in your multiplier.'};
 const tabId=n=>'tab'+n[0].toUpperCase()+n.slice(1);
 function setTab(t){
   activeTab=t;
   for(const n in TABS){$(tabId(n)).classList.toggle('on',n===t);$(n+'View').style.display=n===t?'block':'none'}
-  document.querySelector('.stats').style.display=t==='roulette'?'none':'';
+  document.querySelector('.stats').style.display=(t==='roulette'||t==='mines')?'none':'';
   $('gameModeDesc').textContent=TABS[t];
-  if(t==='roulette'){dRender();dIdle()}else render()
+  if(t==='roulette'){dRender();dIdle()}else if(t==='mines'){mnDraw()}else render()
 }
 for(const n in TABS)$(tabId(n)).onclick=()=>{if(activeTab!==n)setTab(n)};
 
@@ -613,51 +721,105 @@ $('withdrawGo').onclick=()=>{
 };
 
 const SURVEYS=[
- {id:'classic',icon:'📋',name:'Classic Survey',reward:30,qs:[
+ {id:'classic',icon:'📋',name:'Classic Survey',reward:15,qs:[
   {q:'How old are you?',type:'number',ph:'Enter your age'},
   {q:'Do you like Coinrbx?',type:'choice',opts:['Yes','No','Not sure']},
   {q:'How much have you won/lost on this game? Put 0 if not sure.',type:'text',ph:'Example: won 100 / lost 50'}
  ]},
- {id:'choc',icon:'🍫',name:'Chocolate Brands',reward:30,qs:[
+ {id:'choc',icon:'🍫',name:'Chocolate Brands',reward:15,qs:[
   {q:'Which chocolate brand is your favorite?',type:'choice',opts:["Hershey's",'Cadbury','Lindt','Milka','Ferrero']},
   {q:'Milk, dark or white?',type:'choice',opts:['Milk','Dark','White']},
   {q:'How often do you eat chocolate?',type:'choice',opts:['Every day','A few times a week','Once in a while','Almost never']},
   {q:'What is the best chocolate bar ever made?',type:'text',ph:'Type your answer'}
  ]},
- {id:'gamble',icon:'🎰',name:'Gambling Survey',reward:30,qs:[
+ {id:'gamble',icon:'🎰',name:'Gambling Survey',reward:15,qs:[
   {q:'How often do you play gambling-style games online?',type:'choice',opts:['Never','Rarely','Weekly','Daily']},
-  {q:'Which game type do you like most?',type:'choice',opts:['Coinflip','Roulette','Slots']},
+  {q:'Which game type do you like most?',type:'choice',opts:['Coinflip','Roulette','Towers Battle','Mines','Slots']},
   {q:'Do you set a budget before you play?',type:'choice',opts:['Always','Sometimes','Never']},
   {q:'Do you think the house always wins?',type:'choice',opts:['Yes','No','Depends on luck']},
   {q:'What is the biggest win you have ever had?',type:'text',ph:'Example: 500 Robux'}
  ]},
- {id:'roblox',icon:'🎮',name:'Roblox Games',reward:30,qs:[
+ {id:'roblox',icon:'🎮',name:'Roblox Games',reward:15,qs:[
   {q:'Which type of Roblox game do you play most?',type:'choice',opts:['Obby','Tycoon','Simulator','Roleplay','Shooter']},
   {q:'How many hours a week do you play Roblox?',type:'choice',opts:['0 - 5','5 - 15','15 - 30','30+']},
   {q:'What is your favorite Roblox game?',type:'text',ph:'Type your answer'}
  ]},
- {id:'food',icon:'🍕',name:'Pizza & Fast Food',reward:30,qs:[
+ {id:'food',icon:'🍕',name:'Pizza & Fast Food',reward:15,qs:[
   {q:'What is your favorite fast food?',type:'choice',opts:['Pizza','Burgers','Fried chicken','Tacos']},
   {q:'Is pineapple on pizza acceptable?',type:'choice',opts:['Yes','No','Only sometimes']},
   {q:'How often do you eat fast food?',type:'choice',opts:['Daily','Weekly','Monthly','Rarely']},
   {q:'What is the best sauce?',type:'text',ph:'Type your answer'}
  ]},
- {id:'tech',icon:'📱',name:'Tech & Gadgets',reward:30,qs:[
+ {id:'tech',icon:'📱',name:'Tech & Gadgets',reward:15,qs:[
   {q:'Which device do you use the most?',type:'choice',opts:['Phone','PC','Console','Tablet']},
   {q:'Android or iOS?',type:'choice',opts:['Android','iOS','Neither']},
   {q:'How many hours of screen time do you get per day?',type:'number',ph:'Enter hours'},
   {q:'What gadget do you want next?',type:'text',ph:'Type your answer'}
  ]},
- {id:'media',icon:'🎬',name:'Music & Movies',reward:30,qs:[
+ {id:'media',icon:'🎬',name:'Music & Movies',reward:15,qs:[
   {q:'What is your favorite music genre?',type:'choice',opts:['Pop','Hip-hop','Rock','EDM']},
   {q:'Movies or series?',type:'choice',opts:['Movies','Series','Both']},
   {q:'What is your favorite movie or show?',type:'text',ph:'Type your answer'}
  ]},
- {id:'feedback',icon:'💬',name:'Coinrbx Feedback',reward:30,qs:[
-  {q:'Which Coinrbx feature do you like most?',type:'choice',opts:['Coinflip','Roulette','Wallet','Chat']},
+ {id:'feedback',icon:'💬',name:'Coinrbx Feedback',reward:15,qs:[
+  {q:'Which Coinrbx feature do you like most?',type:'choice',opts:['Coinflip','Dice Duels','Roulette','Towers Battle','Mines','Wallet','Chat']},
   {q:'Which side would you pick in coinflip?',type:'choice',opts:['Robux','Tix']},
   {q:'Do you like the current interface?',type:'choice',opts:['Yes','No','It is okay']},
   {q:'What would you improve?',type:'text',ph:'Type your answer'}
+ ]},
+ {id:'sports',icon:'⚽',name:'Sports & Fitness',reward:15,qs:[
+  {q:'Which sport do you enjoy the most?',type:'choice',opts:['Football / Soccer','Basketball','American football','Tennis','Other']},
+  {q:'How often do you exercise?',type:'choice',opts:['Every day','A few times a week','Rarely','Never']},
+  {q:'Who is your favorite team or athlete?',type:'text',ph:'Type your answer'}
+ ]},
+ {id:'pets',icon:'🐶',name:'Pets & Animals',reward:15,qs:[
+  {q:'Dogs or cats?',type:'choice',opts:['Dogs','Cats','Both','Neither']},
+  {q:'Do you have a pet?',type:'choice',opts:['Yes','No','I want one']},
+  {q:'What is the coolest animal in the world?',type:'text',ph:'Type your answer'}
+ ]},
+ {id:'travel',icon:'✈️',name:'Travel & Holidays',reward:15,qs:[
+  {q:'What kind of holiday do you prefer?',type:'choice',opts:['Beach','City trip','Mountains','Staying home']},
+  {q:'How many countries have you visited?',type:'number',ph:'Enter a number'},
+  {q:'Where is your dream destination?',type:'text',ph:'Type your answer'}
+ ]},
+ {id:'anime',icon:'🍥',name:'Anime & Cartoons',reward:15,qs:[
+  {q:'Do you watch anime?',type:'choice',opts:['Yes, a lot','Sometimes','No']},
+  {q:'Which genre do you like most?',type:'choice',opts:['Action','Comedy','Romance','Adventure','Horror']},
+  {q:'Sub or dub?',type:'choice',opts:['Sub','Dub','No preference']},
+  {q:'What is your favorite show?',type:'text',ph:'Type your answer'}
+ ]},
+ {id:'social',icon:'📲',name:'Social Media',reward:15,qs:[
+  {q:'Which app do you use the most?',type:'choice',opts:['YouTube','TikTok','Instagram','Discord','X / Twitter']},
+  {q:'How many hours a day are you on social media?',type:'number',ph:'Enter hours'},
+  {q:'Who is your favorite creator?',type:'text',ph:'Type your answer'}
+ ]},
+ {id:'games',icon:'🕹️',name:'Video Games',reward:15,qs:[
+  {q:'What do you mostly play on?',type:'choice',opts:['PC','PlayStation','Xbox','Switch','Mobile']},
+  {q:'Which genre do you play most?',type:'choice',opts:['Shooter','Sandbox','Racing','RPG','Sports']},
+  {q:'Do you prefer playing solo or with friends?',type:'choice',opts:['Solo','With friends','Both']},
+  {q:'What is the best game you have ever played?',type:'text',ph:'Type your answer'}
+ ]},
+ {id:'cars',icon:'🚗',name:'Cars & Driving',reward:15,qs:[
+  {q:'Which brand would you pick for a dream car?',type:'choice',opts:['Lamborghini','Ferrari','Porsche','Tesla','BMW']},
+  {q:'Manual or automatic?',type:'choice',opts:['Manual','Automatic','Electric all the way']},
+  {q:'What would your dream car be?',type:'text',ph:'Type your answer'}
+ ]},
+ {id:'drinks',icon:'🥤',name:'Snacks & Drinks',reward:15,qs:[
+  {q:'Which drink do you pick first?',type:'choice',opts:['Cola','Lemonade','Energy drink','Water','Iced tea']},
+  {q:'Chips or candy?',type:'choice',opts:['Chips','Candy','Both','Neither']},
+  {q:'How many snacks do you have while gaming?',type:'choice',opts:['None','1 - 2','3 - 5','Too many to count']},
+  {q:'What is your favorite snack?',type:'text',ph:'Type your answer'}
+ ]},
+ {id:'season',icon:'🌦️',name:'Seasons & Weather',reward:15,qs:[
+  {q:'What is your favorite season?',type:'choice',opts:['Spring','Summer','Autumn','Winter']},
+  {q:'Are you a morning or a night person?',type:'choice',opts:['Morning','Night','Neither']},
+  {q:'What do you like most about that season?',type:'text',ph:'Type your answer'}
+ ]},
+ {id:'sleep',icon:'😴',name:'Sleep & Routine',reward:15,qs:[
+  {q:'How many hours do you sleep on average?',type:'number',ph:'Enter hours'},
+  {q:'When do you usually go to bed?',type:'choice',opts:['Before 10 PM','10 PM - midnight','After midnight','Whenever']},
+  {q:'Do you check your phone right before sleeping?',type:'choice',opts:['Always','Sometimes','Never']},
+  {q:'What is your ideal morning routine?',type:'text',ph:'Type your answer'}
  ]}
 ];
 const SURVEY_CD=5*60*1000,SURVEY_CD_KEY='coinrbx_survey_cd_v2';
@@ -760,7 +922,7 @@ document.addEventListener('click',e=>{
     cur=coinGames[+j.dataset.join];const[lo,hi]=range(cur.amt);
     $('hint').textContent=`Choose at least ${lo} - ${hi} Robux`;$('amount').value='';$('err').textContent='';
     $('joinOv').classList.add('show');$('amount').focus();return}
-  if(e.target.id==='flipOv'||e.target.id==='duOv'){const b=$(e.target.id==='duOv'?'duDone':'done');if(b.style.display!=='none')b.click();return}
+  const dm={flipOv:'done',duOv:'duDone',twOv:'twDone'};if(dm[e.target.id]){const b=$(dm[e.target.id]);if(b.style.display!=='none')b.click();return}
   if(e.target.closest('[data-close]')||e.target.classList.contains('ov'))close();
 });
 
@@ -773,9 +935,9 @@ function submit(){
   stats.wagered+=v;
   setBal();close();
 
-  const mine=cur.mode==='dice'?null:(cur.side==='H'?'T':'H');
+  const mine=noSide(cur.mode)?null:(cur.side==='H'?'T':'H');
   cur.status='active';cur.manual=true;cur.joiner={seed:777,name:'You',side:mine,amt:v};render();
-  (cur.mode==='dice'?duel:flip)({seed:cur.seed,name:cur.name,side:cur.side,amt:cur.amt,you:false},{seed:777,name:'You',side:mine,amt:v,you:true});
+  runner(cur.mode)({seed:cur.seed,name:cur.name,side:cur.side,amt:cur.amt,you:false},{seed:777,name:'You',side:mine,amt:v,you:true});
 }
 $('confirm').onclick=submit;$('amount').addEventListener('keydown',e=>{if(e.key==='Enter')submit()});
 
@@ -821,13 +983,13 @@ function finish(){
   if(i>-1)coinGames.splice(i,1,...(cur.own?[]:[mkCoin(false,cur.mode)]));
   render();
 }
-$('done').onclick=finish;$('duDone').onclick=finish;
+$('done').onclick=finish;$('duDone').onclick=finish;$('twDone').onclick=finish;
 function spectate(g){
   if(flipping||!g||!g.joiner)return;
   $('cdn').innerHTML='';$('toss').style.visibility='visible';
   spectating=true;const j=g.joiner;
   const L={seed:g.seed,name:g.name,side:g.side,amt:g.amt,you:false},R={seed:j.seed,name:j.name,side:j.side,amt:j.amt,you:false};
-  if(g.mode==='dice')duel(L,R,{spectate:true,rolls:g.rolls});else flip(L,R,{leftWins:g.hostWins,spectate:true});
+  if(g.mode==='dice')duel(L,R,{spectate:true,rolls:g.rolls});else if(g.mode==='towers')towers(L,R,{spectate:true,plan:g.plan});else flip(L,R,{leftWins:g.hostWins,spectate:true});
 }
 
 // DICE DUELS
@@ -917,7 +1079,7 @@ function createGame() {
   stats.wagered += v;
   setBal();
 
-  coinGames.push({ id: nid++, own: true, seed: 777, name: 'You', side: createMode === 'dice' ? null : cside, amt: v, fireAt: Date.now() + BOT_WAIT, mode: createMode, status: 'open' });
+  coinGames.push({ id: nid++, own: true, seed: 777, name: 'You', side: noSide(createMode) ? null : cside, amt: v, fireAt: Date.now() + BOT_WAIT, mode: createMode, status: 'open' });
   close();
   render();
 }
@@ -930,9 +1092,9 @@ function callBot(g) {
   const [lo, hi] = range(g.amt), ba = lo + Math.floor(Math.random() * (hi - lo + 1));
   cur = g;
 
-  (g.mode === 'dice' ? duel : flip)(
+  runner(g.mode)(
     { seed: 777, name: 'You', side: g.side, amt: g.amt, you: true },
-    { seed: Math.floor(Math.random() * 1e6), name: 'COINFLIP BOT [BOT]', side: g.mode === 'dice' ? null : (g.side === 'H' ? 'T' : 'H'), amt: ba, you: false }
+    { seed: Math.floor(Math.random() * 1e6), name: 'COINFLIP BOT [BOT]', side: noSide(g.mode) ? null : (g.side === 'H' ? 'T' : 'H'), amt: ba, you: false }
   );
 }
 
@@ -966,8 +1128,9 @@ function simJoin(mode){
   const g=pick(pool),[lo,hi]=range(g.amt),amt=lo+Math.floor(Math.random()*(hi-lo+1)),total=g.amt+amt;
   let name=getRandomPlayerName();while(name===g.name)name=getRandomPlayerName();
   g.status='active';g.startedAt=Date.now();g.endsAt=g.startedAt+ACTIVE_MS;
-  g.joiner={seed:Math.floor(Math.random()*1e6),name,side:mode==='dice'?null:(g.side==='H'?'T':'H'),amt};
+  g.joiner={seed:Math.floor(Math.random()*1e6),name,side:noSide(mode)?null:(g.side==='H'?'T':'H'),amt};
   if(mode==='dice'){let a,b;do{a=r6();b=r6()}while(a===b);g.rolls=[a,b];g.hostWins=a>b}
+  else if(mode==='towers'){let pl;do{pl=twPlan()}while(pl.loser===null);g.plan=pl;g.hostWins=pl.loser===1}
   else g.hostWins=Math.random()<g.amt/total;
 }
 function simStep(mode,min,max){
@@ -983,16 +1146,199 @@ function simStep(mode,min,max){
 }
 setInterval(()=>simStep('coinflip',CF_MIN,CF_MAX),SIM_MS);
 setTimeout(()=>setInterval(()=>simStep('dice',DU_MIN,DU_MAX),SIM_MS),SIM_MS/2);
+setTimeout(()=>setInterval(()=>simStep('towers',TW_MIN,TW_MAX),SIM_MS),SIM_MS*.75);
 
 // CREATE (shared by coinflip + dice duels)
 let createMode='coinflip';
 function openCreate(m){
   createMode=m;$('camt').value='';$('cerr').textContent='';
-  $('createTitle').textContent=m==='dice'?'Create a dice duel':'Create a coinflip';
-  $('coinSides').style.display=m==='dice'?'none':'flex';
+  $('createTitle').textContent=m==='dice'?'Create a dice duel':m==='towers'?'Create a Towers Battle':'Create a coinflip';
+  $('coinSides').style.display=m==='coinflip'?'flex':'none';
   $('createOv').classList.add('show');$('camt').focus();
 }
-$('create').onclick=()=>openCreate('coinflip');$('createDice').onclick=()=>openCreate('dice');
+$('create').onclick=()=>openCreate('coinflip');$('createDice').onclick=()=>openCreate('dice');$('createTowers').onclick=()=>openCreate('towers');
+
+// ==================== TOWERS BATTLE ====================
+// Each player has their own tower: TW_LEVELS levels, 3 tiles per level, 1 bomb per level.
+// Players pick one tile per level, taking turns (who goes first is random, then it alternates each level).
+// The first player to hit a bomb loses, the other player takes the whole pot.
+const twRb=()=>Array.from({length:TW_LEVELS},()=>Math.floor(Math.random()*3));
+function twPlan(){
+  const bombs=[twRb(),twRb()],first=Math.random()<.5?0:1,moves=[];let loser=null;
+  outer:for(let lv=0;lv<TW_LEVELS;lv++){
+    const order=lv%2===0?[first,1-first]:[1-first,first];
+    for(const s of order){
+      const p=Math.floor(Math.random()*3);
+      moves.push({s,lv,p});
+      if(bombs[s][lv]===p){loser=s;break outer}
+    }
+  }
+  return{bombs,first,moves,loser};
+}
+let twHandler=null;
+document.querySelector('.tw-wrap').addEventListener('click',e=>{const b=e.target.closest('[data-twp]');if(b&&twHandler)twHandler(+b.dataset.twp)});
+function towers(L,R,opts){
+  flipping=true;
+  const spec=!!(opts&&opts.spectate),plan=opts&&opts.plan,sides=[L,R],total=L.amt+R.amt,youIdx=L.you?0:1;
+  const bombs=plan?plan.bombs:[twRb(),twRb()],first=plan?plan.first:(Math.random()<.5?0:1);
+  const res=[[],[]];
+  let lv=0,step=0,over=false,loser=null,ready=false;
+  const turnSide=()=>{const o=lv%2===0?[first,1-first]:[1-first,first];return o[step]};
+  const winner=()=>over&&loser!==null?1-loser:null;
+  const status=t=>{$('twStatus').textContent=t};
+  function draw(){
+    const w=winner(),ts=over?-1:turnSide();
+    [0,1].forEach(s=>{
+      const el=$(s?'twR':'twL'),p=sides[s],canPick=ready&&!over&&!spec&&p.you&&ts===s;
+      const rows=Array.from({length:TW_LEVELS},(_,l)=>{
+        const r=res[s][l];
+        const tiles=[0,1,2].map(i=>{
+          let cls='tw-tile',txt='',at='';
+          if(r&&r.p===i){cls+=r.hit?' bomb':' safe';txt=r.hit?'💣':'✓'}
+          else if(over&&bombs[s][l]===i){cls+=' bomb ghost';txt='💣'}
+          else if(canPick&&l===lv){cls+=' can';at=` data-twp="${i}"`}
+          return `<button type="button" class="${cls}"${at}>${txt}</button>`;
+        }).join('');
+        return `<div class="tw-row">${tiles}</div>`;
+      }).join('');
+      el.className='tw-col'+(ts===s?' turn':'')+(over&&loser===s?' dead':'');
+      el.innerHTML=`<div class="nm">${av(p.seed,null,w===s)}<span>${p.name}</span></div><div class="tw-board">${rows}</div>`;
+    });
+  }
+  function end(){
+    twHandler=null;
+    const w=winner(),r=$('twRes'),me=sides[youIdx];
+    if(spec){r.style.color='var(--green)';r.textContent=w===null?'Both survived - draw':`${sides[w].name} won ${fmt(total)} Robux!`}
+    else{
+      if(w===null){balance+=me.amt;stats.wagered=Math.max(0,stats.wagered-me.amt)}
+      else if(w===youIdx){balance+=total;stats.won+=total-me.amt}
+      else stats.lost+=me.amt;
+      setBal();
+      r.style.color=w===null?'var(--muted)':w===youIdx?'var(--green)':'#ff6b6b';
+      r.textContent=w===null?'Both survived the tower - bets refunded':w===youIdx?`You won ${fmt(total)} Robux!`:`You hit a bomb! You lost ${fmt(me.amt)} Robux`;
+    }
+    status(w===null?'Draw - nobody hit a bomb':`${sides[loser].name} hit a bomb on level ${lv+1}`);
+    r.classList.add('show');$('twDone').style.display='inline-block';
+  }
+  function play(p){
+    const s=turnSide(),hit=bombs[s][lv]===p;
+    res[s][lv]={p,hit};
+    if(hit){over=true;loser=s;draw();end();return}
+    step++;if(step===2){step=0;lv++}
+    if(lv>=TW_LEVELS){over=true;loser=null;draw();end();return}
+    draw();next();
+  }
+  function next(){
+    const s=turnSide(),p=sides[s];
+    if(p.you&&!spec){
+      status(`Level ${lv+1} of ${TW_LEVELS} - your turn, pick a tile`);
+      twHandler=i=>{twHandler=null;play(i)};
+      draw();
+    }else{
+      status(`Level ${lv+1} of ${TW_LEVELS} - ${p.name} is picking...`);
+      twHandler=null;
+      setTimeout(()=>{
+        const mv=plan?plan.moves.find(m=>m.s===s&&m.lv===lv):null;
+        play(mv?mv.p:Math.floor(Math.random()*3));
+      },spec?900:700+Math.random()*600);
+    }
+  }
+  $('twBL').innerHTML=`<span>Bet</span><b>${RBX}${fmt(L.amt)}</b>`;
+  $('twBR').innerHTML=`<span>Bet</span><b>${RBX}${fmt(R.amt)}</b>`;
+  $('twRes').className='res';$('twRes').textContent='';$('twDone').style.display='none';
+  draw();$('twOv').classList.add('show');
+  status(sides[first].you?'You go first on level 1':`${sides[first].name} goes first on level 1`);
+  setTimeout(()=>{ready=true;next()},spec?800:2000);
+}
+
+// ==================== MINES ====================
+// 5x5 grid. Chance to survive k reveals with m mines = prod (25-m-i)/(25-i). Payout = fair multiplier x 0.99.
+const MN_N=25,MN_EDGE=.99;
+let mn=null;
+function mnMult(k,m){let x=1;for(let i=0;i<k;i++)x*=(MN_N-i)/(MN_N-m-i);return x*MN_EDGE}
+const mnX=x=>x.toFixed(2)+'x';
+$('mnCount').innerHTML=Array.from({length:24},(_,i)=>`<option value="${i+1}"${i+1===3?' selected':''}>${i+1}</option>`).join('');
+function mnDraw(){
+  let h='';
+  for(let i=0;i<MN_N;i++){
+    let cls='mn-tile',c='',dis=' disabled';
+    if(mn){
+      const open=mn.open.includes(i),isMine=mn.mines.has(i);
+      if(open){cls+=' gem';c=gemSvg}
+      else if(mn.over&&isMine){cls+=' mine'+(i===mn.hit?' boom':' dim');c='💣'}
+      else if(mn.over){cls+=' dim';c=gemSvg}
+      if(!mn.over&&!open)dis='';
+    }
+    h+=`<button type="button" class="${cls}" data-mn="${i}"${dis}>${c}</button>`;
+  }
+  $('mnGrid').innerHTML=h;
+  const active=!!(mn&&!mn.over),m=mn?mn.m:(parseInt($('mnCount').value,10)||3),k=mn?mn.open.length:0;
+  const cur=k?mnMult(k,m):0;
+  $('mnB1').innerHTML=`<span>Multiplier</span><b>${k?mnX(cur):'-'}</b>`;
+  $('mnB2').innerHTML=`<span>Next tile</span><b>${k+1<=MN_N-m?mnX(mnMult(k+1,m)):'-'}</b>`;
+  $('mnStart').style.display=active?'none':'';
+  $('mnCash').style.display=active?'':'none';
+  $('mnRand').style.display=active?'':'none';
+  if(active){$('mnCash').disabled=!k;$('mnCash').innerHTML=k?`Cash out ${RBX}${fmt(Math.floor(mn.bet*cur))}`:'Pick a tile to start'}
+  $('mnAmt').disabled=active;$('mnCount').disabled=active;
+}
+function mnResult(win,pay,mult){
+  const r=$('mnRes');r.style.color=win?'var(--green)':'#ff6b6b';
+  r.textContent=win?`You cashed out ${fmt(pay)} Robux (${mnX(mult)})!`:`You hit a mine! You lost ${fmt(mn.bet)} Robux`;
+  r.classList.add('show');
+}
+function mnBegin(){
+  if(mn&&!mn.over)return;
+  const bet=parseInt($('mnAmt').value,10),m=parseInt($('mnCount').value,10);
+  if(!Number.isSafeInteger(bet)||bet<10){$('mnErr').textContent='Minimum is 10 Robux.';return}
+  if(bet>balance){$('mnErr').textContent='Not enough balance. Tap Wallet to add some.';return}
+  $('mnErr').textContent='';
+  const mines=new Set();while(mines.size<m)mines.add(Math.floor(Math.random()*MN_N));
+  // settle the bet immediately so a reload mid-game can't refund it
+  balance-=bet;stats.wagered+=bet;setBal();
+  mn={bet,m,mines,open:[],over:false};
+  $('mnRes').className='res';mnDraw();
+}
+function mnPick(i){
+  if(!mn||mn.over||mn.open.includes(i))return;
+  if(mn.mines.has(i)){mn.over=true;mn.hit=i;stats.lost+=mn.bet;setBal();mnResult(false);mnDraw();return}
+  mn.open.push(i);
+  if(mn.open.length===MN_N-mn.m){mnCash();return}
+  mnDraw();
+}
+function mnCash(){
+  if(!mn||mn.over||!mn.open.length)return;
+  const mult=mnMult(mn.open.length,mn.m),pay=Math.floor(mn.bet*mult);
+  mn.over=true;balance+=pay;stats.won+=pay-mn.bet;setBal();mnResult(true,pay,mult);mnDraw();
+}
+$('mnGrid').addEventListener('click',e=>{const b=e.target.closest('[data-mn]');if(b&&!b.disabled)mnPick(+b.dataset.mn)});
+$('mnStart').onclick=mnBegin;$('mnCash').onclick=mnCash;
+$('mnRand').onclick=()=>{if(!mn||mn.over)return;const free=[...Array(MN_N).keys()].filter(i=>!mn.open.includes(i));mnPick(pick(free))};
+$('mnCount').onchange=()=>{if(!mn||mn.over)mnDraw()};
+$('mnAmt').addEventListener('keydown',e=>{if(e.key==='Enter')mnBegin()});
+document.addEventListener('click',e=>{
+  const q=e.target.closest('[data-mq]');if(!q||(mn&&!mn.over))return;
+  const v=parseInt($('mnAmt').value,10)||0;
+  $('mnAmt').value={min:10,half:Math.max(10,Math.floor(v/2)),dbl:Math.max(10,v*2),max:Math.floor(balance)}[q.dataset.mq];
+});
+mnDraw();
+
+// ==================== 2 YEAR ANNIVERSARY POPUP ====================
+(function(){
+  const ov=$('annOv');
+  function closeAnn(){ov.classList.remove('show')}
+  // handled here (and not bubbled) so closing it never closes the login window underneath
+  ov.addEventListener('click',e=>{e.stopPropagation();if(e.target===ov||e.target.closest('[data-ann]'))closeAnn()});
+  ov.classList.add('show');
+  const cols=['#3ddc84','#ffc45c','#4aa8ff','#ee7d2a','#a855f7','#ffffff'],box=$('annConfetti');
+  for(let i=0;i<46;i++){
+    const c=document.createElement('i');
+    c.style.left=Math.random()*100+'%';c.style.background=cols[i%cols.length];
+    c.style.animationDuration=(2.6+Math.random()*2.4)+'s';c.style.animationDelay=(Math.random()*1.8)+'s';
+    c.style.transform=`rotate(${Math.random()*360}deg)`;
+    box.appendChild(c);
+  }
+})();
 </script>
 </body>
 </html>
