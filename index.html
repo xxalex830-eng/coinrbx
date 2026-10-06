@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coinrbx - Coinflip & Roulette</title>
+<style>
+:root{color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#13171d;--side:#161a21;--panel:#1b2028;--panel2:#262c37;--text:#f1f4f8;--muted:#8a94a3;--green:#3ddc84;--orange:#ee7d2a;--red:#ff4d4d;--purple:#a855f7}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;height:100vh;display:flex;flex-direction:column}
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 18px;height:56px;background:var(--side);border-bottom:1px solid #0004;flex:none}
+.logo{font-weight:800;font-size:22px;display:flex;align-items:center;gap:8px;margin-right:28px}
+.logo i{width:22px;height:22px;border-radius:50%;background:linear-gradient(90deg,var(--green) 50%,#0e3b24 50%)}
+.tabs{display:flex;gap:22px;flex:1;color:var(--muted);font-weight:600;font-size:14px}
+.tabs span{cursor:pointer;transition:color .2s;user-select:none}
+.tabs span.on{color:var(--text);border-bottom:2px solid var(--green);padding-bottom:16px}
+.bal{display:flex;align-items:stretch;background:var(--panel);border-radius:8px;overflow:hidden;height:38px}
+.bal b{display:flex;align-items:center;gap:8px;padding:0 14px;font-size:15px}
+.bal button{background:var(--green);color:#06210f;border:0;font-weight:800;padding:0 18px;cursor:pointer;font-size:14px}
+.rbx{width:16px;height:16px;flex:none}
+.wrap{display:flex;flex:1;min-height:0}
+aside{width:300px;background:var(--side);border-right:1px solid #0004;display:flex;flex-direction:column;flex:none}
+.ch{display:flex;justify-content:space-between;align-items:center;padding:16px 14px 10px;font-weight:700}
+.on-n{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:13px;font-weight:600}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+.msgs{flex:1}
+.cin{display:flex;align-items:center;justify-content:space-between;margin:10px;background:var(--panel);border-radius:8px;padding:12px;color:#5d6674;font-size:14px}
+.ic{display:flex;gap:8px;padding:0 10px 12px}
+.ic span{flex:1;height:32px;border-radius:7px;background:var(--panel2);display:flex;align-items:center;justify-content:center;font-size:13px;opacity:.7}
+main{flex:1;overflow:auto;padding:18px 24px}
+.in{width:100%;max-width:1100px;margin:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}
+.stat{background:var(--panel);border-radius:8px;padding:14px 16px}
+.stat b{font-size:20px;display:flex;align-items:center;gap:6px}
+.stat small{color:var(--muted);font-size:14px}
+.list{background:var(--panel);border-radius:10px;padding:14px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;color:var(--muted);font-size:13px;font-weight:600}
+.top .l{display:flex;align-items:center;gap:8px}
+.chip{width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#fff;border:2px solid}
+.chip{letter-spacing:-.5px}
+.chip.H{background:#1f9d54;border-color:#3ddc84}.chip.T{background:#c85f12;border-color:var(--orange)}.chip.J{background:#a855f7;border-color:#c084fc}
+.btn{background:var(--panel2);color:var(--text);border:0;padding:10px 22px;border-radius:7px;font-weight:700;cursor:pointer;font-size:14px}
+.btn:hover{filter:brightness(1.2)}.btn.g{background:var(--green);color:#06210f}
+.row{display:flex;align-items:center;justify-content:space-between;background:var(--bg);border-radius:8px;padding:10px 18px;margin-bottom:10px;gap:12px}
+.row:last-child{margin-bottom:0}
+.side2{display:flex;align-items:center;gap:16px}
+.av{width:56px;height:56px;border-radius:50%;position:relative;flex:none}
+.av .im{width:100%;height:100%;border-radius:50%;overflow:hidden;background:var(--panel2)}
+.av svg{width:100%;height:100%;display:block}
+.av .chip{position:absolute;left:-2px;bottom:-2px;width:22px;height:22px}
+.av.ring .im{box-shadow:0 0 0 3px var(--green)}
+.av.empty .im{background:var(--panel2)}
+.vs{color:var(--muted);font-size:13px}
+.item{width:56px;height:56px;border-radius:50%;background:var(--panel2);display:flex;align-items:center;justify-content:center}
+.item .rbx{width:26px;height:26px}
+.amt{text-align:right;min-width:90px}
+.amt b{font-size:18px;display:flex;align-items:center;gap:6px;justify-content:flex-end}
+.amt small{color:var(--muted);font-size:13px}
+.ov{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;padding:16px;z-index:10}
+.ov.show{display:flex}
+.modal{background:var(--bg);border:1px solid #ffffff12;border-radius:12px;width:100%;max-width:440px;padding:26px;position:relative}
+.modal.big{max-width:600px}
+.x{position:absolute;right:14px;top:8px;background:none;border:0;color:var(--muted);font-size:24px;cursor:pointer}
+.modal h3{margin:0 0 6px;font-size:18px}
+.hint{color:var(--muted);font-size:14px;margin-bottom:16px}
+input{width:100%;background:var(--panel);border:1px solid #ffffff18;border-radius:8px;color:var(--text);padding:12px 14px;font-size:16px;outline:none;margin-bottom:8px}
+input:focus{border-color:var(--green)}
+.err{color:#ff6b6b;font-size:13px;min-height:18px;margin-bottom:10px}
+.login-user{color:var(--green);font-weight:800;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.login-user:hover{opacity:0.85}
+.login-note{background:var(--panel);border-radius:8px;padding:11px 13px;color:var(--muted);font-size:13px;margin:10px 0 14px}
+.survey-option{display:block;width:100%;background:var(--panel);color:var(--text);border:1px solid #ffffff12;border-radius:8px;padding:11px;margin:7px 0;text-align:left;cursor:pointer;font-weight:700}
+.survey-option.selected{border-color:var(--green);background:#173524}
+.demo-badge{display:inline-flex;align-items:center;gap:5px;background:#3a2d16;color:#ffc45c;border:1px solid #8b6826;border-radius:999px;padding:3px 7px;font-size:10px;font-weight:800;margin-left:7px}
+.wallet-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.wallet-option{background:var(--panel);border:1px solid #ffffff12;color:var(--text);border-radius:99px;padding:14px;cursor:pointer;font-weight:800;text-align:left}
+.wallet-option:hover{filter:brightness(1.15)}
+.survey-q{font-weight:800;margin:14px 0 7px}
+.survey-progress{height:5px;background:var(--panel2);border-radius:99px;overflow:hidden;margin:12px 0 18px}
+.survey-progress i{display:block;height:100%;width:0;background:var(--green);transition:width .3s}
+.celebrate{text-align:center;font-size:24px;font-weight:900;margin:18px 0;color:var(--green)}
+
+.profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.profile-stat{background:var(--panel);border-radius:8px;padding:12px 14px}
+.profile-stat span{display:block;color:var(--muted);font-size:12px;font-weight:600;margin-bottom:4px}
+.profile-stat b{font-size:16px;display:flex;align-items:center;gap:4px}
+.stat-green{color:var(--green)}
+.stat-red{color:#ff6b6b}
+
+.stage{display:grid;grid-template-columns:1fr 200px 1fr;align-items:center;justify-items:center;margin:10px 0 18px;position:relative}
+.pl{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:14px;font-weight:700}
+.pl .av{width:92px;height:92px}
+.pl .av .chip{width:26px;height:26px;font-size:12px}
+.coinbox{width:200px;height:170px;display:flex;align-items:center;justify-content:center;perspective:700px;position:relative}
+.toss{transform-style:preserve-3d}
+.coin{width:120px;height:120px;position:relative;transform-style:preserve-3d}
+.coin>*{position:absolute;inset:0;border-radius:50%}
+.face{backface-visibility:hidden;display:flex;align-items:center;justify-content:center;font-size:54px;font-weight:900;color:#fff;text-shadow:0 2px 4px #0005}
+.face.H{background:radial-gradient(circle,#43e888 0,#1fa653 70%);border:9px solid #2fcf6e;transform:translateZ(6px)}
+.face.T{background:radial-gradient(circle,#f39446 0,#c85f12 70%);border:9px solid var(--orange);transform:rotateY(180deg) translateZ(6px)}
+.edge{background:#7a5a3a}
+.fx{position:absolute;left:50%;top:50%;pointer-events:none}
+.fx i{position:absolute;width:10px;height:3px;border-radius:2px;margin:-1px 0 0 -5px}
+.ringfx{position:absolute;left:50%;top:50%;width:140px;height:140px;margin:-70px 0 0 -70px;border-radius:50%;border:2px solid #ee7d2a88;opacity:0;pointer-events:none}
+.bars{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bar{background:var(--panel);border-radius:8px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px}
+.bar b{color:var(--text);display:flex;gap:6px;align-items:center}
+.res{text-align:center;font-weight:800;font-size:20px;height:28px;margin:14px 0 4px;opacity:0;transition:opacity .4s}
+.res.show{opacity:1}
+.fair{text-align:center;color:var(--muted);font-size:13px;font-weight:600;margin-top:10px}
+.own{display:flex;flex-direction:column;align-items:flex-end;gap:6px}.own small{color:var(--muted);font-size:12px}.own div{display:flex;gap:6px}.btn.s{padding:8px 14px}
+.sides{display:flex;gap:10px;margin-bottom:14px}.sd{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--panel);border:2px solid transparent;color:var(--text);border-radius:8px;padding:10px;font-weight:700;cursor:pointer}.sd.on{border-color:var(--green)}
+
+.chip.G{background:#1f6fe0;border-color:#4aa8ff}.chip svg{width:12px;height:12px}
+.face.G{background:radial-gradient(circle,#6cc4ff 0,#1666dc 72%);border:9px solid #3d9bff;transform:rotateY(180deg) translateZ(6px)}
+.face.G svg{width:62%;height:62%;filter:drop-shadow(0 2px 4px #0006)}
+.cdn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:84px;font-weight:900;color:var(--green);text-shadow:0 0 24px #3ddc8488;pointer-events:none}
+.lring{width:120px;height:120px;transform:rotate(-90deg)}.lr-bg,.lr-fg{fill:none;stroke-width:8}.lr-bg{stroke:#ffffff14}.lr-fg{stroke:var(--green);stroke-linecap:round;stroke-dasharray:264;stroke-dashoffset:264}
+.die{width:84px;height:84px;background:#f1f4f8;border-radius:14px;display:grid;grid-template:repeat(3,1fr)/repeat(3,1fr);padding:12px;box-shadow:0 4px 0 #9aa3b2;transition:opacity .3s,box-shadow .3s}
+.die b{border-radius:50%}.die b.pip{background:#13171d}.die.win{box-shadow:0 0 26px #3ddc84,0 4px 0 #1fa653}.die.lose{opacity:.45}
+.badge{display:inline-flex;align-items:center;gap:6px;background:#173524;color:var(--green);border:1px solid #3ddc8466;border-radius:99px;padding:8px 14px;font-weight:800;font-size:13px}.badge i{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1s infinite}@keyframes pulse{50%{opacity:.25}}.amt b.hi{color:#ffc45c}
+.btn:disabled{opacity:.45;cursor:not-allowed;filter:none}
+/* SURVEY LIST */
+.sv-list{max-height:55vh;overflow:auto;margin-top:6px}
+.sv-row{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;background:var(--panel);color:var(--text);border:1px solid #ffffff12;border-radius:8px;padding:12px 14px;margin:7px 0;cursor:pointer;font-weight:700;font-size:14px;text-align:left}
+.sv-row:hover:not(:disabled){border-color:var(--green)}
+.sv-row:disabled{opacity:.6;cursor:not-allowed}
+.sv-name{display:flex;align-items:center;gap:12px}
+.sv-ic{font-size:22px}
+.sv-name small{display:block;color:var(--muted);font-weight:600;font-size:12px;margin-top:2px}
+.sv-r{display:flex;align-items:center;gap:6px;color:var(--green);font-weight:800;white-space:nowrap}
+.sv-row:disabled .sv-r{color:var(--orange)}
+
+.reel{position:relative;overflow:hidden;height:110px;background:var(--bg);border-radius:10px;margin:8px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.reel-ptr{position:absolute;left:50%;top:0;bottom:0;width:3px;margin-left:-1.5px;background:#fff;z-index:2;box-shadow:0 0 10px #fffa}
+.reel-track{display:flex;gap:10px;position:absolute;left:0;top:0;will-change:transform}
+.tile{flex:none;width:90px;height:90px;margin-top:10px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:900;color:#fff;text-shadow:0 2px 4px #0005;transition:transform .3s,box-shadow .3s}
+.tile.H{background:radial-gradient(circle,#43e888 0,#1fa653 70%);border:7px solid #2fcf6e}
+.tile.T{background:radial-gradient(circle,#f39446 0,#c85f12 70%);border:7px solid var(--orange)}
+.tile.G{background:radial-gradient(circle,#6cc4ff 0,#1666dc 72%);border:7px solid #3d9bff}
+.tile svg{width:60%;height:60%}
+.tile.win{transform:scale(1.15);box-shadow:0 0 22px #fffa}
+.hist{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.picks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.pick{background:var(--bg);border:2px solid transparent;border-radius:10px;color:var(--text);padding:12px 6px;cursor:pointer;font-weight:800;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:14px}
+.pick small{color:var(--muted);font-weight:600;font-size:12px}.pick .chip{width:30px;height:30px;font-size:14px}.pick .chip svg{width:18px;height:18px}
+.pick.on{border-color:var(--green)}.pick.G.on{border-color:#4aa8ff}.pick:disabled{opacity:.6;cursor:not-allowed}
+.dbet{display:flex;gap:8px;margin-bottom:6px}.dbet input{margin:0;flex:1;min-width:0}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--panel2);border:1px solid #ffffff18;border-radius:10px;padding:12px 18px;font-weight:700;opacity:0;pointer-events:none;transition:.3s;z-index:20;max-width:90vw;text-align:center}
+#toast.show{opacity:1;transform:translateX(-50%)}
+.jp-banner{display:none;text-align:center;font-weight:800;font-size:18px;background:#173524;border:1px solid var(--green);border-radius:10px;padding:12px}
+.jp-top{flex-wrap:wrap;gap:12px}
+@media(max-width:820px){aside{display:none}.stats{grid-template-columns:1fr}nav{flex-wrap:wrap;height:auto;padding:8px 14px}.logo{margin-right:0}.tabs{order:3;flex:0 0 100%;justify-around:space-around;gap:0;margin-top:6px}.tabs span{padding:8px 4px}.tabs span.on{padding-bottom:6px}}
+@media(max-width:560px){.stage{grid-template-columns:1fr 130px 1fr}.coinbox{width:130px}.coin{width:90px;height:90px}.face{font-size:38px}.pl .av{width:64px;height:64px}.row{padding:10px}.side2{gap:8px}.av,.item{width:44px;height:44px}.btn{padding:9px 14px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo"><i></i>Coinrbx <span class="demo-badge"></span></div>
+  <div class="tabs">
+    <span id="tabCoinflip" class="on">Coinflip</span>
+    <span id="tabDice">Dice Duels 🎲</span>
+    <span id="tabRoulette">Roulette 💎</span>
+  </div>
+  <div class="bal"><b id="bal"></b><button id="wallet">Wallet</button></div>
+</nav>
+<div class="wrap">
+  <aside>
+    <div class="ch"><span>Chat</span><span class="on-n"><span class="dot"></span><span id="online">300</span> online</span></div>
+    <div class="msgs"></div>
+    <div class="cin"><span>Log in to chat</span><span>➤</span></div>
+    <div class="ic"><span>💬</span><span>🐦</span><span id="surveyBtn" title=" survey">🎁</span><span>🏆</span><span>✔</span><span>?</span><span>📄</span><span>🔒</span></div>
+  </aside>
+  <main><div class="in">
+    <div class="stats">
+      <div class="stat"><b id="sG">12</b><small>Active games</small></div>
+      <div class="stat"><b id="sV"></b><small>Total value</small></div>
+      <div class="stat"><b id="sM"></b><small>Highest wager</small></div>
+    </div>
+    <div class="hint" style="text-align:left;margin:0 0 10px" id="gameModeDesc">Coinrbx is a robux gambling website with robux</div>
+    
+    <div class="list" id="coinflipView">
+      <div class="top">
+        <div class="l" id="topHeader">LAST 100 <span class="chip H">R$</span> 50 <span class="chip T">T</span> 50</div>
+        <div style="display:flex;gap:8px"><button class="btn">History</button><button class="btn g" id="create">Create</button></div>
+      </div>
+      <div id="list"></div>
+    </div>
+
+    <div class="list" id="diceView" style="display:none">
+      <div class="top"><div class="l">DICE DUELS &middot; highest roll wins</div><div style="display:flex;gap:8px"><button class="btn g" id="createDice">Create</button></div></div>
+      <div id="duList"></div>
+    </div>
+
+    <!-- ROULETTE VIEW -->
+    <div class="list" id="rouletteView" style="display:none">
+      <div class="top"><div class="l">LAST RESULTS</div><div class="hist" id="dHist"></div></div>
+      <div class="reel" id="dReel"><div class="reel-ptr"></div><div class="reel-track" id="dTrack"></div></div>
+      <div class="res" id="dRes"></div>
+      <div class="picks" id="dPicks"></div>
+      <div class="dbet"><input id="dAmt" type="number" inputmode="numeric" placeholder="Bet amount (min 10)"><button class="btn s" data-dq="min">Min</button><button class="btn s" data-dq="half">&frac12;</button><button class="btn s" data-dq="dbl">2&times;</button><button class="btn s" data-dq="max">Max</button></div>
+      <div class="err" id="dErr"></div>
+      <button class="btn g" id="dGo" style="width:100%">Spin</button>
+    </div>
+
+  </div></main>
+</div>
+
+<div class="ov" id="joinOv"><div class="modal">
+  <button class="x" data-close>&times;</button>
+  <h3>Put in how much Robux you want to join</h3>
+  <div class="hint" id="hint"></div>
+  <input id="amount" type="number" inputmode="numeric" placeholder="Enter amount">
+  <div class="err" id="err"></div>
+  <button class="btn g" id="confirm" style="width:100%">Join</button>
+</div></div>
+
+<div class="ov" id="createOv"><div class="modal">
+  <button class="x" data-close>&times;</button>
+  <h3 id="createTitle">Create a game</h3>
+  <div class="hint">How much Robux do you want to put in? (min 10)</div>
+  <input id="camt" type="number" inputmode="numeric" placeholder="Enter amount">
+  <div class="sides" id="coinSides">
+    <button class="sd on" data-side="H"><span class="chip H">R$</span>Robux</button>
+    <button class="sd" data-side="T"><span class="chip T">T</span>Tix</button>
+  </div>
+  <div class="err" id="cerr"></div>
+  <button class="btn g" id="cgo" style="width:100%">Create</button>
+</div></div>
+
+<div class="ov" id="loginOv"><div class="modal">
+  <h3>Welcome to Coinrbx <span class="demo-badge">DEMO</span></h3>
+  <div class="hint">Put in your username and playerfile to login or register.</div>
+  <input id="loginName" type="text" maxlength="20" placeholder="Username">
+  <input id="loginPass" type="password" placeholder="Playerfile">
+  <div class="err" id="loginErr"></div>
+  <button class="btn g" id="loginGo" style="width:100%">Login / Register</button>
+  <div class="login-note">Best of luck.</div>
+</div></div>
+
+<div class="ov" id="profileOv"><div class="modal">
+  <button class="x" data-close>&times;</button>
+  <h3 id="profileTitle">User Stats</h3>
+  <div class="hint">Account overview and lifetime activity.</div>
+  <div class="profile-grid">
+    <div class="profile-stat"><span>Wagered</span><b id="pWagered">0</b></div>
+    <div class="profile-stat"><span>Deposited</span><b id="pDeposited">0</b></div>
+    <div class="profile-stat"><span>Total Won</span><b id="pWon">0</b></div>
+    <div class="profile-stat"><span>Total Lost</span><b id="pLost">0</b></div>
+    <div class="profile-stat" style="grid-column: span 2"><span>Net Profit / Loss</span><b id="pNet">0</b></div>
+  </div>
+</div></div>
+
+<div class="ov" id="walletOv"><div class="modal">
+  <button class="x" data-close>&times;</button>
+  <h3>Wallet <span class="demo-badge">ROBUX ONLY</span></h3>
+  <div class="hint">This wallet is your amount of robux.</div>
+  <div class="wallet-options">
+    <button class="wallet-option" id="depositBtn">➕ Deposit</button>
+    <button class="wallet-option" id="withdrawBtn">➖ Withdraw</button>
+  </div>
+</div></div>
+
+<div class="ov" id="depositOv"><div class="modal">
+  <button class="x" data-close>&times;</button>
+  <h3>Deposit Method</h3>
+  <div class="hint">Choose how you would like to deposit:</div>
+  <div class="wallet-options">
+    <button class="wallet-option" id="depositOptionSurvey">📋 Survey</button>
+    <button class="wallet-option" id="depositOptionNormal">💳 Deposit</button>
+  </div>
+</div></div>
+
+<div class="ov" id="normalDepositOv"><div class="modal">
+  <button class="x" data-close>&times;</button>
+  <h3>Deposit Robux</h3>
+  <div class="hint">Put in amount of robux you would like to deposit, min is 10</div>
+  <input id="normalDepositAmt" type="number" inputmode="numeric" placeholder="Amount (min 10)">
+  <div class="err" id="normalDepositErr"></div>
+  <button class="btn g" id="normalDepositGo" style="width:100%">Submit Deposit</button>
+</div></div>
+
+<div class="ov" id="withdrawOv"><div class="modal">
+  <button class="x" data-close>&times;</button>
+  <h3>Withdraw <span class="demo-badge"></span></h3>
+  <div class="hint">Withdraw.</div>
+  <input id="withdrawUser" type="text" placeholder="Put your username">
+  <input id="withdrawAmt" type="number" inputmode="numeric" placeholder="Put amount">
+  <div class="err" id="withdrawErr"></div>
+  <button class="btn g" id="withdrawGo" style="width:100%">Withdraw</button>
+</div></div>
+
+<div class="ov" id="surveyListOv"><div class="modal">
+  <button class="x" data-close>&times;</button>
+  <h3>Surveys</h3>
+  <div class="hint">Pick a survey to earn Robux. Each survey has its own 5 minute cooldown after you finish it.</div>
+  <div class="sv-list" id="surveyList"></div>
+</div></div>
+
+<div class="ov" id="surveyOv"><div class="modal">
+  <button class="x" data-close>&times;</button>
+  <h3 id="surveyTitle">Survey</h3>
+  <div class="hint">Complete a survey for robux</div>
+  <div class="survey-progress"><i id="surveyProgress"></i></div>
+  <div id="surveyBody"></div>
+  <button class="btn g" id="surveyNext" style="width:100%">Next</button>
+</div></div>
+
+<div class="ov" id="surveyDoneOv"><div class="modal">
+  <div class="celebrate" id="surveyDoneTitle">🎉 Survey complete!</div>
+  <div class="hint" id="surveyDoneText" style="text-align:center">30 Robux have been added to the <b> balance</b>.</div>
+  <button class="btn g" id="surveyDone" style="width:100%">Continue</button>
+</div></div>
+
+<!-- COINFLIP ARENA MODAL -->
+<div class="ov" id="flipOv"><div class="modal big">
+  <button class="x" id="flipX" style="display:none">&times;</button>
+  <div class="stage">
+    <div class="pl" id="pL"></div>
+    <div class="coinbox"><div class="toss" id="toss"><div class="coin" id="coin"></div></div><div class="cdn" id="cdn"></div><div class="ringfx" id="ringfx"></div><div class="fx" id="fx"></div></div>
+    <div class="pl" id="pR"></div>
+  </div>
+  <div class="bars"><div class="bar" id="bL"></div><div class="bar" id="bR"></div></div>
+  <div class="res" id="res"></div>
+  <div style="text-align:center"><button class="btn g" id="done" style="display:none">Close</button></div>
+  <div class="fair">✔ Provably fair</div>
+</div></div>
+
+<div class="ov" id="duOv"><div class="modal big">
+  <div class="stage">
+    <div class="pl" id="duL"></div>
+    <div class="coinbox"><div class="cdn" id="duCd"></div></div>
+    <div class="pl" id="duR"></div>
+  </div>
+  <div class="bars"><div class="bar" id="duBL"></div><div class="bar" id="duBR"></div></div>
+  <div class="res" id="duRes"></div>
+  <div style="text-align:center"><button class="btn g" id="duDone" style="display:none">Close</button></div>
+  <div class="fair">✔ Provably fair</div>
+</div></div>
+
+<div id="toast"></div>
+<script>
+const $=id=>document.getElementById(id);
+const RBX='<svg class="rbx" viewBox="0 0 16 16"><path d="M8 1l6 3.5v7L8 15l-6-3.5v-7z" fill="none" stroke="#3ddc84" stroke-width="1.8"/><rect x="6" y="6" width="4" height="4" fill="#3ddc84"/></svg>';
+const LOW=.9,HIGH=1.2,range=a=>[Math.ceil(a*LOW),Math.floor(a*HIGH)];
+let balance=0,cur=null,nid=1,flipping=false,cside="H",activeTab="coinflip";
+const BOT_WAIT=10*60*1000;
+let username=localStorage.getItem('coinrbx_username')||'';
+const STORAGE_KEY='coinrbx_account_v2';
+const SURVEY_KEY='coinrbx_last_survey';
+
+let coinGames=[];
+
+let stats={
+  wagered:0,
+  deposited:0,
+  won:0,
+  lost:0
+};
+
+const savedAccounts=JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}');
+if(username && savedAccounts[username]){
+  if(Number.isFinite(savedAccounts[username].balance)){
+    balance=savedAccounts[username].balance;
+  }
+  if(savedAccounts[username].stats){
+    stats={...stats, ...savedAccounts[username].stats};
+  }
+}
+
+// avatars
+function rng(s){return()=>{s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const SK=['#f5c9a0','#e0a878','#c68642','#8d5524','#ffdbac','#fbd2b5'],HR=['#2b1b12','#4a2c17','#d9b44a','#a33a1f','#1c1c24','#e8e8ee','#6b3fa0'],
+SH=['#3b6fd8','#d84a4a','#2fb36a','#e0a030','#8a4fd0','#2b2f3a','#e0e0e8','#d8508f'],BG=['#2a3342','#33283f','#243b36','#3d3326','#2a3a4a'];
+function avatar(seed){
+  const r=rng(seed),p=a=>a[Math.floor(r()*a.length)],sk=p(SK),hr=p(HR),sh=p(SH),bg=p(BG),hv=Math.floor(r()*4),gl=r()<.3;
+  const hair=[`<path d="M26 42Q23 11 50 11Q77 11 74 42Q70 27 50 27Q30 27 26 42Z" fill="${hr}"/>`,
+  `<path d="M26 42L25 22L34 14L40 22L48 8L56 22L64 14L75 22L74 42Q70 29 50 29Q30 29 26 42Z" fill="${hr}"/>`,
+  `<path d="M24 36Q26 8 50 8Q74 8 76 36Z" fill="${hr}"/><rect x="22" y="33" width="56" height="6" rx="3" fill="#0003"/>`,
+  `<path d="M24 64L24 30Q26 9 50 9Q74 9 76 30L76 64L68 64L68 33Q50 24 32 33L32 64Z" fill="${hr}"/>`][hv];
+  return `<svg viewBox="0 0 100 100"><rect width="100" height="100" fill="${bg}"/><path d="M12 100Q14 73 50 71Q86 73 88 100Z" fill="${sh}"/><rect x="42" y="58" width="16" height="16" rx="4" fill="${sk}"/><rect x="42" y="64" width="16" height="6" fill="#0002"/><rect x="28" y="18" width="44" height="46" rx="15" fill="${sk}"/><ellipse cx="38" cy="26" rx="8" ry="4" fill="#fff2" transform="rotate(-20 38 26)"/>${hair}<ellipse cx="40" cy="45" rx="3" ry="4" fill="#1a1a1a"/><ellipse cx="60" cy="45" rx="3" ry="4" fill="#1a1a1a"/>${gl?'<g fill="none" stroke="#222" stroke-width="2"><rect x="33" y="39" width="14" height="12" rx="4"/><rect x="53" y="39" width="14" height="12" rx="4"/><path d="M47 45h6"/></g>':''}<path d="M41 55Q50 62 59 55" stroke="#3a1a1a" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>`;
+}
+const gemSvg=`<svg viewBox="0 0 100 100"><polygon points="26,14 74,14 64,38 36,38" fill="#d6efff"/><polygon points="26,14 8,38 36,38" fill="#7cc4ff"/><polygon points="74,14 92,38 64,38" fill="#5aaeff"/><polygon points="8,38 36,38 50,88" fill="#2f86e8"/><polygon points="36,38 64,38 50,88" fill="#1f6ad0"/><polygon points="64,38 92,38 50,88" fill="#2578de"/><path d="M8 38H92M36 38L26 14M64 38L74 14M36 38L50 88M64 38L50 88" stroke="#fff" stroke-opacity=".45" stroke-width="1.5" fill="none"/><path d="M26 14H74L92 38L50 88L8 38Z" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="2.5" stroke-linejoin="round"/><path d="M32 20L42 20L36 31Z" fill="#fff" fill-opacity=".8"/></svg>`;
+const LBL={H:'R$',T:'T'};
+const chip=s=>`<span class="chip ${s}">${s==='G'?gemSvg:(LBL[s]||s)}</span>`;
+const av=(seed,side,ring)=>`<div class="av${ring?' ring':''}"><div class="im">${avatar(seed)}</div>${side?chip(side):''}</div>`;
+
+function getRandomPlayerName(){
+  return 'player' + Math.floor(Math.random() * 900 + 100);
+}
+
+const fmt=n=>Number(n).toLocaleString('en-US');
+const CF_MIN=25,CF_MAX=30,DU_MIN=15,DU_MAX=20,ACTIVE_MS=8000,REWATCH_MS=60000,SIM_MS=10000;
+let spectating=false;
+const LOWA=[10,10,12,15,20,25,30,40,50,60,75,80,90,100],MIDA=[120,150,200,250,300,400,500],HIA=[750,1000,1500,2000,3000,5000,10000];
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+function mkCoin(forceHigh,mode){
+  mode=mode||'coinflip';
+  const r=Math.random(),a=forceHigh||r>.85?pick(HIA):r>.55?pick(MIDA):pick(LOWA);
+  return{id:nid++,amt:a,seed:Math.floor(Math.random()*1e6),name:getRandomPlayerName(),side:mode==='dice'?null:(Math.random()<.5?'H':'T'),mode,status:'open'}}
+
+function rowHtml(g){
+  const i=coinGames.indexOf(g),[lo,hi]=range(g.amt),j=g.joiner,done=g.status==='done';
+  const right=j?av(j.seed,j.side,done&&!g.hostWins):'<div class="av empty"><div class="im"></div></div>';
+  const sub=j?`Pot ${fmt(g.amt+j.amt)}`:`${fmt(lo)} - ${fmt(hi)}`;
+  let act;
+  if(g.own)act=`<div class="own"><small class="cd" data-id="${g.id}"></small><div><button class="btn g s" data-call="${g.id}">Call bot</button><button class="btn s" data-cancel="${g.id}">Cancel</button></div></div>`;
+  else if(done)act=`<div class="own"><small class="dl" data-id="${g.id}"></small><button class="btn" data-view="${g.id}">Rewatch</button></div>`;
+  else if(g.status==='active')act=`<div class="own"><div><span class="badge"><i></i>Active</span>${g.manual?'':`<button class="btn" data-view="${g.id}">View</button>`}</div></div>`;
+  else act=`<button class="btn" data-join="${i}">Join</button>`;
+  return `<div class="row"><div class="side2">${av(g.seed,g.side,done&&g.hostWins)}<span class="vs">vs</span>${right}</div>
+    <div class="item">${g.mode==='dice'?'<span style="font-size:26px">🎲</span>':RBX}</div>
+    <div class="amt"><b${g.amt>=1000?' class="hi"':''}>${RBX}${fmt(g.amt)}</b><small>${sub}</small></div>${act}</div>`}
+
+function render(){
+  const list=m=>[...coinGames.filter(g=>g.mode===m&&g.own),...coinGames.filter(g=>g.mode===m&&!g.own)].map(rowHtml).join('');
+  $('list').innerHTML=list('coinflip');$('duList').innerHTML=list('dice');
+  const m=activeTab==='dice'?'dice':'coinflip',live=coinGames.filter(g=>g.mode===m&&g.status!=='done');
+  $('sG').textContent=live.length;
+  $('sV').innerHTML=RBX+fmt(live.reduce((t,g)=>t+g.amt,0));
+  $('sM').innerHTML=RBX+fmt(Math.max(0,...live.map(g=>g.amt)));
+  tick();
+}
+
+function saveAcc(){
+  if(username){
+    savedAccounts[username]={balance:Math.max(0,Math.floor(balance)),stats,updatedAt:Date.now()};
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(savedAccounts));
+  }
+}
+function setBal(){$('bal').innerHTML=RBX+balance;saveAcc()}
+
+coinGames=[...Array.from({length:CF_MIN},(_,i)=>mkCoin(i<2)),...Array.from({length:DU_MIN},(_,i)=>mkCoin(i<1,'dice'))];
+render();
+
+if(username){
+  $('loginOv').classList.remove('show');
+  setBal();
+}else{
+  $('loginOv').classList.add('show');$('loginName').focus();
+}
+
+// ==================== COIN ANIMATION (shared by Coinflip + Roulette) ====================
+const FXC={H:['#3ddc84','#3ddc8488'],T:['#ee7d2a','#ee7d2a88'],G:['#4aa8ff','#4aa8ff88']};
+function buildCoin(c){c.innerHTML='<div class="face H">R$</div><div class="face T back">T</div>'+Array.from({length:9},(_,i)=>`<div class="edge" style="transform:translateZ(${(i-4)*1.3}px)"></div>`).join('')}
+function playCoin(e,result,dur,onLand){
+  buildCoin(e.coin);e.fx.innerHTML='';
+  e.coin.style.transition='none';e.coin.style.transform='rotateY(0deg)';void e.coin.offsetWidth;
+  e.toss.animate([{transform:'translateY(0) scale(.45)',opacity:0},{transform:'translateY(0) scale(.6)',opacity:1,offset:.08},{transform:'translateY(-34px) scale(1.15)',offset:.45},{transform:'translateY(0) scale(1)'}],{duration:dur,easing:'ease-out',fill:'forwards'});
+  e.coin.style.transition=`transform ${dur}ms cubic-bezier(.2,.6,.15,1)`;
+  e.coin.style.transform=`rotateY(${360*6+(result==='H'?0:180)}deg)`;
+  // GEM: the back face becomes the gem coin while the spin is still too fast to notice
+  if(result==='G')setTimeout(()=>{const b=e.coin.querySelector('.back');b.className='face G back';b.innerHTML=gemSvg;e.coin.querySelectorAll('.edge').forEach(x=>x.style.background='#2a6fd0')},350);
+  setTimeout(()=>{
+    const col=FXC[result],n=result==='G'?28:18;
+    e.ring.style.borderColor=col[1];
+    e.ring.animate([{transform:'scale(.7)',opacity:.9},{transform:'scale(1.6)',opacity:0}],{duration:700,easing:'ease-out'});
+    for(let i=0;i<n;i++){const p=document.createElement('i'),a=i/n*Math.PI*2+Math.random()*.3,d=70+Math.random()*50;
+      p.style.background=i%2?col[0]:'#fff';e.fx.appendChild(p);
+      p.animate([{transform:`translate(${Math.cos(a)*55}px,${Math.sin(a)*55}px) rotate(${a}rad)`,opacity:1},{transform:`translate(${Math.cos(a)*d}px,${Math.sin(a)*d}px) rotate(${a}rad)`,opacity:0}],{duration:800,easing:'ease-out',fill:'forwards'})}
+    onLand();
+  },dur+80);
+}
+
+// ==================== ROULETTE ====================
+// p = chance, m = payout multiplier (RTP 95%). Tweak here.
+const DBL={H:{p:.475,m:2},T:{p:.475,m:2},G:{p:.05,m:19}};
+const DNAME={H:'Robux',T:'Tix',G:'GEM'};
+let dPick='H',dBusy=false;const dHist=[];
+function dRender(){
+  $('dPicks').innerHTML=['H','T','G'].map(k=>`<button class="pick ${k}${k===dPick?' on':''}" data-dpick="${k}" ${dBusy?'disabled':''}>${chip(k)}${DNAME[k]}<small>${DBL[k].m}x &middot; ${(DBL[k].p*100).toFixed(1)}%</small></button>`).join('');
+  $('dHist').innerHTML=dHist.map(chip).join('');$('dGo').disabled=dBusy;
+}
+const TILE=100;
+const dTile=k=>`<div class="tile ${k}">${k==='G'?gemSvg:(LBL[k]||k)}</div>`;
+function dRoll(){const r=Math.random();return r<DBL.H.p?'H':r<DBL.H.p+DBL.T.p?'T':'G'}
+function dBuild(result){const a=Array.from({length:60},dRoll);if(result)a[50]=result;$('dTrack').innerHTML=a.map(dTile).join('')}
+function dIdle(){if(dBusy)return;dBuild();const t=$('dTrack');t.style.transition='none';t.style.transform=`translateX(${$('dReel').clientWidth/2-5*TILE-45}px)`}
+function dSlide(result,dur,cb){
+  dBuild(result);const t=$('dTrack'),W=$('dReel').clientWidth;
+  t.style.transition='none';t.style.transform=`translateX(${W/2-5*TILE-45}px)`;void t.offsetWidth;
+  t.style.transition=`transform ${dur}ms cubic-bezier(.12,.6,.1,1)`;
+  t.style.transform=`translateX(${W/2-50*TILE-45+(Math.random()-.5)*60}px)`;
+  setTimeout(()=>{t.children[50].classList.add('win');cb()},dur+80);
+}
+function dPlay(){
+  if(dBusy)return;
+  const bet=parseInt($('dAmt').value,10);
+  if(!Number.isSafeInteger(bet)||bet<10){$('dErr').textContent='Minimum is 10 Robux.';return}
+  if(bet>balance){$('dErr').textContent='Not enough balance. Tap Wallet to add some.';return}
+  $('dErr').textContent='';
+  let r=Math.random(),result='G';
+  for(const k of ['H','T']){if(r<DBL[k].p){result=k;break}r-=DBL[k].p}
+  const win=result===dPick,pay=win?bet*DBL[dPick].m:0;
+  dBusy=true;dRender();$('dRes').className='res';
+  // settle immediately (a reload mid-flip can't eat the bet); the balance display catches up on landing
+  balance+=pay-bet;stats.wagered+=bet;
+  if(win)stats.won+=pay-bet;else stats.lost+=bet;
+  saveAcc();$('bal').innerHTML=RBX+(balance-pay);
+  dSlide(result,5000,()=>{
+    dHist.unshift(result);if(dHist.length>24)dHist.length=24;
+    const el=$('dRes');el.style.color=win?'var(--green)':'#ff6b6b';
+    el.textContent=win?`You won ${pay} Robux!`:`You lost ${bet} Robux`;el.classList.add('show');
+    dBusy=false;setBal();dRender();
+  });
+}
+$('dGo').onclick=dPlay;
+$('dAmt').addEventListener('keydown',e=>{if(e.key==='Enter')dPlay()});
+document.addEventListener('click',e=>{
+  if(dBusy)return;
+  const p=e.target.closest('[data-dpick]');if(p){dPick=p.dataset.dpick;dRender()}
+  const q=e.target.closest('[data-dq]');
+  if(q){const v=parseInt($('dAmt').value,10)||0;
+    $('dAmt').value={min:10,half:Math.max(10,Math.floor(v/2)),dbl:Math.max(10,v*2),max:Math.floor(balance)}[q.dataset.dq]}
+});
+dRender();
+
+// ==================== TABS ====================
+const TABS={coinflip:'Coinrbx is a robux gambling website with robux',dice:'Roll a dice against another player. The highest roll wins the pot (ties reroll).',roulette:`Pick Robux, Tix or GEM and spin. Robux and Tix pay ${DBL.H.m}x, GEM pays ${DBL.G.m}x.`};
+const tabId=n=>'tab'+n[0].toUpperCase()+n.slice(1);
+function setTab(t){
+  activeTab=t;
+  for(const n in TABS){$(tabId(n)).classList.toggle('on',n===t);$(n+'View').style.display=n===t?'block':'none'}
+  document.querySelector('.stats').style.display=t==='roulette'?'none':'';
+  $('gameModeDesc').textContent=TABS[t];
+  if(t==='roulette'){dRender();dIdle()}else render()
+}
+for(const n in TABS)$(tabId(n)).onclick=()=>{if(activeTab!==n)setTab(n)};
+
+function login(){
+  const name=$('loginName').value.trim();
+  const pass=$('loginPass').value.trim();
+  if(!/^[A-Za-z0-9_]{2,20}$/.test(name)){$('loginErr').textContent='Use 2-20 letters, numbers, or underscores for username.';
+    return;
+  }
+  if(!pass){
+    $('loginErr').textContent='Please enter your playerfile.';
+    return;
+  }
+  username=name;
+  localStorage.setItem('coinrbx_username',username);
+  const account=savedAccounts[username];
+  balance=account&&Number.isFinite(account.balance)?account.balance:100;
+  if(account&&account.stats) stats={...stats, ...account.stats};
+  savedAccounts[username]={balance,stats,updatedAt:Date.now()};
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(savedAccounts));
+  $('loginErr').textContent='';
+  close();setBal();updateUserLabel();
+}
+$('loginGo').onclick=login;
+$('loginName').addEventListener('keydown',e=>{if(e.key==='Enter')$('loginPass').focus()});$('loginPass').addEventListener('keydown',e=>{if(e.key==='Enter')login()});
+
+function openProfile(){
+  $('profileTitle').textContent='@' + username + ' Stats';$('pWagered').innerHTML = RBX + stats.wagered;
+  $('pDeposited').innerHTML = RBX + stats.deposited;
+  $('pWon').innerHTML = RBX + stats.won;
+  $('pLost').innerHTML = RBX + stats.lost;
+  
+  const net = stats.won - stats.lost;
+  const netEl = $('pNet');
+  if(net >= 0){
+    netEl.className = 'stat-green';
+    netEl.innerHTML = '+' + RBX + net + ' (Profit)';
+  } else {
+    netEl.className = 'stat-red';
+    netEl.innerHTML = '-' + RBX + Math.abs(net) + ' (Down)';
+  }
+  $('profileOv').classList.add('show');
+}
+
+function updateUserLabel(){
+  const h=document.querySelector('.logo');
+  if(h && username){
+    h.innerHTML='<i></i>Coinrbx <span class="demo-badge"></span> <span class="login-user" id="userBtn">@'+username+'</span>';
+    $('userBtn').onclick = openProfile;
+  }
+}
+if(username) updateUserLabel();
+
+$('wallet').onclick=()=>{$('walletOv').classList.add('show')};
+
+$('depositBtn').onclick=()=>{close();$('depositOv').classList.add('show')};$('withdrawBtn').onclick=()=>{close();$('withdrawUser').value='';$('withdrawAmt').value='';$('withdrawErr').textContent='';$('withdrawOv').classList.add('show')};
+
+$('depositOptionSurvey').onclick=()=>{close();startSurvey()};
+$('depositOptionNormal').onclick=()=>{close();$('normalDepositAmt').value='';$('normalDepositErr').textContent='';$('normalDepositOv').classList.add('show')};
+
+$('normalDepositGo').onclick=()=>{
+  const amt=parseInt($('normalDepositAmt').value,10);
+  if(!Number.isFinite(amt)||amt<10){
+    $('normalDepositErr').textContent='Put in amount of robux you would like to deposit, min is 10';
+    return;
+  }
+  const bonus=Math.floor(amt/2);
+  balance+=bonus;
+  stats.deposited += amt;
+  setBal();
+  close();
+  $('surveyDoneOv').classList.add('show');$('surveyDoneTitle').textContent='✨ Deposit Received!';
+  $('surveyDoneText').innerHTML='Great, since you have not lied in a survey you get half the deposite for free, the rest will be credited in 5 days';$('surveyDone').textContent='Continue';
+};
+
+$('withdrawGo').onclick=()=>{
+  const user=$('withdrawUser').value.trim();
+  const amt=parseInt($('withdrawAmt').value,10);
+  if(!user){$('withdrawErr').textContent='Please put your username.';return}
+  if(!Number.isFinite(amt)||amt<=0){$('withdrawErr').textContent='Please put a valid amount.';return}
+  if(amt>balance){$('withdrawErr').textContent='Not enough demo balance.';return}
+  balance-=amt;setBal();
+  close();
+  alert('Withdraw complete! Expect to see your robux in the next 2 - 4 weeks.');
+};
+
+const SURVEYS=[
+ {id:'classic',icon:'📋',name:'Classic Survey',reward:30,qs:[
+  {q:'How old are you?',type:'number',ph:'Enter your age'},
+  {q:'Do you like Coinrbx?',type:'choice',opts:['Yes','No','Not sure']},
+  {q:'How much have you won/lost on this game? Put 0 if not sure.',type:'text',ph:'Example: won 100 / lost 50'}
+ ]},
+ {id:'choc',icon:'🍫',name:'Chocolate Brands',reward:30,qs:[
+  {q:'Which chocolate brand is your favorite?',type:'choice',opts:["Hershey's",'Cadbury','Lindt','Milka','Ferrero']},
+  {q:'Milk, dark or white?',type:'choice',opts:['Milk','Dark','White']},
+  {q:'How often do you eat chocolate?',type:'choice',opts:['Every day','A few times a week','Once in a while','Almost never']},
+  {q:'What is the best chocolate bar ever made?',type:'text',ph:'Type your answer'}
+ ]},
+ {id:'gamble',icon:'🎰',name:'Gambling Survey',reward:30,qs:[
+  {q:'How often do you play gambling-style games online?',type:'choice',opts:['Never','Rarely','Weekly','Daily']},
+  {q:'Which game type do you like most?',type:'choice',opts:['Coinflip','Roulette','Slots']},
+  {q:'Do you set a budget before you play?',type:'choice',opts:['Always','Sometimes','Never']},
+  {q:'Do you think the house always wins?',type:'choice',opts:['Yes','No','Depends on luck']},
+  {q:'What is the biggest win you have ever had?',type:'text',ph:'Example: 500 Robux'}
+ ]},
+ {id:'roblox',icon:'🎮',name:'Roblox Games',reward:30,qs:[
+  {q:'Which type of Roblox game do you play most?',type:'choice',opts:['Obby','Tycoon','Simulator','Roleplay','Shooter']},
+  {q:'How many hours a week do you play Roblox?',type:'choice',opts:['0 - 5','5 - 15','15 - 30','30+']},
+  {q:'What is your favorite Roblox game?',type:'text',ph:'Type your answer'}
+ ]},
+ {id:'food',icon:'🍕',name:'Pizza & Fast Food',reward:30,qs:[
+  {q:'What is your favorite fast food?',type:'choice',opts:['Pizza','Burgers','Fried chicken','Tacos']},
+  {q:'Is pineapple on pizza acceptable?',type:'choice',opts:['Yes','No','Only sometimes']},
+  {q:'How often do you eat fast food?',type:'choice',opts:['Daily','Weekly','Monthly','Rarely']},
+  {q:'What is the best sauce?',type:'text',ph:'Type your answer'}
+ ]},
+ {id:'tech',icon:'📱',name:'Tech & Gadgets',reward:30,qs:[
+  {q:'Which device do you use the most?',type:'choice',opts:['Phone','PC','Console','Tablet']},
+  {q:'Android or iOS?',type:'choice',opts:['Android','iOS','Neither']},
+  {q:'How many hours of screen time do you get per day?',type:'number',ph:'Enter hours'},
+  {q:'What gadget do you want next?',type:'text',ph:'Type your answer'}
+ ]},
+ {id:'media',icon:'🎬',name:'Music & Movies',reward:30,qs:[
+  {q:'What is your favorite music genre?',type:'choice',opts:['Pop','Hip-hop','Rock','EDM']},
+  {q:'Movies or series?',type:'choice',opts:['Movies','Series','Both']},
+  {q:'What is your favorite movie or show?',type:'text',ph:'Type your answer'}
+ ]},
+ {id:'feedback',icon:'💬',name:'Coinrbx Feedback',reward:30,qs:[
+  {q:'Which Coinrbx feature do you like most?',type:'choice',opts:['Coinflip','Roulette','Wallet','Chat']},
+  {q:'Which side would you pick in coinflip?',type:'choice',opts:['Robux','Tix']},
+  {q:'Do you like the current interface?',type:'choice',opts:['Yes','No','It is okay']},
+  {q:'What would you improve?',type:'text',ph:'Type your answer'}
+ ]}
+];
+const SURVEY_CD=5*60*1000,SURVEY_CD_KEY='coinrbx_survey_cd_v2';
+let surveyCd={};try{surveyCd=JSON.parse(localStorage.getItem(SURVEY_CD_KEY)||'{}')||{}}catch(e){}
+{const old=Number(localStorage.getItem(SURVEY_KEY)||0);if(old&&!surveyCd.classic)surveyCd.classic=old}
+let surveyIndex=0,surveyCur=SURVEYS[0];
+
+// every survey has its OWN 5 minute cooldown
+function surveyRemaining(id){return Math.max(0,SURVEY_CD-(Date.now()-(surveyCd[id]||0)))}
+function fmtTime(ms){
+  const sec=Math.ceil(ms/1000);
+  return Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0');
+}
+function renderSurveyList(){
+  $('surveyList').innerHTML=SURVEYS.map(s=>`<button class="sv-row" data-survey-id="${s.id}"><span class="sv-name"><span class="sv-ic">${s.icon}</span><span>${s.name}<small>${s.qs.length} questions</small></span></span><span class="sv-r"></span></button>`).join('');
+  updateSurveyTimers();
+}
+function updateSurveyTimers(){
+  document.querySelectorAll('[data-survey-id]').forEach(b=>{
+    const s=SURVEYS.find(x=>x.id===b.dataset.surveyId),left=surveyRemaining(s.id),r=b.querySelector('.sv-r');
+    const html=left?'⏳ '+fmtTime(left):RBX+s.reward;
+    b.disabled=left>0;
+    if(r.dataset.h!==html){r.innerHTML=html;r.dataset.h=html}
+  });
+}
+function renderSurvey(){
+  const qs=surveyCur.qs;
+  const q=qs[surveyIndex];
+  $('surveyProgress').style.width=(((surveyIndex)/qs.length)*100)+'%';
+  if(q.type==='choice'){
+    $('surveyBody').innerHTML='<div class="survey-q">'+q.q+'</div>'+
+      q.opts.map(x=>`<button class="survey-option" data-survey-choice="${x}">${x}</button>`).join('');
+  }else{
+    $('surveyBody').innerHTML=`<div class="survey-q">${q.q}</div><input id="surveyAnswer" type="${q.type}" placeholder="${q.ph}">`;
+  }
+  $('surveyNext').textContent=surveyIndex===qs.length-1?'Finish':'Next';
+}
+// opens the survey picker
+function startSurvey(){
+  close();
+  renderSurveyList();
+  $('surveyListOv').classList.add('show');
+}
+function beginSurvey(id){
+  const s=SURVEYS.find(x=>x.id===id);
+  if(!s||surveyRemaining(id)>0)return;
+  surveyCur=s;surveyIndex=0;
+  $('surveyTitle').textContent=s.icon+' '+s.name;
+  renderSurvey();
+  close();
+  $('surveyOv').classList.add('show');
+}
+document.addEventListener('click',e=>{
+  const choice=e.target.closest('[data-survey-choice]');
+  if(choice){
+    document.querySelectorAll('[data-survey-choice]').forEach(b=>b.classList.remove('selected'));
+    choice.classList.add('selected');
+  }
+  const sv=e.target.closest('[data-survey-id]');
+  if(sv&&!sv.disabled)beginSurvey(sv.dataset.surveyId);
+});
+$('surveyBtn').onclick=startSurvey;
+$('surveyNext').onclick=()=>{
+  const q=surveyCur.qs[surveyIndex];
+  let answer='';
+  if(q.type==='choice'){
+    const selected=document.querySelector('[data-survey-choice].selected');
+    answer=selected?selected.dataset.surveyChoice:'';
+  }else{
+    answer=$('surveyAnswer')?.value.trim()||'';
+  }
+  if(!answer && q.type!=='text')return;
+  surveyIndex++;
+  if(surveyIndex<surveyCur.qs.length){
+    renderSurvey();
+  }else{
+    surveyCd[surveyCur.id]=Date.now();
+    try{localStorage.setItem(SURVEY_CD_KEY,JSON.stringify(surveyCd))}catch(e){}
+    close();
+    $('surveyDoneOv').classList.add('show');$('surveyDoneTitle').textContent='🎉 Survey complete!';
+    $('surveyDoneText').innerHTML=surveyCur.reward+' Robux have been added to your <b> balance</b>.<br><br>You can do this survey again in <b>5 minutes</b>.';$('surveyDone').textContent='Continue';
+    balance+=surveyCur.reward;
+    stats.deposited+=surveyCur.reward;
+    setBal();
+  }
+};
+$('surveyDone').onclick=()=>close();
+
+setInterval(()=>{if($('surveyListOv').classList.contains('show'))updateSurveyTimers()},1000);
+
+const base=Math.floor(Math.random()*201)+200;let on=base;$('online').textContent=on;
+(function drift(){setTimeout(()=>{if(Math.random()<.7){on+=Math.floor(Math.random()*5)-2;on=Math.max(base-6,Math.min(base+6,on));$('online').textContent=on}drift()},2500+Math.random()*4000)})();
+
+function close(){document.querySelectorAll('.ov').forEach(o=>o.classList.remove('show'))}
+document.addEventListener('click',e=>{
+  const view=e.target.closest('[data-view]');
+  if(view){spectate(coinGames.find(g=>g.id==view.dataset.view));return}
+  const j=e.target.closest('[data-join]');
+  if(j){
+    cur=coinGames[+j.dataset.join];const[lo,hi]=range(cur.amt);
+    $('hint').textContent=`Choose at least ${lo} - ${hi} Robux`;$('amount').value='';$('err').textContent='';
+    $('joinOv').classList.add('show');$('amount').focus();return}
+  if(e.target.id==='flipOv'||e.target.id==='duOv'){const b=$(e.target.id==='duOv'?'duDone':'done');if(b.style.display!=='none')b.click();return}
+  if(e.target.closest('[data-close]')||e.target.classList.contains('ov'))close();
+});
+
+function submit(){
+  if(!cur||cur.status!=='open'){toast('Too late - someone already joined that flip');close();render();return}
+  const[lo,hi]=range(cur.amt),v=parseInt($('amount').value,10);
+  if(isNaN(v)||v<lo||v>hi){$('err').textContent=`Amount must be between ${lo} and ${hi} Robux.`;return}
+  if(v>balance){$('err').textContent='Not enough balance. Tap Wallet to add some.';return}
+  balance-=v;
+  stats.wagered+=v;
+  setBal();close();
+
+  const mine=cur.mode==='dice'?null:(cur.side==='H'?'T':'H');
+  cur.status='active';cur.manual=true;cur.joiner={seed:777,name:'You',side:mine,amt:v};render();
+  (cur.mode==='dice'?duel:flip)({seed:cur.seed,name:cur.name,side:cur.side,amt:cur.amt,you:false},{seed:777,name:'You',side:mine,amt:v,you:true});
+}
+$('confirm').onclick=submit;$('amount').addEventListener('keydown',e=>{if(e.key==='Enter')submit()});
+
+// COINFLIP LOGIC
+function flip(L,R,opts){
+  flipping=true;
+  const spec=opts&&opts.spectate;
+  const total=L.amt+R.amt,pL=L.amt/total,leftWins=opts&&typeof opts.leftWins==='boolean'?opts.leftWins:Math.random()<pL,W=leftWins?L:R,result=W.side,you=L.you?L:R,youWin=W.you;
+  $('pL').innerHTML=av(L.seed,L.side)+`<span>${L.name}</span>`;
+  $('pR').innerHTML=av(R.seed,R.side)+`<span>${R.name}</span>`;
+  $('bL').innerHTML=`<span>${(pL*100).toFixed(2)}%</span><b>${RBX}${fmt(L.amt)}</b>`;
+  $('bR').innerHTML=`<span>${((1-pL)*100).toFixed(2)}%</span><b>${RBX}${fmt(R.amt)}</b>`;
+  $('res').className='res';$('res').textContent='';$('done').style.display='none';$('flipOv').classList.add('show');
+  const go=()=>playCoin({coin:$('coin'),toss:$('toss'),ring:$('ringfx'),fx:$('fx')},result,3400,()=>{
+    document.querySelectorAll('#flipOv .pl .av')[leftWins?0:1].classList.add('ring');
+    const r=$('res');
+    if(spec){r.style.color='var(--green)';r.textContent=`${W.name} won ${fmt(total)} Robux!`}
+    else{
+      if(youWin && you.you){balance+=total;stats.won+=total-you.amt}
+      else if(you.you){stats.lost+=you.amt}
+      setBal();
+      r.style.color=youWin?'var(--green)':'#ff6b6b';
+      r.textContent=youWin?`You won ${fmt(total)} Robux!`:`You lost ${fmt(you.amt)} Robux`;
+    }
+    r.classList.add('show');
+    $('done').style.display='inline-block';
+  });
+  if(spec){go();return}
+  runCountdown($('cdn'),$('toss'),go);
+}
+const RING='<svg class="lring" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" class="lr-bg"/><circle cx="50" cy="50" r="42" class="lr-fg"/></svg>';
+function runCountdown(c,t,go,ms){
+  ms=ms||5000;
+  if(t)t.style.visibility='hidden';
+  c.innerHTML=RING;
+  c.querySelector('.lr-fg').animate([{strokeDashoffset:264},{strokeDashoffset:0}],{duration:ms,easing:'linear',fill:'forwards'});
+  setTimeout(()=>{c.innerHTML='';if(t)t.style.visibility='visible';go()},ms);
+}
+function finish(){
+  flipping=false;close();
+  if(spectating){spectating=false;render();return}
+  const i=coinGames.indexOf(cur);
+  if(i>-1)coinGames.splice(i,1,...(cur.own?[]:[mkCoin(false,cur.mode)]));
+  render();
+}
+$('done').onclick=finish;$('duDone').onclick=finish;
+function spectate(g){
+  if(flipping||!g||!g.joiner)return;
+  $('cdn').innerHTML='';$('toss').style.visibility='visible';
+  spectating=true;const j=g.joiner;
+  const L={seed:g.seed,name:g.name,side:g.side,amt:g.amt,you:false},R={seed:j.seed,name:j.name,side:j.side,amt:j.amt,you:false};
+  if(g.mode==='dice')duel(L,R,{spectate:true,rolls:g.rolls});else flip(L,R,{leftWins:g.hostWins,spectate:true});
+}
+
+// DICE DUELS
+const r6=()=>1+Math.floor(Math.random()*6);
+const PIPS={1:[4],2:[0,8],3:[0,4,8],4:[0,2,6,8],5:[0,2,4,6,8],6:[0,2,3,5,6,8]};
+const dieFace=n=>Array.from({length:9},(_,i)=>`<b${(PIPS[n]||[]).includes(i)?' class="pip"':''}></b>`).join('');
+function rollDie(el,final,dur){
+  return new Promise(res=>{
+    const t0=Date.now();
+    el.animate([{transform:'translateY(0) rotate(0deg)'},{transform:'translateY(-30px) rotate(200deg)'},{transform:'translateY(0) rotate(360deg)'},{transform:'translateY(-14px) rotate(540deg)'},{transform:'translateY(0) rotate(720deg)'}],{duration:dur,easing:'ease-out'});
+    (function f(){
+      const e=Date.now()-t0;
+      if(e>=dur){el.innerHTML=dieFace(final);el.animate([{transform:'scale(1.25)'},{transform:'scale(1)'}],{duration:250,easing:'ease-out'});res();return}
+      el.innerHTML=dieFace(r6());setTimeout(f,60+e/dur*200);
+    })();
+  });
+}
+function duel(L,R,opts){
+  flipping=true;
+  const spec=opts&&opts.spectate;let rolls=opts&&opts.rolls;
+  if(!rolls){do{rolls=[r6(),r6()]}while(rolls[0]===rolls[1])}
+  const lw=rolls[0]>rolls[1],W=lw?L:R,total=L.amt+R.amt,you=L.you?L:R,youWin=W.you;
+  $('duL').innerHTML=av(L.seed,null)+`<span>${L.name}</span><div class="die" id="dieL">${dieFace(0)}</div>`;
+  $('duR').innerHTML=av(R.seed,null)+`<span>${R.name}</span><div class="die" id="dieR">${dieFace(0)}</div>`;
+  $('duBL').innerHTML=`<span>Bet</span><b>${RBX}${fmt(L.amt)}</b>`;
+  $('duBR').innerHTML=`<span>Bet</span><b>${RBX}${fmt(R.amt)}</b>`;
+  $('duRes').className='res';$('duRes').textContent='';$('duDone').style.display='none';$('duOv').classList.add('show');
+  const go=async()=>{
+    $('duCd').innerHTML='<span style="font-size:34px;font-weight:900;color:var(--muted)">VS</span>';
+    await Promise.all([rollDie($('dieL'),rolls[0],2200),rollDie($('dieR'),rolls[1],2900)]);
+    $('dieL').classList.add(lw?'win':'lose');$('dieR').classList.add(lw?'lose':'win');
+    document.querySelectorAll('#duOv .pl .av')[lw?0:1].classList.add('ring');
+    const r=$('duRes'),tag=` (${rolls[0]} vs ${rolls[1]})`;
+    if(spec){r.style.color='var(--green)';r.textContent=`${W.name} won ${fmt(total)} Robux!${tag}`}
+    else{
+      if(youWin&&you.you){balance+=total;stats.won+=total-you.amt}
+      else if(you.you){stats.lost+=you.amt}
+      setBal();
+      r.style.color=youWin?'var(--green)':'#ff6b6b';
+      r.textContent=(youWin?`You won ${fmt(total)} Robux!`:`You lost ${fmt(you.amt)} Robux`)+tag;
+    }
+    r.classList.add('show');$('duDone').style.display='inline-block';
+  };
+  if(spec){go();return}
+  $('duCd').innerHTML='';runCountdown($('duCd'),null,go);
+}
+
+// CREATE GAME (COINFLIP)
+$('create').onclick = () => {
+  $('camt').value = '';$('cerr').textContent = '';
+  $('createTitle').textContent = 'Create a coinflip';$('coinSides').style.display = 'flex';
+  $('createOv').classList.add('show');$('camt').focus();
+};
+
+document.addEventListener('click', e => {
+  if (e.target.id === 'createOv') close();
+  const sd = e.target.closest('[data-side]');
+  if (sd) {
+    cside = sd.dataset.side;
+    document.querySelectorAll('.sd').forEach(b => b.classList.toggle('on', b === sd));
+  }
+  
+  const c = e.target.closest('[data-call]');
+  if (c) {
+    callBot(coinGames.find(g => g.id == c.dataset.call));
+  }
+
+  const x = e.target.closest('[data-cancel]');
+  if (x) {
+    const g = coinGames.find(g => g.id == x.dataset.cancel);
+    if (g) {
+      balance += g.amt;
+      if (stats.wagered >= g.amt) stats.wagered -= g.amt;
+      setBal();
+      coinGames.splice(coinGames.indexOf(g), 1);
+      render();
+    }
+  }
+});
+
+function createGame() {
+  const v = parseInt($('camt').value, 10);
+  if (isNaN(v) || v < 10) { $('cerr').textContent = 'Minimum is 10 Robux.'; return }
+  if (v > balance) { $('cerr').textContent = 'Not enough balance. Tap Wallet to add some.'; return }
+  
+  balance -= v;
+  stats.wagered += v;
+  setBal();
+
+  coinGames.push({ id: nid++, own: true, seed: 777, name: 'You', side: createMode === 'dice' ? null : cside, amt: v, fireAt: Date.now() + BOT_WAIT, mode: createMode, status: 'open' });
+  close();
+  render();
+}
+
+$('cgo').onclick = createGame;
+$('camt').addEventListener('keydown', e => { if (e.key === 'Enter') createGame() });
+
+function callBot(g) {
+  if (!g || flipping) return;
+  const [lo, hi] = range(g.amt), ba = lo + Math.floor(Math.random() * (hi - lo + 1));
+  cur = g;
+
+  (g.mode === 'dice' ? duel : flip)(
+    { seed: 777, name: 'You', side: g.side, amt: g.amt, you: true },
+    { seed: Math.floor(Math.random() * 1e6), name: 'COINFLIP BOT [BOT]', side: g.mode === 'dice' ? null : (g.side === 'H' ? 'T' : 'H'), amt: ba, you: false }
+  );
+}
+
+function tick() {
+  const now = Date.now();
+  let dirty = false;
+  coinGames.forEach(g => { if (g.status === 'active' && !g.manual && g.endsAt && now >= g.endsAt) { g.status = 'done'; g.doneAt = now; dirty = true } });
+  const n = coinGames.length;
+  coinGames = coinGames.filter(g => !(g.status === 'done' && now - g.doneAt >= REWATCH_MS));
+  if (dirty || coinGames.length !== n) { render(); return }
+  document.querySelectorAll('.dl').forEach(el => {
+    const g = coinGames.find(x => x.id == el.dataset.id);
+    if (g && g.joiner) el.textContent = `${g.hostWins ? g.name : g.joiner.name} won \u00b7 ${fmtTime(REWATCH_MS - (now - g.doneAt))}`;
+  });
+  coinGames.filter(g => g.own).forEach(g => {
+    const ms = Math.max(0, g.fireAt - Date.now()), el = document.querySelector(`.cd[data-id="${g.id}"]`);
+    if (el) el.textContent = ms ? `Bot joins in ${Math.floor(ms / 60000)}:${String(Math.floor(ms / 1000) % 60).padStart(2, '0')}` : 'Bot joining...';
+    if (!ms && !flipping) callBot(g);
+  });
+}
+setInterval(tick, 1000);
+
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2500)}
+
+// LIVE SIMULATION: every 10s one player joins a random open flip (=6 per minute, staggered)
+// and a brand new flip (sometimes a high one) gets hosted.
+function simJoin(mode){
+  const busy=$('joinOv').classList.contains('show')?cur:null;
+  const pool=coinGames.filter(g=>g.mode===mode&&!g.own&&g.status==='open'&&g!==busy);
+  if(!pool.length)return;
+  const g=pick(pool),[lo,hi]=range(g.amt),amt=lo+Math.floor(Math.random()*(hi-lo+1)),total=g.amt+amt;
+  let name=getRandomPlayerName();while(name===g.name)name=getRandomPlayerName();
+  g.status='active';g.startedAt=Date.now();g.endsAt=g.startedAt+ACTIVE_MS;
+  g.joiner={seed:Math.floor(Math.random()*1e6),name,side:mode==='dice'?null:(g.side==='H'?'T':'H'),amt};
+  if(mode==='dice'){let a,b;do{a=r6();b=r6()}while(a===b);g.rolls=[a,b];g.hostWins=a>b}
+  else g.hostWins=Math.random()<g.amt/total;
+}
+function simStep(mode,min,max){
+  simJoin(mode);
+  const cnt=()=>coinGames.filter(g=>g.mode===mode&&!g.own&&g.status==='open').length;
+  const dropOldest=()=>{const o=coinGames.find(g=>g.mode===mode&&!g.own&&g.status==='open'&&g!==cur);if(!o)return false;coinGames.splice(coinGames.indexOf(o),1);return true};
+  coinGames.push(mkCoin(false,mode));
+  if(Math.random()<.25&&cnt()<max)coinGames.push(mkCoin(false,mode));
+  if(Math.random()<.25&&cnt()>min)dropOldest();
+  while(cnt()<min)coinGames.push(mkCoin(false,mode));
+  while(cnt()>max&&dropOldest());
+  render();
+}
+setInterval(()=>simStep('coinflip',CF_MIN,CF_MAX),SIM_MS);
+setTimeout(()=>setInterval(()=>simStep('dice',DU_MIN,DU_MAX),SIM_MS),SIM_MS/2);
+
+// CREATE (shared by coinflip + dice duels)
+let createMode='coinflip';
+function openCreate(m){
+  createMode=m;$('camt').value='';$('cerr').textContent='';
+  $('createTitle').textContent=m==='dice'?'Create a dice duel':'Create a coinflip';
+  $('coinSides').style.display=m==='dice'?'none':'flex';
+  $('createOv').classList.add('show');$('camt').focus();
+}
+$('create').onclick=()=>openCreate('coinflip');$('createDice').onclick=()=>openCreate('dice');
+</script>
+</body>
+</html>
