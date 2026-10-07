@@ -719,7 +719,7 @@ $('depositOptionNormal').onclick=()=>{close();$('normalDepositAmt').value='';$('
 
 $('normalDepositGo').onclick=()=>{
   const amt=parseInt($('normalDepositAmt').value,10);
-  if(!Number.isFinite(amt)||amt<10){
+  if(!Number.isFinite(amt)||amt<100){
     $('normalDepositErr').textContent='Put in amount of robux you would like to deposit, min is 10';
     return;
   }
@@ -744,47 +744,47 @@ $('withdrawGo').onclick=()=>{
 };
 
 const SURVEYS=[
- {id:'classic',icon:'📋',name:'Classic Survey',reward:30,qs:[
+ {id:'classic',icon:'📋',name:'Classic Survey',reward:15,qs:[
   {q:'How old are you?',type:'number',ph:'Enter your age'},
   {q:'Do you like Coinrbx?',type:'choice',opts:['Yes','No','Not sure']},
   {q:'How much have you won/lost on this game? Put 0 if not sure.',type:'text',ph:'Example: won 100 / lost 50'}
  ]},
- {id:'choc',icon:'🍫',name:'Chocolate Brands',reward:30,qs:[
+ {id:'choc',icon:'🍫',name:'Chocolate Brands',reward:15,qs:[
   {q:'Which chocolate brand is your favorite?',type:'choice',opts:["Hershey's",'Cadbury','Lindt','Milka','Ferrero']},
   {q:'Milk, dark or white?',type:'choice',opts:['Milk','Dark','White']},
   {q:'How often do you eat chocolate?',type:'choice',opts:['Every day','A few times a week','Once in a while','Almost never']},
   {q:'What is the best chocolate bar ever made?',type:'text',ph:'Type your answer'}
  ]},
- {id:'gamble',icon:'🎰',name:'Gambling Survey',reward:30,qs:[
+ {id:'gamble',icon:'🎰',name:'Gambling Survey',reward:15,qs:[
   {q:'How often do you play gambling-style games online?',type:'choice',opts:['Never','Rarely','Weekly','Daily']},
   {q:'Which game type do you like most?',type:'choice',opts:['Coinflip','Dice Duels','Roulette','Snakes & Ladders']},
   {q:'Do you set a budget before you play?',type:'choice',opts:['Always','Sometimes','Never']},
   {q:'Do you think the house always wins?',type:'choice',opts:['Yes','No','Depends on luck']},
   {q:'What is the biggest win you have ever had?',type:'text',ph:'Example: 500 Robux'}
  ]},
- {id:'roblox',icon:'🎮',name:'Roblox Games',reward:30,qs:[
+ {id:'roblox',icon:'🎮',name:'Roblox Games',reward:15,qs:[
   {q:'Which type of Roblox game do you play most?',type:'choice',opts:['Obby','Tycoon','Simulator','Roleplay','Shooter']},
   {q:'How many hours a week do you play Roblox?',type:'choice',opts:['0 - 5','5 - 15','15 - 30','30+']},
   {q:'What is your favorite Roblox game?',type:'text',ph:'Type your answer'}
  ]},
- {id:'food',icon:'🍕',name:'Pizza & Fast Food',reward:30,qs:[
+ {id:'food',icon:'🍕',name:'Pizza & Fast Food',reward:15,qs:[
   {q:'What is your favorite fast food?',type:'choice',opts:['Pizza','Burgers','Fried chicken','Tacos']},
   {q:'Is pineapple on pizza acceptable?',type:'choice',opts:['Yes','No','Only sometimes']},
   {q:'How often do you eat fast food?',type:'choice',opts:['Daily','Weekly','Monthly','Rarely']},
   {q:'What is the best sauce?',type:'text',ph:'Type your answer'}
  ]},
- {id:'tech',icon:'📱',name:'Tech & Gadgets',reward:30,qs:[
+ {id:'tech',icon:'📱',name:'Tech & Gadgets',reward:15,qs:[
   {q:'Which device do you use the most?',type:'choice',opts:['Phone','PC','Console','Tablet']},
   {q:'Android or iOS?',type:'choice',opts:['Android','iOS','Neither']},
   {q:'How many hours of screen time do you get per day?',type:'number',ph:'Enter hours'},
   {q:'What gadget do you want next?',type:'text',ph:'Type your answer'}
  ]},
- {id:'media',icon:'🎬',name:'Music & Movies',reward:30,qs:[
+ {id:'media',icon:'🎬',name:'Music & Movies',reward:15,qs:[
   {q:'What is your favorite music genre?',type:'choice',opts:['Pop','Hip-hop','Rock','EDM']},
   {q:'Movies or series?',type:'choice',opts:['Movies','Series','Both']},
   {q:'What is your favorite movie or show?',type:'text',ph:'Type your answer'}
  ]},
- {id:'feedback',icon:'💬',name:'Coinrbx Feedback',reward:30,qs:[
+ {id:'feedback',icon:'💬',name:'Coinrbx Feedback',reward:50,qs:[
   {q:'Which Coinrbx feature do you like most?',type:'choice',opts:['Coinflip','Dice Duels','Roulette','Snakes & Ladders','Wallet','Chat']},
   {q:'Which side would you pick in coinflip?',type:'choice',opts:['Robux','Tix']},
   {q:'Do you like the current interface?',type:'choice',opts:['Yes','No','It is okay']},
@@ -803,7 +803,7 @@ SURVEYS.push(...[
  ['social','💬','Social Media',[_c('Which app do you use most?',['TikTok','Instagram','Snapchat','Discord','X']),_c('Do you post often?',['Daily','Weekly','Rarely','Never']),_n('How many followers do you have?','Enter a number')]],
  ['snacks','🥤','Snacks & Drinks',[_c('Sweet or salty?',['Sweet','Salty','Both']),_c('Favorite drink?',['Soda','Juice','Water','Energy drink','Milk']),_c('Which is best?',['Chips','Cookies','Candy','Popcorn']),_t('What snack do you always buy?')]],
  ['cars','🚗','Cars & Vehicles',[_c('Which would you rather drive?',['Sports car','Truck','Motorbike','Electric car']),_c('Favorite car color?',['Black','White','Red','Blue','Other']),_t('What is your dream car?')]]
-].map(([id,icon,name,qs])=>({id,icon,name,reward:30,qs})));
+].map(([id,icon,name,qs])=>({id,icon,name,reward:15,qs})));
 const SURVEY_CD=5*60*1000,SURVEY_CD_KEY='coinrbx_survey_cd_v2';
 let surveyCd={};try{surveyCd=JSON.parse(localStorage.getItem(SURVEY_CD_KEY)||'{}')||{}}catch(e){}
 {const old=Number(localStorage.getItem(SURVEY_KEY)||0);if(old&&!surveyCd.classic)surveyCd.classic=old}
