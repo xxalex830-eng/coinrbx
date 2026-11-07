@@ -48,7 +48,7 @@ h1{text-align:center;font-size:22px;margin:4px 0 22px;display:flex;justify-conte
 .box.lose{box-shadow:0 0 0 2px var(--r),0 0 40px #ff4d4d44}
 /* wheel */
 .wheel{position:relative;width:280px;height:280px;align-self:center}
-.ring{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,var(--g) 0,#d8d82a calc(var(--p)*.5),var(--y2) var(--p),#2a2b32 var(--p));
+.ring{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from var(--pointer-offset,180deg),var(--g) 0,#d8d82a calc(var(--p)*.5),var(--y2) var(--p),#2a2b32 var(--p));
 -webkit-mask:radial-gradient(circle,transparent 98px,#000 99px,#000 124px,transparent 125px);mask:radial-gradient(circle,transparent 98px,#000 99px,#000 124px,transparent 125px);transition:--p .4s}
 .tick{position:absolute;inset:6px;border-radius:50%;border:2px dashed #ffffff22}
 .core{position:absolute;inset:36px;border-radius:50%;background:#101114;border:1px solid var(--line);display:grid;place-items:center;text-align:center}
@@ -70,7 +70,7 @@ input[type=range]{width:100%;accent-color:var(--y)}
 .mult .p35{border-color:#ff4d4d99}.mult .p55{border-color:#ffb30099}.mult .p75{border-color:#35d06a99}
 .tools{display:flex;gap:10px;max-width:1120px;margin:0 auto 10px}
 .tools button{width:34px;height:34px;border-radius:8px;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;color:var(--mut);transition:.15s}
-.tools button.on{color:var(--y);border-color:var(--y);background:#2a2208}
+.tools button.on{color:var(--y);border-color:var(--y);background:#2a2208}.pointer-setting{display:flex;align-items:center;gap:8px;margin-left:4px;color:var(--mut);font-size:11px}.pointer-setting select{background:var(--card);border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:8px 10px;font:inherit}
 .spinning .ring{animation:glow .6s ease-in-out infinite alternate}
 @keyframes glow{to{filter:drop-shadow(0 0 14px #ffcc0088)}}
 .spinning .core .pc{color:var(--y)}
@@ -130,7 +130,7 @@ input[type=range]{width:100%;accent-color:var(--y)}
 
 <h1><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="#ffcc00" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-8 9 8M3 20l9-8 9 8"/></svg>Upgrader</h1>
 
-<div class="tools"><button id="snd" class="on" title="Sound" aria-label="Sound"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 4V5L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4z"/></svg></button><button id="qk" title="Quick spin" aria-label="Quick spin"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg></button></div>
+<div class="tools"><button id="snd" class="on" title="Sound" aria-label="Sound"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 4V5L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4z"/></svg></button><button id="qk" title="Quick spin" aria-label="Quick spin"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg></button><label class="pointer-setting" for="pointerPosition">Pointer position<select id="pointerPosition" aria-label="Pointer position"><option value="180" selected>Bottom</option><option value="0">Top</option><option value="90">Right</option><option value="270">Left</option></select></label></div>
 <section class="stage">
 <div class="box" id="from"></div>
 <div class="wheel">
@@ -164,7 +164,8 @@ const raw=[["P250","Sand Dune",13.75],["P90","Sand Spray",39.51],["SG 553","Army
 let ITEMS=raw.map((r,i)=>({id:i,w:r[0],n:r[1],p:r[2],c:COL[i%COL.length]}));
 const pic=it=>it.img?`<img src="${it.img}" alt="" loading="lazy" onerror="this.outerHTML=gun('${it.c}')">`:gun(it.c);
 const fmt=n=>n.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
-const S={bal:964.82,inv:[{...ITEMS[0],u:1},{...ITEMS[5],u:2},{...ITEMS[9],u:3}],sel:new Set(),target:null,amt:0,ip:0,cp:0,asc:true,spin:false,uid:10,rot:0};
+const S={bal:964.82,inv:[{...ITEMS[0],u:1},{...ITEMS[5],u:2},{...ITEMS[9],u:3}],sel:new Set(),target:null,amt:0,ip:0,cp:0,asc:true,spin:false,uid:10,rot:0,pointerOffset:180};
+function setPointerPosition(value){S.pointerOffset=Number(value)||0;$("ring").style.setProperty("--pointer-offset",S.pointerOffset+"deg");if(!S.spin){$("ptr").style.transform=`rotate(${S.pointerOffset+S.rot}deg)`;}}
 const KEY="upgrader-save";let HAD=false;
 try{const sv=JSON.parse(localStorage.getItem(KEY));if(sv&&typeof sv.bal==="number"){S.bal=sv.bal;S.inv=sv.inv||[];S.uid=sv.uid||10;HAD=true}}catch(e){}
 function save(){try{localStorage.setItem(KEY,JSON.stringify({bal:S.bal,inv:S.inv,uid:S.uid}))}catch(e){}}
@@ -196,7 +197,7 @@ const chev='<svg class="big" viewBox="0 0 24 24" fill="none" stroke="#ffcc00" st
 from.className="box";to.className="box";
 from.innerHTML=sv>0?`<div class="it">${S.sel.size?gun("#ffcc00"):chev.replace('class="big"','width="70" height="70"')}<b>${S.sel.size} skin${S.sel.size===1?"":"s"} + balance</b><em>${fmt(sv)}<i class="coin"></i></em></div>`:`<p>Select skins or skins and balance to use.</p><small>You can select multiple skins.</small>${chev}`;
 to.innerHTML=S.target?`<div class="it">${pic(S.target)}<small>${S.target.w}</small><b>${S.target.n}</b><em>${fmt(S.target.p)}<i class="coin"></i></em></div>`:`<p>Select a skin for upgrade</p>${chev}`;
-if(!S.spin){$("ring").style.setProperty("--p",ch*3.6+"deg");$("pc").textContent=ch.toFixed(2).replace(/\.?0+$/,"")+"%"}
+if(!S.spin){$("ring").style.setProperty("--p",ch*3.6+"deg");$("ring").style.setProperty("--pointer-offset",S.pointerOffset+"deg");$("ptr").style.transform=`rotate(${S.pointerOffset+S.rot}deg)`;$("pc").textContent=ch.toFixed(2).replace(/\.?0+$/,"")+"%"}
 $("go").disabled=S.spin||!S.target||sv<=0||ch<=0||ch>=95.0001&&false;
 }
 function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove("show"),2200)}
@@ -243,13 +244,15 @@ function tick(f,d=.04,v=.05,t="square"){if(!S.snd)return;try{ac=ac||new AudioCon
 function jingle(win){(win?[523,659,784,1047]:[330,262]).forEach((f,i)=>setTimeout(()=>tick(f,.22,.08,"triangle"),i*110))}
 $("snd").onclick=e=>{S.snd=!S.snd;e.currentTarget.classList.toggle("on",S.snd)};
 $("qk").onclick=e=>{S.quick=!S.quick;e.currentTarget.classList.toggle("on",S.quick);toast(S.quick?"Quick spin on":"Quick spin off")};
+$("pointerPosition").onchange=e=>setPointerPosition(e.target.value);
+setPointerPosition($("pointerPosition").value);
 $("go").onclick=()=>{
 if(S.spin||!S.target)return;const ch=chance();if(ch<=0)return;
-S.spin=true;$("go").disabled=true;
+S.spin=true;$("go").disabled=true;$("pointerPosition").disabled=true;
 S.bal-=S.amt;S.amt=0;
 S.inv=S.inv.filter(i=>!S.sel.has(i.u));S.sel.clear();
 const target=S.target,ang=Math.random()*360,win=ang<ch*3.6;
-const start=S.rot%360,end=start+360*(S.quick?2:6)+((ang-start)+360)%360,dur=S.quick?900:4800;
+const start=(S.rot+S.pointerOffset)%360,end=start+360*(S.quick?2:6)+((ang-S.rot%360)+360)%360,dur=S.quick?900:5000;
 render();
 document.body.classList.add("spinning");
 const p=$("ptr"),ring=$("ring");p.style.transition="none";
@@ -257,13 +260,13 @@ const an=p.animate([{transform:`rotate(${start}deg)`},{transform:`rotate(${end}d
 let last=start,acc=0;
 (function loop(){if(an.playState==="finished")return;const m=new DOMMatrix(getComputedStyle(p).transform);let a=Math.atan2(m.b,m.a)*180/Math.PI;if(a<0)a+=360;let d=a-last;if(d<0)d+=360;acc+=d;last=a;if(acc>=12){acc%=12;tick(650+Math.random()*80)}requestAnimationFrame(loop)})();
 an.onfinish=()=>{
-S.rot=ang;p.style.transform=`rotate(${ang}deg)`;an.cancel();
+S.rot=ang;p.style.transform=`rotate(${S.pointerOffset+ang}deg)`;an.cancel();
 document.body.classList.remove("spinning");
 const to=$("to");ring.classList.add(win?"wf":"lf");jingle(win);
 if(win){to.classList.add("win");S.inv.unshift({...target,u:++S.uid});toast(`Success! You won ${target.w} ${target.n}`)}
 else{to.classList.add("lose");toast("Upgrade failed. Try a higher chance.")}
 pushFeed({...target,pc:ch},win);
-setTimeout(()=>{S.spin=false;ring.classList.remove("wf","lf");render()},S.quick?500:1400);
+setTimeout(()=>{S.spin=false;$("pointerPosition").disabled=false;ring.classList.remove("wf","lf");render()},S.quick?500:1400);
 };
 };
 /* x2/x4/x8 and % buttons: pick the target skin from the current stake */
