@@ -1,698 +1,3620 @@
 {
   "currency": "coins",
   "skins": [
-    {"weapon": "P250", "name": "Sand Dune", "price": 13.75},
-    {"weapon": "P90", "name": "Sand Spray", "price": 39.51},
-    {"weapon": "SG 553", "name": "Army Shine", "price": 47.39},
-    {"weapon": "FAMAS", "name": "Colony", "price": 56.68},
-    {"weapon": "CZ75-Auto", "name": "Imprint", "price": 58.5},
-    {"weapon": "USP-S", "name": "Forest Leaves", "price": 66.23},
-    {"weapon": "Five-SeveN", "name": "Coolant", "price": 74.26},
-    {"weapon": "Nova", "name": "Forest Leaves", "price": 81.83},
-    {"weapon": "USP-S", "name": "Lead Conduit", "price": 89.51},
-    {"weapon": "PP-Bizon", "name": "Candy Apple", "price": 93.35},
-    {"weapon": "Glock-18", "name": "Off-World", "price": 113.93},
-    {"weapon": "Dual Berettas", "name": "Colony", "price": 114.5},
-    {"weapon": "AK-47", "name": "Fuel Injector", "price": 160.2},
-    {"weapon": "AWP", "name": "Wildfire", "price": 420.4},
-    {"weapon": "M4A4", "name": "The Emperor", "price": 610.0},
-    {"weapon": "AWP", "name": "Lightning Strike", "price": 1180.0},
-    {"weapon": "Desert Eagle", "name": "Printstream", "price": 2150.0},
-    {"weapon": "Desert Eagle", "name": "Flame", "price": 21174.6},
-    {"weapon": "AK-47", "name": "Vulcan", "price": 1740.0},
-    {"weapon": "FAMAS", "name": "Roll Cage", "price": 250.3},
-    {"weapon": "Tec-9", "name": "Isaac", "price": 18.2},
-    {"weapon": "MAC-10", "name": "Neon Rider", "price": 22.4},
-    {"weapon": "Galil AR", "name": "Sugar Rush", "price": 27.8},
-    {"weapon": "MP9", "name": "Hot Rod", "price": 31.1},
-    {"weapon": "SSG 08", "name": "Blood in the Water", "price": 44.9},
-    {"weapon": "AK-47", "name": "Redline", "price": 95.3},
-    {"weapon": "M4A1-S", "name": "Cyrex", "price": 128.6},
-    {"weapon": "USP-S", "name": "Kill Confirmed", "price": 340.0},
-    {"weapon": "AWP", "name": "Asiimov", "price": 360.5},
-    {"weapon": "Desert Eagle", "name": "Blaze", "price": 520.0},
-    {"weapon": "Glock-18", "name": "Fade", "price": 940.0},
-    {"weapon": "M4A4", "name": "Howl", "price": 5200.0},
-    {"weapon": "Glock-18", "name": "Water Elemental", "price": 25.0},
-    {"weapon": "Glock-18", "name": "Bunsen Burner", "price": 32.0},
-    {"weapon": "Glock-18", "name": "Twilight Galaxy", "price": 70.0},
-    {"weapon": "Glock-18", "name": "Wasteland Rebel", "price": 85.0},
-    {"weapon": "Glock-18", "name": "Neo-Noir", "price": 48.0},
-    {"weapon": "Glock-18", "name": "Gamma Doppler", "price": 310.0},
-    {"weapon": "Glock-18", "name": "Moonrise", "price": 20.0},
-    {"weapon": "Glock-18", "name": "Vogue", "price": 17.0},
-    {"weapon": "Glock-18", "name": "Royal Legion", "price": 12.0},
-    {"weapon": "Glock-18", "name": "Candy Apple", "price": 4.5},
-    {"weapon": "Glock-18", "name": "Steel Disruption", "price": 6.0},
-    {"weapon": "Glock-18", "name": "Dragon Tattoo", "price": 42.0},
-    {"weapon": "Glock-18", "name": "Reactor", "price": 9.0},
-    {"weapon": "USP-S", "name": "Orion", "price": 38.0},
-    {"weapon": "USP-S", "name": "Neo-Noir", "price": 29.0},
-    {"weapon": "USP-S", "name": "Cortex", "price": 14.0},
-    {"weapon": "USP-S", "name": "Caiman", "price": 24.0},
-    {"weapon": "USP-S", "name": "Serum", "price": 33.0},
-    {"weapon": "USP-S", "name": "Guardian", "price": 12.0},
-    {"weapon": "USP-S", "name": "Torque", "price": 10.0},
-    {"weapon": "USP-S", "name": "Blueprint", "price": 19.0},
-    {"weapon": "USP-S", "name": "Flashback", "price": 8.0},
-    {"weapon": "USP-S", "name": "Stainless", "price": 7.0},
-    {"weapon": "P250", "name": "Asiimov", "price": 18.0},
-    {"weapon": "P250", "name": "Muertos", "price": 6.0},
-    {"weapon": "P250", "name": "Mehndi", "price": 3.0},
-    {"weapon": "P250", "name": "Whiteout", "price": 4.0},
-    {"weapon": "P250", "name": "Nuclear Threat", "price": 160.0},
-    {"weapon": "P250", "name": "See Ya Later", "price": 40.0},
-    {"weapon": "P250", "name": "Cartel", "price": 9.0},
-    {"weapon": "P250", "name": "Supernova", "price": 7.0},
-    {"weapon": "P250", "name": "Franklin", "price": 15.0},
-    {"weapon": "P250", "name": "Wingshot", "price": 11.0},
-    {"weapon": "P250", "name": "Bone Mask", "price": 2.0},
-    {"weapon": "Desert Eagle", "name": "Code Red", "price": 140.0},
-    {"weapon": "Desert Eagle", "name": "Hypnotic", "price": 45.0},
-    {"weapon": "Desert Eagle", "name": "Oxide Blaze", "price": 15.0},
-    {"weapon": "Desert Eagle", "name": "Kumicho Dragon", "price": 26.0},
-    {"weapon": "Desert Eagle", "name": "Cobalt Disruption", "price": 30.0},
-    {"weapon": "Desert Eagle", "name": "Mecha Industries", "price": 22.0},
-    {"weapon": "Desert Eagle", "name": "Golden Koi", "price": 55.0},
-    {"weapon": "Desert Eagle", "name": "Sunset Storm", "price": 35.0},
-    {"weapon": "Desert Eagle", "name": "Conspiracy", "price": 11.0},
-    {"weapon": "Desert Eagle", "name": "Light Rail", "price": 18.0},
-    {"weapon": "Desert Eagle", "name": "Night", "price": 2.0},
-    {"weapon": "Five-SeveN", "name": "Hyper Beast", "price": 22.0},
-    {"weapon": "Five-SeveN", "name": "Monkey Business", "price": 12.0},
-    {"weapon": "Five-SeveN", "name": "Case Hardened", "price": 40.0},
-    {"weapon": "Five-SeveN", "name": "Fowl Play", "price": 9.0},
-    {"weapon": "Five-SeveN", "name": "Retrobution", "price": 6.0},
-    {"weapon": "Five-SeveN", "name": "Neon Kimono", "price": 38.0},
-    {"weapon": "Five-SeveN", "name": "Angry Mob", "price": 8.0},
-    {"weapon": "Tec-9", "name": "Fuel Injector", "price": 12.0},
-    {"weapon": "Tec-9", "name": "Nuclear Threat", "price": 110.0},
-    {"weapon": "Tec-9", "name": "Red Quartz", "price": 4.0},
-    {"weapon": "Tec-9", "name": "Titanium Bit", "price": 5.0},
-    {"weapon": "Tec-9", "name": "Avalanche", "price": 3.0},
-    {"weapon": "Tec-9", "name": "Decimator", "price": 10.0},
-    {"weapon": "CZ75-Auto", "name": "Victoria", "price": 16.0},
-    {"weapon": "CZ75-Auto", "name": "Tigris", "price": 7.0},
-    {"weapon": "CZ75-Auto", "name": "Xiangliu", "price": 11.0},
-    {"weapon": "CZ75-Auto", "name": "Red Astor", "price": 5.0},
-    {"weapon": "CZ75-Auto", "name": "Pole Position", "price": 8.0},
-    {"weapon": "CZ75-Auto", "name": "Tuxedo", "price": 3.0},
-    {"weapon": "CZ75-Auto", "name": "Yellow Jacket", "price": 6.0},
-    {"weapon": "R8 Revolver", "name": "Fade", "price": 85.0},
-    {"weapon": "R8 Revolver", "name": "Amber Fade", "price": 20.0},
-    {"weapon": "R8 Revolver", "name": "Bone Mask", "price": 3.0},
-    {"weapon": "R8 Revolver", "name": "Crimson Web", "price": 50.0},
-    {"weapon": "R8 Revolver", "name": "Llama Cannon", "price": 8.0},
-    {"weapon": "R8 Revolver", "name": "Reboot", "price": 6.0},
-    {"weapon": "Dual Berettas", "name": "Cobra Strike", "price": 6.0},
-    {"weapon": "Dual Berettas", "name": "Marina", "price": 4.0},
-    {"weapon": "Dual Berettas", "name": "Hemoglobin", "price": 13.0},
-    {"weapon": "Dual Berettas", "name": "Panther", "price": 2.0},
-    {"weapon": "Dual Berettas", "name": "Dualing Dragons", "price": 9.0},
-    {"weapon": "Dual Berettas", "name": "Black Limba", "price": 5.0},
-    {"weapon": "AK-47", "name": "Asiimov", "price": 190.0},
-    {"weapon": "AK-47", "name": "Neon Revolution", "price": 45.0},
-    {"weapon": "AK-47", "name": "Bloodsport", "price": 60.0},
-    {"weapon": "AK-47", "name": "Hydroponic", "price": 750.0},
-    {"weapon": "AK-47", "name": "Fire Serpent", "price": 2200.0},
-    {"weapon": "AK-47", "name": "Case Hardened", "price": 120.0},
-    {"weapon": "AK-47", "name": "Wasteland Rebel", "price": 85.0},
-    {"weapon": "AK-47", "name": "Neon Rider", "price": 105.0},
-    {"weapon": "AK-47", "name": "Phantom Disruptor", "price": 8.0},
-    {"weapon": "AK-47", "name": "Elite Build", "price": 14.0},
-    {"weapon": "AK-47", "name": "Point Disarray", "price": 28.0},
-    {"weapon": "AK-47", "name": "Head Shot", "price": 170.0},
-    {"weapon": "AK-47", "name": "Slate", "price": 9.0},
-    {"weapon": "AK-47", "name": "Jet Set", "price": 16.0},
-    {"weapon": "AK-47", "name": "Frontside Misty", "price": 32.0},
-    {"weapon": "AK-47", "name": "The Empress", "price": 120.0},
-    {"weapon": "AK-47", "name": "Aquamarine Revenge", "price": 80.0},
-    {"weapon": "AK-47", "name": "Safari Mesh", "price": 2.0},
-    {"weapon": "M4A4", "name": "Asiimov", "price": 300.0},
-    {"weapon": "M4A4", "name": "Neo-Noir", "price": 65.0},
-    {"weapon": "M4A4", "name": "Desolate Space", "price": 22.0},
-    {"weapon": "M4A4", "name": "Buzz Kill", "price": 28.0},
-    {"weapon": "M4A4", "name": "Bullet Rain", "price": 18.0},
-    {"weapon": "M4A4", "name": "Griffin", "price": 12.0},
-    {"weapon": "M4A4", "name": "Dragon King", "price": 30.0},
-    {"weapon": "M4A4", "name": "Evil Daimyo", "price": 5.0},
-    {"weapon": "M4A4", "name": "Poseidon", "price": 280.0},
-    {"weapon": "M4A4", "name": "X-Ray", "price": 9.0},
-    {"weapon": "M4A4", "name": "Magnesium", "price": 3.0},
-    {"weapon": "M4A4", "name": "Radiation Hazard", "price": 6.0},
-    {"weapon": "M4A1-S", "name": "Hyper Beast", "price": 75.0},
-    {"weapon": "M4A1-S", "name": "Golden Coil", "price": 55.0},
-    {"weapon": "M4A1-S", "name": "Printstream", "price": 220.0},
-    {"weapon": "M4A1-S", "name": "Atomic Alloy", "price": 14.0},
-    {"weapon": "M4A1-S", "name": "Decimator", "price": 20.0},
-    {"weapon": "M4A1-S", "name": "Chantico's Fire", "price": 32.0},
-    {"weapon": "M4A1-S", "name": "Guardian", "price": 8.0},
-    {"weapon": "M4A1-S", "name": "Knight", "price": 700.0},
-    {"weapon": "M4A1-S", "name": "Mecha Industries", "price": 24.0},
-    {"weapon": "M4A1-S", "name": "Nightmare", "price": 11.0},
-    {"weapon": "M4A1-S", "name": "Control Panel", "price": 15.0},
-    {"weapon": "M4A1-S", "name": "Leaded Glass", "price": 7.0},
-    {"weapon": "M4A1-S", "name": "Blue Phosphor", "price": 38.0},
-    {"weapon": "M4A1-S", "name": "Hot Rod", "price": 130.0},
-    {"weapon": "M4A1-S", "name": "Basilisk", "price": 6.0},
-    {"weapon": "AUG", "name": "Chameleon", "price": 15.0},
-    {"weapon": "AUG", "name": "Akihabara Accept", "price": 130.0},
-    {"weapon": "AUG", "name": "Bengal Tiger", "price": 28.0},
-    {"weapon": "AUG", "name": "Hot Rod", "price": 40.0},
-    {"weapon": "AUG", "name": "Stymphalian", "price": 6.0},
-    {"weapon": "AUG", "name": "Syd Mead", "price": 10.0},
-    {"weapon": "AUG", "name": "Torque", "price": 3.0},
-    {"weapon": "SG 553", "name": "Pulse", "price": 5.0},
-    {"weapon": "SG 553", "name": "Cyrex", "price": 8.0},
-    {"weapon": "SG 553", "name": "Integrale", "price": 5.0},
-    {"weapon": "SG 553", "name": "Tiger Moth", "price": 2.0},
-    {"weapon": "SG 553", "name": "Ultraviolet", "price": 4.0},
-    {"weapon": "Galil AR", "name": "Chatterbox", "price": 18.0},
-    {"weapon": "Galil AR", "name": "Eco", "price": 22.0},
-    {"weapon": "Galil AR", "name": "Cerberus", "price": 5.0},
-    {"weapon": "Galil AR", "name": "Rocket Pop", "price": 7.0},
-    {"weapon": "Galil AR", "name": "Chromatic Aberration", "price": 9.0},
-    {"weapon": "Galil AR", "name": "Stone Cold", "price": 6.0},
-    {"weapon": "FAMAS", "name": "Djinn", "price": 8.0},
-    {"weapon": "FAMAS", "name": "Mecha Industries", "price": 5.0},
-    {"weapon": "FAMAS", "name": "Neural Net", "price": 4.0},
-    {"weapon": "FAMAS", "name": "Afterimage", "price": 6.0},
-    {"weapon": "AWP", "name": "Dragon Lore", "price": 8400.0},
-    {"weapon": "AWP", "name": "Hyper Beast", "price": 120.0},
-    {"weapon": "AWP", "name": "Neo-Noir", "price": 60.0},
-    {"weapon": "AWP", "name": "Containment Breach", "price": 55.0},
-    {"weapon": "AWP", "name": "Redline", "price": 28.0},
-    {"weapon": "AWP", "name": "Man-o'-war", "price": 52.0},
-    {"weapon": "AWP", "name": "Graphite", "price": 150.0},
-    {"weapon": "AWP", "name": "Oni Taiji", "price": 190.0},
-    {"weapon": "AWP", "name": "Elite Build", "price": 30.0},
-    {"weapon": "AWP", "name": "Fever Dream", "price": 30.0},
-    {"weapon": "AWP", "name": "Pit Viper", "price": 7.0},
-    {"weapon": "AWP", "name": "Corticera", "price": 25.0},
-    {"weapon": "AWP", "name": "Electric Hive", "price": 90.0},
-    {"weapon": "AWP", "name": "Atheris", "price": 11.0},
-    {"weapon": "AWP", "name": "Chromatic Aberration", "price": 70.0},
-    {"weapon": "AWP", "name": "Medusa", "price": 3500.0},
-    {"weapon": "AWP", "name": "Gungnir", "price": 6000.0},
-    {"weapon": "SCAR-20", "name": "Cyrex", "price": 12.0},
-    {"weapon": "SCAR-20", "name": "Cardiac", "price": 8.0},
-    {"weapon": "SCAR-20", "name": "Bloodsport", "price": 6.0},
-    {"weapon": "SCAR-20", "name": "Splash Jam", "price": 14.0},
-    {"weapon": "SCAR-20", "name": "Emerald", "price": 20.0},
-    {"weapon": "G3SG1", "name": "Flux", "price": 5.0},
-    {"weapon": "G3SG1", "name": "Orange Kimono", "price": 15.0},
-    {"weapon": "G3SG1", "name": "Chronos", "price": 10.0},
-    {"weapon": "G3SG1", "name": "Demeter", "price": 4.0},
-    {"weapon": "SSG 08", "name": "Abyss", "price": 10.0},
-    {"weapon": "SSG 08", "name": "Death's Head", "price": 6.0},
-    {"weapon": "SSG 08", "name": "Big Iron", "price": 4.0},
-    {"weapon": "SSG 08", "name": "Dragonfire", "price": 17.0},
-    {"weapon": "SSG 08", "name": "Detour", "price": 5.0},
-    {"weapon": "MP9", "name": "Bulldozer", "price": 4.0},
-    {"weapon": "MP9", "name": "Rose Iron", "price": 3.0},
-    {"weapon": "MP9", "name": "Starlight Protector", "price": 25.0},
-    {"weapon": "MP9", "name": "Hypnotic", "price": 18.0},
-    {"weapon": "MP9", "name": "Airlock", "price": 6.0},
-    {"weapon": "MP7", "name": "Nemesis", "price": 12.0},
-    {"weapon": "MP7", "name": "Bloodsport", "price": 18.0},
-    {"weapon": "MP7", "name": "Neon Ply", "price": 6.0},
-    {"weapon": "MP7", "name": "Cirrus", "price": 4.0},
-    {"weapon": "MP7", "name": "Urban Hazard", "price": 3.0},
-    {"weapon": "MP7", "name": "Fade", "price": 40.0},
-    {"weapon": "MP5-SD", "name": "Phosphor", "price": 5.0},
-    {"weapon": "MP5-SD", "name": "Lab Rats", "price": 4.0},
-    {"weapon": "MP5-SD", "name": "Gauss", "price": 3.0},
-    {"weapon": "UMP-45", "name": "Primal Saber", "price": 8.0},
-    {"weapon": "UMP-45", "name": "Momentum", "price": 9.0},
-    {"weapon": "UMP-45", "name": "Arctic Wolf", "price": 14.0},
-    {"weapon": "UMP-45", "name": "Exposure", "price": 5.0},
-    {"weapon": "UMP-45", "name": "Scaffold", "price": 4.0},
-    {"weapon": "UMP-45", "name": "Moonrise", "price": 6.0},
-    {"weapon": "P90", "name": "Asiimov", "price": 22.0},
-    {"weapon": "P90", "name": "Death by Kitty", "price": 40.0},
-    {"weapon": "P90", "name": "Module", "price": 4.0},
-    {"weapon": "P90", "name": "Trigon", "price": 3.0},
-    {"weapon": "P90", "name": "Emerald Dragon", "price": 55.0},
-    {"weapon": "P90", "name": "Cold Blooded", "price": 11.0},
-    {"weapon": "P90", "name": "Shapewood", "price": 5.0},
-    {"weapon": "PP-Bizon", "name": "Judgement of Anubis", "price": 10.0},
-    {"weapon": "PP-Bizon", "name": "Blue Streak", "price": 4.0},
-    {"weapon": "PP-Bizon", "name": "Fuel Rod", "price": 6.0},
-    {"weapon": "PP-Bizon", "name": "Osiris", "price": 5.0},
-    {"weapon": "MAC-10", "name": "Heat", "price": 6.0},
-    {"weapon": "MAC-10", "name": "Disco Tech", "price": 8.0},
-    {"weapon": "MAC-10", "name": "Stalker", "price": 3.0},
-    {"weapon": "MAC-10", "name": "Hot Snakes", "price": 7.0},
-    {"weapon": "MAC-10", "name": "Last Dive", "price": 4.0},
-    {"weapon": "Nova", "name": "Hyper Beast", "price": 20.0},
-    {"weapon": "Nova", "name": "Bloomstick", "price": 14.0},
-    {"weapon": "Nova", "name": "Antique", "price": 7.0},
-    {"weapon": "Nova", "name": "Graphite", "price": 22.0},
-    {"weapon": "Nova", "name": "Wild Six", "price": 5.0},
-    {"weapon": "Nova", "name": "Koi", "price": 3.0},
-    {"weapon": "XM1014", "name": "Tranquility", "price": 7.0},
-    {"weapon": "XM1014", "name": "Seasons", "price": 5.0},
-    {"weapon": "XM1014", "name": "Red Python", "price": 9.0},
-    {"weapon": "XM1014", "name": "Ziggy", "price": 4.0},
-    {"weapon": "XM1014", "name": "Slipstream", "price": 3.0},
-    {"weapon": "MAG-7", "name": "Bulldozer", "price": 14.0},
-    {"weapon": "MAG-7", "name": "Heat", "price": 5.0},
-    {"weapon": "MAG-7", "name": "Cobalt Core", "price": 4.0},
-    {"weapon": "MAG-7", "name": "Memento", "price": 3.0},
-    {"weapon": "Sawed-Off", "name": "The Kraken", "price": 16.0},
-    {"weapon": "Sawed-Off", "name": "Wasteland Princess", "price": 6.0},
-    {"weapon": "Sawed-Off", "name": "Origami", "price": 4.0},
-    {"weapon": "Sawed-Off", "name": "Serenity", "price": 3.0},
-    {"weapon": "M249", "name": "Nebula Crusader", "price": 11.0},
-    {"weapon": "M249", "name": "Magma", "price": 4.0},
-    {"weapon": "Negev", "name": "Power Loader", "price": 5.0},
-    {"weapon": "Negev", "name": "Man-o'-war", "price": 4.0},
-    {"weapon": "Zeus x27", "name": "Olympus", "price": 12.0},
-    {"weapon": "★ Karambit", "name": "Fade", "price": 3800.0},
-    {"weapon": "★ Karambit", "name": "Doppler", "price": 1450.0},
-    {"weapon": "★ Karambit", "name": "Marble Fade", "price": 3600.0},
-    {"weapon": "★ Karambit", "name": "Tiger Tooth", "price": 1500.0},
-    {"weapon": "★ Karambit", "name": "Crimson Web", "price": 2800.0},
-    {"weapon": "★ Karambit", "name": "Case Hardened", "price": 1700.0},
-    {"weapon": "★ Karambit", "name": "Gamma Doppler", "price": 1900.0},
-    {"weapon": "★ Karambit", "name": "Slaughter", "price": 1300.0},
-    {"weapon": "★ Karambit", "name": "Autotronic", "price": 1450.0},
-    {"weapon": "★ Karambit", "name": "Lore", "price": 2600.0},
-    {"weapon": "★ Karambit", "name": "Damascus Steel", "price": 1100.0},
-    {"weapon": "★ Karambit", "name": "Ultraviolet", "price": 950.0},
-    {"weapon": "★ Karambit", "name": "Night", "price": 1050.0},
-    {"weapon": "★ Karambit", "name": "Vanilla", "price": 1200.0},
-    {"weapon": "★ Karambit", "name": "Sapphire", "price": 95000.0},
-    {"weapon": "★ Karambit", "name": "Ruby", "price": 80000.0},
-    {"weapon": "★ Karambit", "name": "Black Pearl", "price": 70000.0},
-    {"weapon": "★ Karambit", "name": "Case Hardened (Blue Gem)", "price": 38000.0},
-    {"weapon": "★ M9 Bayonet", "name": "Fade", "price": 2400.0},
-    {"weapon": "★ M9 Bayonet", "name": "Doppler", "price": 1100.0},
-    {"weapon": "★ M9 Bayonet", "name": "Marble Fade", "price": 2300.0},
-    {"weapon": "★ M9 Bayonet", "name": "Tiger Tooth", "price": 1050.0},
-    {"weapon": "★ M9 Bayonet", "name": "Crimson Web", "price": 2000.0},
-    {"weapon": "★ M9 Bayonet", "name": "Case Hardened", "price": 1200.0},
-    {"weapon": "★ M9 Bayonet", "name": "Lore", "price": 1800.0},
-    {"weapon": "★ M9 Bayonet", "name": "Autotronic", "price": 1000.0},
-    {"weapon": "★ M9 Bayonet", "name": "Vanilla", "price": 800.0},
-    {"weapon": "★ M9 Bayonet", "name": "Ruby", "price": 55000.0},
-    {"weapon": "★ M9 Bayonet", "name": "Sapphire", "price": 60000.0},
-    {"weapon": "★ Butterfly Knife", "name": "Fade", "price": 3100.0},
-    {"weapon": "★ Butterfly Knife", "name": "Doppler", "price": 1500.0},
-    {"weapon": "★ Butterfly Knife", "name": "Marble Fade", "price": 3000.0},
-    {"weapon": "★ Butterfly Knife", "name": "Tiger Tooth", "price": 1550.0},
-    {"weapon": "★ Butterfly Knife", "name": "Crimson Web", "price": 3400.0},
-    {"weapon": "★ Butterfly Knife", "name": "Case Hardened", "price": 1800.0},
-    {"weapon": "★ Butterfly Knife", "name": "Slaughter", "price": 1300.0},
-    {"weapon": "★ Butterfly Knife", "name": "Vanilla", "price": 1100.0},
-    {"weapon": "★ Butterfly Knife", "name": "Lore", "price": 2700.0},
-    {"weapon": "★ Butterfly Knife", "name": "Sapphire", "price": 90000.0},
-    {"weapon": "★ Butterfly Knife", "name": "Case Hardened (Blue Gem)", "price": 42000.0},
-    {"weapon": "★ Talon Knife", "name": "Fade", "price": 2100.0},
-    {"weapon": "★ Talon Knife", "name": "Doppler", "price": 1300.0},
-    {"weapon": "★ Talon Knife", "name": "Marble Fade", "price": 2000.0},
-    {"weapon": "★ Talon Knife", "name": "Tiger Tooth", "price": 1250.0},
-    {"weapon": "★ Talon Knife", "name": "Slaughter", "price": 1250.0},
-    {"weapon": "★ Talon Knife", "name": "Crimson Web", "price": 3200.0},
-    {"weapon": "★ Talon Knife", "name": "Ruby", "price": 48000.0},
-    {"weapon": "★ Skeleton Knife", "name": "Fade", "price": 1600.0},
-    {"weapon": "★ Skeleton Knife", "name": "Doppler", "price": 1000.0},
-    {"weapon": "★ Skeleton Knife", "name": "Crimson Web", "price": 1700.0},
-    {"weapon": "★ Skeleton Knife", "name": "Case Hardened", "price": 1100.0},
-    {"weapon": "★ Skeleton Knife", "name": "Vanilla", "price": 900.0},
-    {"weapon": "★ Bayonet", "name": "Fade", "price": 1300.0},
-    {"weapon": "★ Bayonet", "name": "Doppler", "price": 650.0},
-    {"weapon": "★ Bayonet", "name": "Marble Fade", "price": 1250.0},
-    {"weapon": "★ Bayonet", "name": "Tiger Tooth", "price": 700.0},
-    {"weapon": "★ Bayonet", "name": "Lore", "price": 1200.0},
-    {"weapon": "★ Flip Knife", "name": "Fade", "price": 700.0},
-    {"weapon": "★ Flip Knife", "name": "Doppler", "price": 400.0},
-    {"weapon": "★ Flip Knife", "name": "Marble Fade", "price": 650.0},
-    {"weapon": "★ Flip Knife", "name": "Tiger Tooth", "price": 420.0},
-    {"weapon": "★ Flip Knife", "name": "Gamma Doppler", "price": 450.0},
-    {"weapon": "★ Huntsman Knife", "name": "Fade", "price": 700.0},
-    {"weapon": "★ Huntsman Knife", "name": "Doppler", "price": 420.0},
-    {"weapon": "★ Huntsman Knife", "name": "Slaughter", "price": 380.0},
-    {"weapon": "★ Stiletto Knife", "name": "Fade", "price": 550.0},
-    {"weapon": "★ Stiletto Knife", "name": "Doppler", "price": 480.0},
-    {"weapon": "★ Ursus Knife", "name": "Fade", "price": 500.0},
-    {"weapon": "★ Ursus Knife", "name": "Doppler", "price": 420.0},
-    {"weapon": "★ Nomad Knife", "name": "Fade", "price": 550.0},
-    {"weapon": "★ Nomad Knife", "name": "Doppler", "price": 400.0},
-    {"weapon": "★ Gut Knife", "name": "Doppler", "price": 200.0},
-    {"weapon": "★ Gut Knife", "name": "Fade", "price": 260.0},
-    {"weapon": "★ Falchion Knife", "name": "Fade", "price": 300.0},
-    {"weapon": "★ Falchion Knife", "name": "Doppler", "price": 250.0},
-    {"weapon": "★ Shadow Daggers", "name": "Fade", "price": 260.0},
-    {"weapon": "★ Sport Gloves", "name": "Pandora's Box", "price": 6500.0},
-    {"weapon": "★ Sport Gloves", "name": "Superconductor", "price": 3800.0},
-    {"weapon": "★ Sport Gloves", "name": "Vice", "price": 3200.0},
-    {"weapon": "★ Sport Gloves", "name": "Hedge Maze", "price": 2400.0},
-    {"weapon": "★ Sport Gloves", "name": "Omega", "price": 1900.0},
-    {"weapon": "★ Sport Gloves", "name": "Amphibious", "price": 1600.0},
-    {"weapon": "★ Specialist Gloves", "name": "Crimson Kimono", "price": 3500.0},
-    {"weapon": "★ Specialist Gloves", "name": "Emerald Web", "price": 2200.0},
-    {"weapon": "★ Specialist Gloves", "name": "Fade", "price": 2500.0},
-    {"weapon": "★ Specialist Gloves", "name": "Foundation", "price": 1500.0},
-    {"weapon": "★ Specialist Gloves", "name": "Marble Fade", "price": 1800.0},
-    {"weapon": "★ Driver Gloves", "name": "King Snake", "price": 2900.0},
-    {"weapon": "★ Driver Gloves", "name": "Crimson Weave", "price": 2000.0},
-    {"weapon": "★ Driver Gloves", "name": "Lunar Weave", "price": 1100.0},
-    {"weapon": "★ Driver Gloves", "name": "Imperial Plaid", "price": 900.0},
-    {"weapon": "★ Moto Gloves", "name": "Spearmint", "price": 1000.0},
-    {"weapon": "★ Moto Gloves", "name": "Cool Mint", "price": 850.0},
-    {"weapon": "★ Moto Gloves", "name": "POW!", "price": 800.0},
-    {"weapon": "★ Moto Gloves", "name": "Eclipse", "price": 600.0},
-    {"weapon": "★ Hand Wraps", "name": "Cobalt Skulls", "price": 1700.0},
-    {"weapon": "★ Hand Wraps", "name": "Slaughter", "price": 900.0},
-    {"weapon": "★ Hand Wraps", "name": "Duct Tape", "price": 450.0},
-    {"weapon": "★ Bloodhound Gloves", "name": "Bronzed", "price": 700.0},
-    {"weapon": "★ Bloodhound Gloves", "name": "Snakebite", "price": 650.0},
-    {"weapon": "★ Hydra Gloves", "name": "Emerald", "price": 1400.0},
-    {"weapon": "★ Hydra Gloves", "name": "Case Hardened", "price": 1100.0},
-    {"weapon": "★ Hydra Gloves", "name": "Rattler", "price": 900.0},
-    {"weapon": "AK-47", "name": "Gold Arabesque", "price": 9500.0},
-    {"weapon": "AK-47", "name": "Wild Lotus", "price": 18000.0},
-    {"weapon": "AK-47", "name": "X-Ray", "price": 140.0},
-    {"weapon": "AK-47", "name": "Fire Serpent (StatTrak)", "price": 4800.0},
-    {"weapon": "AK-47", "name": "Vulcan (StatTrak)", "price": 3200.0},
-    {"weapon": "AK-47", "name": "Neon Rider (StatTrak)", "price": 190.0},
-    {"weapon": "AK-47", "name": "Case Hardened (Blue Gem)", "price": 25000.0},
-    {"weapon": "AWP", "name": "Desert Hydra", "price": 7500.0},
-    {"weapon": "AWP", "name": "Dragon Lore (StatTrak)", "price": 14500.0},
-    {"weapon": "AWP", "name": "Medusa (StatTrak)", "price": 6800.0},
-    {"weapon": "AWP", "name": "Lightning Strike (StatTrak)", "price": 2100.0},
-    {"weapon": "AWP", "name": "Gungnir (StatTrak)", "price": 12500.0},
-    {"weapon": "M4A1-S", "name": "Icarus Fell", "price": 1400.0},
-    {"weapon": "M4A1-S", "name": "Welcome to the Jungle", "price": 1100.0},
-    {"weapon": "M4A1-S", "name": "Printstream (StatTrak)", "price": 420.0},
-    {"weapon": "M4A4", "name": "Howl (StatTrak)", "price": 9800.0},
-    {"weapon": "M4A4", "name": "Poseidon (StatTrak)", "price": 650.0},
-    {"weapon": "Desert Eagle", "name": "Blaze (StatTrak)", "price": 1100.0},
-    {"weapon": "Desert Eagle", "name": "Printstream (StatTrak)", "price": 3700.0},
-    {"weapon": "Glock-18", "name": "Fade (StatTrak)", "price": 1600.0},
-    {"weapon": "USP-S", "name": "Neo-Noir (StatTrak)", "price": 70.0},
-    {"weapon": "AK-47", "name": "Jaguar", "price": 45.0},
-    {"weapon": "AK-47", "name": "Blue Laminate", "price": 25.0},
-    {"weapon": "AK-47", "name": "Orbit Mk01", "price": 30.0},
-    {"weapon": "AK-47", "name": "Uncharted", "price": 12.0},
-    {"weapon": "AK-47", "name": "Legion of Anubis", "price": 150.0},
-    {"weapon": "AK-47", "name": "Panthera onca", "price": 8.0},
-    {"weapon": "AK-47", "name": "Searing Rage", "price": 10.0},
-    {"weapon": "AK-47", "name": "Inheritance", "price": 110.0},
-    {"weapon": "AK-47", "name": "Nightwish", "price": 70.0},
-    {"weapon": "AK-47", "name": "Ice Coaled", "price": 60.0},
-    {"weapon": "AK-47", "name": "Leet Museo", "price": 22.0},
-    {"weapon": "AK-47", "name": "Aquamarine Revenge (StatTrak)", "price": 210.0},
-    {"weapon": "M4A4", "name": "Spider Lily", "price": 8.0},
-    {"weapon": "M4A4", "name": "The Coalition", "price": 30.0},
-    {"weapon": "M4A4", "name": "Temukau", "price": 150.0},
-    {"weapon": "M4A4", "name": "Cyber Security", "price": 8.0},
-    {"weapon": "M4A4", "name": "Hellfire", "price": 55.0},
-    {"weapon": "M4A4", "name": "Tooth Fairy", "price": 35.0},
-    {"weapon": "M4A4", "name": "Neo-Noir (StatTrak)", "price": 150.0},
-    {"weapon": "M4A4", "name": "In Living Color", "price": 65.0},
-    {"weapon": "M4A4", "name": "Daybreak", "price": 10.0},
-    {"weapon": "M4A1-S", "name": "Player Two", "price": 20.0},
-    {"weapon": "M4A1-S", "name": "Imminent Danger", "price": 12.0},
-    {"weapon": "M4A1-S", "name": "Cyrex (StatTrak)", "price": 260.0},
-    {"weapon": "M4A1-S", "name": "Hyper Beast (StatTrak)", "price": 180.0},
-    {"weapon": "M4A1-S", "name": "Golden Coil (StatTrak)", "price": 130.0},
-    {"weapon": "M4A1-S", "name": "Mecha Industries (StatTrak)", "price": 55.0},
-    {"weapon": "AWP", "name": "Mortis", "price": 12.0},
-    {"weapon": "AWP", "name": "Phobos", "price": 9.0},
-    {"weapon": "AWP", "name": "Duality", "price": 20.0},
-    {"weapon": "AWP", "name": "Silk Tiger", "price": 40.0},
-    {"weapon": "AWP", "name": "The Prince", "price": 650.0},
-    {"weapon": "AWP", "name": "Fade", "price": 700.0},
-    {"weapon": "AWP", "name": "Exoskeleton", "price": 3.0},
-    {"weapon": "AWP", "name": "POP AWP", "price": 7.0},
-    {"weapon": "AWP", "name": "Neo-Noir (StatTrak)", "price": 140.0},
-    {"weapon": "AWP", "name": "Hyper Beast (StatTrak)", "price": 270.0},
-    {"weapon": "AWP", "name": "Redline (StatTrak)", "price": 70.0},
-    {"weapon": "AWP", "name": "Containment Breach (StatTrak)", "price": 120.0},
-    {"weapon": "AWP", "name": "Elite Build (StatTrak)", "price": 70.0},
-    {"weapon": "AWP", "name": "Oni Taiji (StatTrak)", "price": 400.0},
-    {"weapon": "Desert Eagle", "name": "Ocean Drive", "price": 18.0},
-    {"weapon": "Desert Eagle", "name": "Trigger Discipline", "price": 9.0},
-    {"weapon": "Desert Eagle", "name": "Emerald Jörmungandr", "price": 250.0},
-    {"weapon": "Desert Eagle", "name": "Directive", "price": 4.0},
-    {"weapon": "Desert Eagle", "name": "Mulberry", "price": 3.0},
-    {"weapon": "Desert Eagle", "name": "Code Red (StatTrak)", "price": 300.0},
-    {"weapon": "Desert Eagle", "name": "Golden Koi (StatTrak)", "price": 120.0},
-    {"weapon": "Desert Eagle", "name": "Hypnotic (StatTrak)", "price": 95.0},
-    {"weapon": "Glock-18", "name": "Snack Attack", "price": 35.0},
-    {"weapon": "Glock-18", "name": "Ramese's Reach", "price": 9.0},
-    {"weapon": "Glock-18", "name": "Water Elemental (StatTrak)", "price": 55.0},
-    {"weapon": "Glock-18", "name": "Bunsen Burner (StatTrak)", "price": 70.0},
-    {"weapon": "Glock-18", "name": "Neo-Noir (StatTrak)", "price": 100.0},
-    {"weapon": "Glock-18", "name": "Twilight Galaxy (StatTrak)", "price": 150.0},
-    {"weapon": "Glock-18", "name": "Gamma Doppler (StatTrak)", "price": 620.0},
-    {"weapon": "USP-S", "name": "Printstream", "price": 120.0},
-    {"weapon": "USP-S", "name": "Overgrowth", "price": 45.0},
-    {"weapon": "USP-S", "name": "Monster Mashup", "price": 14.0},
-    {"weapon": "USP-S", "name": "The Traitor", "price": 20.0},
-    {"weapon": "USP-S", "name": "Orion (StatTrak)", "price": 85.0},
-    {"weapon": "USP-S", "name": "Cortex (StatTrak)", "price": 35.0},
-    {"weapon": "★ Navaja Knife", "name": "Doppler", "price": 250.0},
-    {"weapon": "★ Navaja Knife", "name": "Slaughter", "price": 300.0},
-    {"weapon": "★ Navaja Knife", "name": "Fade", "price": 300.0},
-    {"weapon": "★ Classic Knife", "name": "Fade", "price": 800.0},
-    {"weapon": "★ Classic Knife", "name": "Vanilla", "price": 400.0},
-    {"weapon": "★ Classic Knife", "name": "Slaughter", "price": 600.0},
-    {"weapon": "★ Paracord Knife", "name": "Fade", "price": 550.0},
-    {"weapon": "★ Paracord Knife", "name": "Doppler", "price": 420.0},
-    {"weapon": "★ Survival Knife", "name": "Fade", "price": 520.0},
-    {"weapon": "★ Survival Knife", "name": "Doppler", "price": 400.0},
-    {"weapon": "★ Kukri Knife", "name": "Fade", "price": 450.0},
-    {"weapon": "★ Kukri Knife", "name": "Doppler", "price": 350.0},
-    {"weapon": "★ Bowie Knife", "name": "Fade", "price": 900.0},
-    {"weapon": "★ Bowie Knife", "name": "Doppler", "price": 650.0},
-    {"weapon": "★ Bowie Knife", "name": "Slaughter", "price": 700.0},
-    {"weapon": "★ Huntsman Knife", "name": "Marble Fade", "price": 700.0},
-    {"weapon": "★ Huntsman Knife", "name": "Tiger Tooth", "price": 450.0},
-    {"weapon": "★ Gut Knife", "name": "Marble Fade", "price": 300.0},
-    {"weapon": "★ Gut Knife", "name": "Tiger Tooth", "price": 230.0},
-    {"weapon": "★ Falchion Knife", "name": "Marble Fade", "price": 350.0},
-    {"weapon": "★ Falchion Knife", "name": "Tiger Tooth", "price": 270.0},
-    {"weapon": "★ Shadow Daggers", "name": "Doppler", "price": 250.0},
-    {"weapon": "★ Shadow Daggers", "name": "Tiger Tooth", "price": 270.0},
-    {"weapon": "★ Shadow Daggers", "name": "Marble Fade", "price": 300.0},
-    {"weapon": "★ Karambit", "name": "Emerald", "price": 75000.0},
-    {"weapon": "★ Karambit", "name": "Gold Gem", "price": 60000.0},
-    {"weapon": "★ Butterfly Knife", "name": "Ruby", "price": 85000.0},
-    {"weapon": "★ Butterfly Knife", "name": "Black Pearl", "price": 78000.0},
-    {"weapon": "★ M9 Bayonet", "name": "Black Pearl", "price": 52000.0},
-    {"weapon": "★ Talon Knife", "name": "Sapphire", "price": 58000.0},
-    {"weapon": "★ Talon Knife", "name": "Black Pearl", "price": 45000.0},
-    {"weapon": "★ Skeleton Knife", "name": "Ruby", "price": 30000.0},
-    {"weapon": "★ Skeleton Knife", "name": "Sapphire", "price": 34000.0},
-    {"weapon": "★ Sport Gloves", "name": "Nocts", "price": 800.0},
-    {"weapon": "★ Sport Gloves", "name": "Bronze Morph", "price": 700.0},
-    {"weapon": "★ Sport Gloves", "name": "Slingshot", "price": 1100.0},
-    {"weapon": "★ Specialist Gloves", "name": "Mogul", "price": 600.0},
-    {"weapon": "★ Specialist Gloves", "name": "Forest DDPAT", "price": 450.0},
-    {"weapon": "★ Specialist Gloves", "name": "Tiger Strike", "price": 1300.0},
-    {"weapon": "★ Specialist Gloves", "name": "Buckshot", "price": 500.0},
-    {"weapon": "★ Driver Gloves", "name": "Overtake", "price": 700.0},
-    {"weapon": "★ Driver Gloves", "name": "Racing Green", "price": 650.0},
-    {"weapon": "★ Driver Gloves", "name": "Black Tie", "price": 650.0},
-    {"weapon": "★ Driver Gloves", "name": "Diamondback", "price": 1700.0},
-    {"weapon": "★ Moto Gloves", "name": "Turtle", "price": 500.0},
-    {"weapon": "★ Moto Gloves", "name": "Transport", "price": 500.0},
-    {"weapon": "★ Moto Gloves", "name": "Polygon", "price": 900.0},
-    {"weapon": "★ Moto Gloves", "name": "Boom!", "price": 1400.0},
-    {"weapon": "★ Hand Wraps", "name": "Leather", "price": 300.0},
-    {"weapon": "★ Hand Wraps", "name": "Arboreal", "price": 600.0},
-    {"weapon": "★ Hand Wraps", "name": "Overprint", "price": 1000.0},
-    {"weapon": "★ Hand Wraps", "name": "Constrictor", "price": 700.0},
-    {"weapon": "★ Bloodhound Gloves", "name": "Guerrilla", "price": 350.0},
-    {"weapon": "★ Bloodhound Gloves", "name": "Charred", "price": 450.0},
-    {"weapon": "★ Hydra Gloves", "name": "Mangrove", "price": 550.0},
-    {"weapon": "AK-47", "name": "Gold Gem", "price": 60000.0},
-    {"weapon": "P90", "name": "Sand Spray (StatTrak)", "price": 86.92},
-    {"weapon": "SG 553", "name": "Army Shine (StatTrak)", "price": 104.26},
-    {"weapon": "FAMAS", "name": "Colony (StatTrak)", "price": 124.7},
-    {"weapon": "CZ75-Auto", "name": "Imprint (StatTrak)", "price": 128.7},
-    {"weapon": "USP-S", "name": "Forest Leaves (StatTrak)", "price": 145.71},
-    {"weapon": "Five-SeveN", "name": "Coolant (StatTrak)", "price": 163.37},
-    {"weapon": "Nova", "name": "Forest Leaves (StatTrak)", "price": 180.03},
-    {"weapon": "USP-S", "name": "Lead Conduit (StatTrak)", "price": 196.92},
-    {"weapon": "PP-Bizon", "name": "Candy Apple (StatTrak)", "price": 205.37},
-    {"weapon": "Glock-18", "name": "Off-World (StatTrak)", "price": 250.65},
-    {"weapon": "Dual Berettas", "name": "Colony (StatTrak)", "price": 251.9},
-    {"weapon": "AK-47", "name": "Fuel Injector (StatTrak)", "price": 352.44},
-    {"weapon": "AWP", "name": "Wildfire (StatTrak)", "price": 924.88},
-    {"weapon": "M4A4", "name": "The Emperor (StatTrak)", "price": 1342.0},
-    {"weapon": "FAMAS", "name": "Roll Cage (StatTrak)", "price": 550.66},
-    {"weapon": "Galil AR", "name": "Sugar Rush (StatTrak)", "price": 61.16},
-    {"weapon": "MP9", "name": "Hot Rod (StatTrak)", "price": 68.42},
-    {"weapon": "SSG 08", "name": "Blood in the Water (StatTrak)", "price": 98.78},
-    {"weapon": "AK-47", "name": "Redline (StatTrak)", "price": 209.66},
-    {"weapon": "USP-S", "name": "Kill Confirmed (StatTrak)", "price": 748.0},
-    {"weapon": "AWP", "name": "Asiimov (StatTrak)", "price": 793.1},
-    {"weapon": "Glock-18", "name": "Wasteland Rebel (StatTrak)", "price": 187.0},
-    {"weapon": "Glock-18", "name": "Dragon Tattoo (StatTrak)", "price": 92.4},
-    {"weapon": "USP-S", "name": "Serum (StatTrak)", "price": 72.6},
-    {"weapon": "P250", "name": "Nuclear Threat (StatTrak)", "price": 352.0},
-    {"weapon": "P250", "name": "See Ya Later (StatTrak)", "price": 88.0},
-    {"weapon": "Desert Eagle", "name": "Kumicho Dragon (StatTrak)", "price": 57.2},
-    {"weapon": "Desert Eagle", "name": "Cobalt Disruption (StatTrak)", "price": 66.0},
-    {"weapon": "Desert Eagle", "name": "Sunset Storm (StatTrak)", "price": 77.0},
-    {"weapon": "Five-SeveN", "name": "Case Hardened (StatTrak)", "price": 88.0},
-    {"weapon": "Five-SeveN", "name": "Neon Kimono (StatTrak)", "price": 83.6},
-    {"weapon": "Tec-9", "name": "Nuclear Threat (StatTrak)", "price": 242.0},
-    {"weapon": "R8 Revolver", "name": "Fade (StatTrak)", "price": 187.0},
-    {"weapon": "R8 Revolver", "name": "Crimson Web (StatTrak)", "price": 110.0},
-    {"weapon": "AK-47", "name": "Asiimov (StatTrak)", "price": 418.0},
-    {"weapon": "AK-47", "name": "Neon Revolution (StatTrak)", "price": 99.0},
-    {"weapon": "AK-47", "name": "Bloodsport (StatTrak)", "price": 132.0},
-    {"weapon": "AK-47", "name": "Hydroponic (StatTrak)", "price": 1650.0},
-    {"weapon": "AK-47", "name": "Case Hardened (StatTrak)", "price": 264.0},
-    {"weapon": "AK-47", "name": "Wasteland Rebel (StatTrak)", "price": 187.0},
-    {"weapon": "AK-47", "name": "Point Disarray (StatTrak)", "price": 61.6},
-    {"weapon": "AK-47", "name": "Head Shot (StatTrak)", "price": 374.0},
-    {"weapon": "AK-47", "name": "Frontside Misty (StatTrak)", "price": 70.4},
-    {"weapon": "AK-47", "name": "The Empress (StatTrak)", "price": 264.0},
-    {"weapon": "M4A4", "name": "Asiimov (StatTrak)", "price": 660.0},
-    {"weapon": "M4A4", "name": "Buzz Kill (StatTrak)", "price": 61.6},
-    {"weapon": "M4A4", "name": "Dragon King (StatTrak)", "price": 66.0},
-    {"weapon": "M4A1-S", "name": "Chantico's Fire (StatTrak)", "price": 70.4},
-    {"weapon": "M4A1-S", "name": "Knight (StatTrak)", "price": 1540.0},
-    {"weapon": "M4A1-S", "name": "Blue Phosphor (StatTrak)", "price": 83.6},
-    {"weapon": "M4A1-S", "name": "Hot Rod (StatTrak)", "price": 286.0},
-    {"weapon": "AUG", "name": "Akihabara Accept (StatTrak)", "price": 286.0},
-    {"weapon": "AUG", "name": "Bengal Tiger (StatTrak)", "price": 61.6},
-    {"weapon": "AUG", "name": "Hot Rod (StatTrak)", "price": 88.0},
-    {"weapon": "AWP", "name": "Man-o'-war (StatTrak)", "price": 114.4},
-    {"weapon": "AWP", "name": "Graphite (StatTrak)", "price": 330.0},
-    {"weapon": "AWP", "name": "Fever Dream (StatTrak)", "price": 66.0},
-    {"weapon": "AWP", "name": "Corticera (StatTrak)", "price": 55.0},
-    {"weapon": "AWP", "name": "Electric Hive (StatTrak)", "price": 198.0},
-    {"weapon": "AWP", "name": "Chromatic Aberration (StatTrak)", "price": 154.0},
-    {"weapon": "MP9", "name": "Starlight Protector (StatTrak)", "price": 55.0},
-    {"weapon": "MP7", "name": "Fade (StatTrak)", "price": 88.0},
-    {"weapon": "P90", "name": "Death by Kitty (StatTrak)", "price": 88.0},
-    {"weapon": "P90", "name": "Emerald Dragon (StatTrak)", "price": 121.0},
-    {"weapon": "★ Karambit", "name": "Fade (StatTrak)", "price": 5700.0},
-    {"weapon": "★ Karambit", "name": "Doppler (StatTrak)", "price": 2175.0},
-    {"weapon": "★ Karambit", "name": "Marble Fade (StatTrak)", "price": 5400.0},
-    {"weapon": "★ Karambit", "name": "Tiger Tooth (StatTrak)", "price": 2250.0},
-    {"weapon": "★ Karambit", "name": "Crimson Web (StatTrak)", "price": 4200.0},
-    {"weapon": "★ Karambit", "name": "Case Hardened (StatTrak)", "price": 2550.0},
-    {"weapon": "★ Karambit", "name": "Gamma Doppler (StatTrak)", "price": 2850.0},
-    {"weapon": "★ Karambit", "name": "Slaughter (StatTrak)", "price": 1950.0},
-    {"weapon": "★ Karambit", "name": "Autotronic (StatTrak)", "price": 2175.0},
-    {"weapon": "★ Karambit", "name": "Lore (StatTrak)", "price": 3900.0},
-    {"weapon": "★ Karambit", "name": "Damascus Steel (StatTrak)", "price": 1650.0},
-    {"weapon": "★ Karambit", "name": "Ultraviolet (StatTrak)", "price": 1425.0},
-    {"weapon": "★ Karambit", "name": "Night (StatTrak)", "price": 1575.0},
-    {"weapon": "★ Karambit", "name": "Vanilla (StatTrak)", "price": 1800.0},
-    {"weapon": "★ M9 Bayonet", "name": "Fade (StatTrak)", "price": 3600.0},
-    {"weapon": "★ M9 Bayonet", "name": "Doppler (StatTrak)", "price": 1650.0},
-    {"weapon": "★ M9 Bayonet", "name": "Marble Fade (StatTrak)", "price": 3450.0},
-    {"weapon": "★ M9 Bayonet", "name": "Tiger Tooth (StatTrak)", "price": 1575.0},
-    {"weapon": "★ M9 Bayonet", "name": "Crimson Web (StatTrak)", "price": 3000.0},
-    {"weapon": "★ M9 Bayonet", "name": "Case Hardened (StatTrak)", "price": 1800.0},
-    {"weapon": "★ M9 Bayonet", "name": "Lore (StatTrak)", "price": 2700.0},
-    {"weapon": "★ M9 Bayonet", "name": "Autotronic (StatTrak)", "price": 1500.0},
-    {"weapon": "★ M9 Bayonet", "name": "Vanilla (StatTrak)", "price": 1200.0},
-    {"weapon": "★ Butterfly Knife", "name": "Fade (StatTrak)", "price": 4650.0},
-    {"weapon": "★ Butterfly Knife", "name": "Doppler (StatTrak)", "price": 2250.0},
-    {"weapon": "★ Butterfly Knife", "name": "Marble Fade (StatTrak)", "price": 4500.0},
-    {"weapon": "★ Butterfly Knife", "name": "Tiger Tooth (StatTrak)", "price": 2325.0},
-    {"weapon": "★ Butterfly Knife", "name": "Crimson Web (StatTrak)", "price": 5100.0},
-    {"weapon": "★ Butterfly Knife", "name": "Case Hardened (StatTrak)", "price": 2700.0},
-    {"weapon": "★ Butterfly Knife", "name": "Slaughter (StatTrak)", "price": 1950.0},
-    {"weapon": "★ Butterfly Knife", "name": "Vanilla (StatTrak)", "price": 1650.0},
-    {"weapon": "★ Butterfly Knife", "name": "Lore (StatTrak)", "price": 4050.0},
-    {"weapon": "★ Talon Knife", "name": "Fade (StatTrak)", "price": 3150.0},
-    {"weapon": "★ Talon Knife", "name": "Doppler (StatTrak)", "price": 1950.0},
-    {"weapon": "★ Talon Knife", "name": "Marble Fade (StatTrak)", "price": 3000.0},
-    {"weapon": "★ Talon Knife", "name": "Tiger Tooth (StatTrak)", "price": 1875.0},
-    {"weapon": "★ Talon Knife", "name": "Slaughter (StatTrak)", "price": 1875.0},
-    {"weapon": "★ Talon Knife", "name": "Crimson Web (StatTrak)", "price": 4800.0},
-    {"weapon": "★ Skeleton Knife", "name": "Fade (StatTrak)", "price": 2400.0},
-    {"weapon": "★ Skeleton Knife", "name": "Doppler (StatTrak)", "price": 1500.0},
-    {"weapon": "★ Skeleton Knife", "name": "Crimson Web (StatTrak)", "price": 2550.0},
-    {"weapon": "★ Skeleton Knife", "name": "Case Hardened (StatTrak)", "price": 1650.0},
-    {"weapon": "★ Skeleton Knife", "name": "Vanilla (StatTrak)", "price": 1350.0},
-    {"weapon": "★ Bayonet", "name": "Fade (StatTrak)", "price": 1950.0},
-    {"weapon": "★ Bayonet", "name": "Doppler (StatTrak)", "price": 975.0},
-    {"weapon": "★ Bayonet", "name": "Marble Fade (StatTrak)", "price": 1875.0},
-    {"weapon": "★ Bayonet", "name": "Tiger Tooth (StatTrak)", "price": 1050.0},
-    {"weapon": "★ Bayonet", "name": "Lore (StatTrak)", "price": 1800.0},
-    {"weapon": "★ Flip Knife", "name": "Fade (StatTrak)", "price": 1050.0},
-    {"weapon": "★ Flip Knife", "name": "Marble Fade (StatTrak)", "price": 975.0},
-    {"weapon": "★ Huntsman Knife", "name": "Fade (StatTrak)", "price": 1050.0},
-    {"weapon": "★ Sport Gloves", "name": "Pandora's Box (StatTrak)", "price": 9750.0},
-    {"weapon": "★ Sport Gloves", "name": "Superconductor (StatTrak)", "price": 5700.0},
-    {"weapon": "★ Sport Gloves", "name": "Vice (StatTrak)", "price": 4800.0},
-    {"weapon": "★ Sport Gloves", "name": "Hedge Maze (StatTrak)", "price": 3600.0},
-    {"weapon": "★ Sport Gloves", "name": "Omega (StatTrak)", "price": 2850.0},
-    {"weapon": "★ Sport Gloves", "name": "Amphibious (StatTrak)", "price": 2400.0},
-    {"weapon": "★ Specialist Gloves", "name": "Crimson Kimono (StatTrak)", "price": 5250.0},
-    {"weapon": "★ Specialist Gloves", "name": "Emerald Web (StatTrak)", "price": 3300.0},
-    {"weapon": "★ Specialist Gloves", "name": "Fade (StatTrak)", "price": 3750.0},
-    {"weapon": "★ Specialist Gloves", "name": "Foundation (StatTrak)", "price": 2250.0},
-    {"weapon": "★ Specialist Gloves", "name": "Marble Fade (StatTrak)", "price": 2700.0},
-    {"weapon": "★ Driver Gloves", "name": "King Snake (StatTrak)", "price": 4350.0},
-    {"weapon": "★ Driver Gloves", "name": "Crimson Weave (StatTrak)", "price": 3000.0},
-    {"weapon": "★ Driver Gloves", "name": "Lunar Weave (StatTrak)", "price": 1650.0},
-    {"weapon": "★ Driver Gloves", "name": "Imperial Plaid (StatTrak)", "price": 1350.0},
-    {"weapon": "★ Moto Gloves", "name": "Spearmint (StatTrak)", "price": 1500.0},
-    {"weapon": "★ Moto Gloves", "name": "Cool Mint (StatTrak)", "price": 1275.0},
-    {"weapon": "★ Moto Gloves", "name": "POW! (StatTrak)", "price": 1200.0},
-    {"weapon": "★ Moto Gloves", "name": "Eclipse (StatTrak)", "price": 900.0},
-    {"weapon": "★ Hand Wraps", "name": "Cobalt Skulls (StatTrak)", "price": 2550.0},
-    {"weapon": "★ Hand Wraps", "name": "Slaughter (StatTrak)", "price": 1350.0},
-    {"weapon": "★ Bloodhound Gloves", "name": "Bronzed (StatTrak)", "price": 1050.0},
-    {"weapon": "★ Bloodhound Gloves", "name": "Snakebite (StatTrak)", "price": 975.0},
-    {"weapon": "★ Hydra Gloves", "name": "Emerald (StatTrak)", "price": 2100.0},
-    {"weapon": "★ Hydra Gloves", "name": "Case Hardened (StatTrak)", "price": 1650.0},
-    {"weapon": "★ Hydra Gloves", "name": "Rattler (StatTrak)", "price": 1350.0},
-    {"weapon": "AK-47", "name": "X-Ray (StatTrak)", "price": 308.0},
-    {"weapon": "M4A1-S", "name": "Icarus Fell (StatTrak)", "price": 3080.0},
-    {"weapon": "M4A1-S", "name": "Welcome to the Jungle (StatTrak)", "price": 2420.0},
-    {"weapon": "AK-47", "name": "Jaguar (StatTrak)", "price": 99.0},
-    {"weapon": "AK-47", "name": "Blue Laminate (StatTrak)", "price": 55.0},
-    {"weapon": "AK-47", "name": "Orbit Mk01 (StatTrak)", "price": 66.0},
-    {"weapon": "AK-47", "name": "Legion of Anubis (StatTrak)", "price": 330.0},
-    {"weapon": "AK-47", "name": "Inheritance (StatTrak)", "price": 242.0},
-    {"weapon": "AK-47", "name": "Nightwish (StatTrak)", "price": 154.0},
-    {"weapon": "AK-47", "name": "Ice Coaled (StatTrak)", "price": 132.0},
-    {"weapon": "M4A4", "name": "The Coalition (StatTrak)", "price": 66.0},
-    {"weapon": "M4A4", "name": "Temukau (StatTrak)", "price": 330.0},
-    {"weapon": "M4A4", "name": "Hellfire (StatTrak)", "price": 121.0},
-    {"weapon": "M4A4", "name": "Tooth Fairy (StatTrak)", "price": 77.0},
-    {"weapon": "M4A4", "name": "In Living Color (StatTrak)", "price": 143.0},
-    {"weapon": "AWP", "name": "Silk Tiger (StatTrak)", "price": 88.0},
-    {"weapon": "AWP", "name": "The Prince (StatTrak)", "price": 1430.0},
-    {"weapon": "AWP", "name": "Fade (StatTrak)", "price": 1540.0},
-    {"weapon": "Desert Eagle", "name": "Emerald Jörmungandr (StatTrak)", "price": 550.0},
-    {"weapon": "Glock-18", "name": "Snack Attack (StatTrak)", "price": 77.0},
-    {"weapon": "USP-S", "name": "Printstream (StatTrak)", "price": 264.0},
-    {"weapon": "USP-S", "name": "Overgrowth (StatTrak)", "price": 99.0},
-    {"weapon": "★ Classic Knife", "name": "Fade (StatTrak)", "price": 1200.0},
-    {"weapon": "★ Classic Knife", "name": "Slaughter (StatTrak)", "price": 900.0},
-    {"weapon": "★ Bowie Knife", "name": "Fade (StatTrak)", "price": 1350.0},
-    {"weapon": "★ Bowie Knife", "name": "Doppler (StatTrak)", "price": 975.0},
-    {"weapon": "★ Bowie Knife", "name": "Slaughter (StatTrak)", "price": 1050.0},
-    {"weapon": "★ Huntsman Knife", "name": "Marble Fade (StatTrak)", "price": 1050.0},
-    {"weapon": "★ Skeleton Knife", "name": "Ruby (StatTrak)", "price": 45000.0},
-    {"weapon": "★ Sport Gloves", "name": "Nocts (StatTrak)", "price": 1200.0},
-    {"weapon": "★ Sport Gloves", "name": "Bronze Morph (StatTrak)", "price": 1050.0},
-    {"weapon": "★ Sport Gloves", "name": "Slingshot (StatTrak)", "price": 1650.0},
-    {"weapon": "★ Specialist Gloves", "name": "Mogul (StatTrak)", "price": 900.0},
-    {"weapon": "★ Specialist Gloves", "name": "Tiger Strike (StatTrak)", "price": 1950.0},
-    {"weapon": "★ Driver Gloves", "name": "Overtake (StatTrak)", "price": 1050.0},
-    {"weapon": "★ Driver Gloves", "name": "Racing Green (StatTrak)", "price": 975.0},
-    {"weapon": "★ Driver Gloves", "name": "Black Tie (StatTrak)", "price": 975.0},
-    {"weapon": "★ Driver Gloves", "name": "Diamondback (StatTrak)", "price": 2550.0},
-    {"weapon": "★ Moto Gloves", "name": "Polygon (StatTrak)", "price": 1350.0},
-    {"weapon": "★ Moto Gloves", "name": "Boom! (StatTrak)", "price": 2100.0},
-    {"weapon": "★ Hand Wraps", "name": "Arboreal (StatTrak)", "price": 900.0},
-    {"weapon": "★ Hand Wraps", "name": "Overprint (StatTrak)", "price": 1500.0},
-    {"weapon": "★ Hand Wraps", "name": "Constrictor (StatTrak)", "price": 1050.0}
+    {
+      "weapon": "P250",
+      "name": "Sand Dune",
+      "price": 13.75
+    },
+    {
+      "weapon": "P90",
+      "name": "Sand Spray",
+      "price": 39.51
+    },
+    {
+      "weapon": "SG 553",
+      "name": "Army Shine",
+      "price": 47.39
+    },
+    {
+      "weapon": "FAMAS",
+      "name": "Colony",
+      "price": 56.68
+    },
+    {
+      "weapon": "CZ75-Auto",
+      "name": "Imprint",
+      "price": 58.5
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Forest Leaves",
+      "price": 66.23
+    },
+    {
+      "weapon": "Five-SeveN",
+      "name": "Coolant",
+      "price": 74.26
+    },
+    {
+      "weapon": "Nova",
+      "name": "Forest Leaves",
+      "price": 81.83
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Lead Conduit",
+      "price": 89.51
+    },
+    {
+      "weapon": "PP-Bizon",
+      "name": "Candy Apple",
+      "price": 93.35
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Off-World",
+      "price": 113.93
+    },
+    {
+      "weapon": "Dual Berettas",
+      "name": "Colony",
+      "price": 114.5
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Fuel Injector",
+      "price": 160.2
+    },
+    {
+      "weapon": "AWP",
+      "name": "Wildfire",
+      "price": 420.4
+    },
+    {
+      "weapon": "M4A4",
+      "name": "The Emperor",
+      "price": 610.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Lightning Strike",
+      "price": 1180.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Printstream",
+      "price": 2150.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Flame",
+      "price": 21174.6
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Vulcan",
+      "price": 1740.0
+    },
+    {
+      "weapon": "FAMAS",
+      "name": "Roll Cage",
+      "price": 250.3
+    },
+    {
+      "weapon": "Tec-9",
+      "name": "Isaac",
+      "price": 18.2
+    },
+    {
+      "weapon": "MAC-10",
+      "name": "Neon Rider",
+      "price": 22.4
+    },
+    {
+      "weapon": "Galil AR",
+      "name": "Sugar Rush",
+      "price": 27.8
+    },
+    {
+      "weapon": "MP9",
+      "name": "Hot Rod",
+      "price": 31.1
+    },
+    {
+      "weapon": "SSG 08",
+      "name": "Blood in the Water",
+      "price": 44.9
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Redline",
+      "price": 95.3
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Cyrex",
+      "price": 128.6
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Kill Confirmed",
+      "price": 340.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Asiimov",
+      "price": 360.5
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Blaze",
+      "price": 520.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Fade",
+      "price": 940.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Howl",
+      "price": 5200.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Water Elemental",
+      "price": 25.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Bunsen Burner",
+      "price": 32.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Twilight Galaxy",
+      "price": 70.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Wasteland Rebel",
+      "price": 85.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Neo-Noir",
+      "price": 48.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Gamma Doppler",
+      "price": 310.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Moonrise",
+      "price": 20.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Vogue",
+      "price": 17.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Royal Legion",
+      "price": 12.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Candy Apple",
+      "price": 4.5
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Steel Disruption",
+      "price": 6.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Dragon Tattoo",
+      "price": 42.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Reactor",
+      "price": 9.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Orion",
+      "price": 38.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Neo-Noir",
+      "price": 29.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Cortex",
+      "price": 14.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Caiman",
+      "price": 24.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Serum",
+      "price": 33.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Guardian",
+      "price": 12.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Torque",
+      "price": 10.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Blueprint",
+      "price": 19.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Flashback",
+      "price": 8.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Stainless",
+      "price": 7.0
+    },
+    {
+      "weapon": "P250",
+      "name": "Asiimov",
+      "price": 18.0
+    },
+    {
+      "weapon": "P250",
+      "name": "Muertos",
+      "price": 6.0
+    },
+    {
+      "weapon": "P250",
+      "name": "Mehndi",
+      "price": 3.0
+    },
+    {
+      "weapon": "P250",
+      "name": "Whiteout",
+      "price": 4.0
+    },
+    {
+      "weapon": "P250",
+      "name": "Nuclear Threat",
+      "price": 160.0
+    },
+    {
+      "weapon": "P250",
+      "name": "See Ya Later",
+      "price": 40.0
+    },
+    {
+      "weapon": "P250",
+      "name": "Cartel",
+      "price": 9.0
+    },
+    {
+      "weapon": "P250",
+      "name": "Supernova",
+      "price": 7.0
+    },
+    {
+      "weapon": "P250",
+      "name": "Franklin",
+      "price": 15.0
+    },
+    {
+      "weapon": "P250",
+      "name": "Wingshot",
+      "price": 11.0
+    },
+    {
+      "weapon": "P250",
+      "name": "Bone Mask",
+      "price": 2.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Code Red",
+      "price": 140.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Hypnotic",
+      "price": 45.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Oxide Blaze",
+      "price": 15.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Kumicho Dragon",
+      "price": 26.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Cobalt Disruption",
+      "price": 30.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Mecha Industries",
+      "price": 22.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Golden Koi",
+      "price": 55.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Sunset Storm",
+      "price": 35.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Conspiracy",
+      "price": 11.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Light Rail",
+      "price": 18.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Night",
+      "price": 2.0
+    },
+    {
+      "weapon": "Five-SeveN",
+      "name": "Hyper Beast",
+      "price": 22.0
+    },
+    {
+      "weapon": "Five-SeveN",
+      "name": "Monkey Business",
+      "price": 12.0
+    },
+    {
+      "weapon": "Five-SeveN",
+      "name": "Case Hardened",
+      "price": 40.0
+    },
+    {
+      "weapon": "Five-SeveN",
+      "name": "Fowl Play",
+      "price": 9.0
+    },
+    {
+      "weapon": "Five-SeveN",
+      "name": "Retrobution",
+      "price": 6.0
+    },
+    {
+      "weapon": "Five-SeveN",
+      "name": "Neon Kimono",
+      "price": 38.0
+    },
+    {
+      "weapon": "Five-SeveN",
+      "name": "Angry Mob",
+      "price": 8.0
+    },
+    {
+      "weapon": "Tec-9",
+      "name": "Fuel Injector",
+      "price": 12.0
+    },
+    {
+      "weapon": "Tec-9",
+      "name": "Nuclear Threat",
+      "price": 110.0
+    },
+    {
+      "weapon": "Tec-9",
+      "name": "Red Quartz",
+      "price": 4.0
+    },
+    {
+      "weapon": "Tec-9",
+      "name": "Titanium Bit",
+      "price": 5.0
+    },
+    {
+      "weapon": "Tec-9",
+      "name": "Avalanche",
+      "price": 3.0
+    },
+    {
+      "weapon": "Tec-9",
+      "name": "Decimator",
+      "price": 10.0
+    },
+    {
+      "weapon": "CZ75-Auto",
+      "name": "Victoria",
+      "price": 16.0
+    },
+    {
+      "weapon": "CZ75-Auto",
+      "name": "Tigris",
+      "price": 7.0
+    },
+    {
+      "weapon": "CZ75-Auto",
+      "name": "Xiangliu",
+      "price": 11.0
+    },
+    {
+      "weapon": "CZ75-Auto",
+      "name": "Red Astor",
+      "price": 5.0
+    },
+    {
+      "weapon": "CZ75-Auto",
+      "name": "Pole Position",
+      "price": 8.0
+    },
+    {
+      "weapon": "CZ75-Auto",
+      "name": "Tuxedo",
+      "price": 3.0
+    },
+    {
+      "weapon": "CZ75-Auto",
+      "name": "Yellow Jacket",
+      "price": 6.0
+    },
+    {
+      "weapon": "R8 Revolver",
+      "name": "Fade",
+      "price": 85.0
+    },
+    {
+      "weapon": "R8 Revolver",
+      "name": "Amber Fade",
+      "price": 20.0
+    },
+    {
+      "weapon": "R8 Revolver",
+      "name": "Bone Mask",
+      "price": 3.0
+    },
+    {
+      "weapon": "R8 Revolver",
+      "name": "Crimson Web",
+      "price": 50.0
+    },
+    {
+      "weapon": "R8 Revolver",
+      "name": "Llama Cannon",
+      "price": 8.0
+    },
+    {
+      "weapon": "R8 Revolver",
+      "name": "Reboot",
+      "price": 6.0
+    },
+    {
+      "weapon": "Dual Berettas",
+      "name": "Cobra Strike",
+      "price": 6.0
+    },
+    {
+      "weapon": "Dual Berettas",
+      "name": "Marina",
+      "price": 4.0
+    },
+    {
+      "weapon": "Dual Berettas",
+      "name": "Hemoglobin",
+      "price": 13.0
+    },
+    {
+      "weapon": "Dual Berettas",
+      "name": "Panther",
+      "price": 2.0
+    },
+    {
+      "weapon": "Dual Berettas",
+      "name": "Dualing Dragons",
+      "price": 9.0
+    },
+    {
+      "weapon": "Dual Berettas",
+      "name": "Black Limba",
+      "price": 5.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Asiimov",
+      "price": 190.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Neon Revolution",
+      "price": 45.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Bloodsport",
+      "price": 60.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Hydroponic",
+      "price": 750.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Fire Serpent",
+      "price": 2200.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Case Hardened",
+      "price": 120.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Wasteland Rebel",
+      "price": 85.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Neon Rider",
+      "price": 105.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Phantom Disruptor",
+      "price": 8.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Elite Build",
+      "price": 14.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Point Disarray",
+      "price": 28.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Head Shot",
+      "price": 170.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Slate",
+      "price": 9.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Jet Set",
+      "price": 16.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Frontside Misty",
+      "price": 32.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "The Empress",
+      "price": 120.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Aquamarine Revenge",
+      "price": 80.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Safari Mesh",
+      "price": 2.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Asiimov",
+      "price": 300.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Neo-Noir",
+      "price": 65.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Desolate Space",
+      "price": 22.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Buzz Kill",
+      "price": 28.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Bullet Rain",
+      "price": 18.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Griffin",
+      "price": 12.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Dragon King",
+      "price": 30.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Evil Daimyo",
+      "price": 5.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Poseidon",
+      "price": 280.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "X-Ray",
+      "price": 9.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Magnesium",
+      "price": 3.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Radiation Hazard",
+      "price": 6.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Hyper Beast",
+      "price": 75.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Golden Coil",
+      "price": 55.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Printstream",
+      "price": 220.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Atomic Alloy",
+      "price": 14.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Decimator",
+      "price": 20.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Chantico's Fire",
+      "price": 32.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Guardian",
+      "price": 8.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Knight",
+      "price": 700.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Mecha Industries",
+      "price": 24.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Nightmare",
+      "price": 11.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Control Panel",
+      "price": 15.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Leaded Glass",
+      "price": 7.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Blue Phosphor",
+      "price": 38.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Hot Rod",
+      "price": 130.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Basilisk",
+      "price": 6.0
+    },
+    {
+      "weapon": "AUG",
+      "name": "Chameleon",
+      "price": 15.0
+    },
+    {
+      "weapon": "AUG",
+      "name": "Akihabara Accept",
+      "price": 130.0
+    },
+    {
+      "weapon": "AUG",
+      "name": "Bengal Tiger",
+      "price": 28.0
+    },
+    {
+      "weapon": "AUG",
+      "name": "Hot Rod",
+      "price": 40.0
+    },
+    {
+      "weapon": "AUG",
+      "name": "Stymphalian",
+      "price": 6.0
+    },
+    {
+      "weapon": "AUG",
+      "name": "Syd Mead",
+      "price": 10.0
+    },
+    {
+      "weapon": "AUG",
+      "name": "Torque",
+      "price": 3.0
+    },
+    {
+      "weapon": "SG 553",
+      "name": "Pulse",
+      "price": 5.0
+    },
+    {
+      "weapon": "SG 553",
+      "name": "Cyrex",
+      "price": 8.0
+    },
+    {
+      "weapon": "SG 553",
+      "name": "Integrale",
+      "price": 5.0
+    },
+    {
+      "weapon": "SG 553",
+      "name": "Tiger Moth",
+      "price": 2.0
+    },
+    {
+      "weapon": "SG 553",
+      "name": "Ultraviolet",
+      "price": 4.0
+    },
+    {
+      "weapon": "Galil AR",
+      "name": "Chatterbox",
+      "price": 18.0
+    },
+    {
+      "weapon": "Galil AR",
+      "name": "Eco",
+      "price": 22.0
+    },
+    {
+      "weapon": "Galil AR",
+      "name": "Cerberus",
+      "price": 5.0
+    },
+    {
+      "weapon": "Galil AR",
+      "name": "Rocket Pop",
+      "price": 7.0
+    },
+    {
+      "weapon": "Galil AR",
+      "name": "Chromatic Aberration",
+      "price": 9.0
+    },
+    {
+      "weapon": "Galil AR",
+      "name": "Stone Cold",
+      "price": 6.0
+    },
+    {
+      "weapon": "FAMAS",
+      "name": "Djinn",
+      "price": 8.0
+    },
+    {
+      "weapon": "FAMAS",
+      "name": "Mecha Industries",
+      "price": 5.0
+    },
+    {
+      "weapon": "FAMAS",
+      "name": "Neural Net",
+      "price": 4.0
+    },
+    {
+      "weapon": "FAMAS",
+      "name": "Afterimage",
+      "price": 6.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Dragon Lore",
+      "price": 8400.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Hyper Beast",
+      "price": 120.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Neo-Noir",
+      "price": 60.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Containment Breach",
+      "price": 55.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Redline",
+      "price": 28.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Man-o'-war",
+      "price": 52.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Graphite",
+      "price": 150.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Oni Taiji",
+      "price": 190.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Elite Build",
+      "price": 30.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Fever Dream",
+      "price": 30.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Pit Viper",
+      "price": 7.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Corticera",
+      "price": 25.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Electric Hive",
+      "price": 90.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Atheris",
+      "price": 11.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Chromatic Aberration",
+      "price": 70.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Medusa",
+      "price": 3500.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Gungnir",
+      "price": 6000.0
+    },
+    {
+      "weapon": "SCAR-20",
+      "name": "Cyrex",
+      "price": 12.0
+    },
+    {
+      "weapon": "SCAR-20",
+      "name": "Cardiac",
+      "price": 8.0
+    },
+    {
+      "weapon": "SCAR-20",
+      "name": "Bloodsport",
+      "price": 6.0
+    },
+    {
+      "weapon": "SCAR-20",
+      "name": "Splash Jam",
+      "price": 14.0
+    },
+    {
+      "weapon": "SCAR-20",
+      "name": "Emerald",
+      "price": 20.0
+    },
+    {
+      "weapon": "G3SG1",
+      "name": "Flux",
+      "price": 5.0
+    },
+    {
+      "weapon": "G3SG1",
+      "name": "Orange Kimono",
+      "price": 15.0
+    },
+    {
+      "weapon": "G3SG1",
+      "name": "Chronos",
+      "price": 10.0
+    },
+    {
+      "weapon": "G3SG1",
+      "name": "Demeter",
+      "price": 4.0
+    },
+    {
+      "weapon": "SSG 08",
+      "name": "Abyss",
+      "price": 10.0
+    },
+    {
+      "weapon": "SSG 08",
+      "name": "Death's Head",
+      "price": 6.0
+    },
+    {
+      "weapon": "SSG 08",
+      "name": "Big Iron",
+      "price": 4.0
+    },
+    {
+      "weapon": "SSG 08",
+      "name": "Dragonfire",
+      "price": 17.0
+    },
+    {
+      "weapon": "SSG 08",
+      "name": "Detour",
+      "price": 5.0
+    },
+    {
+      "weapon": "MP9",
+      "name": "Bulldozer",
+      "price": 4.0
+    },
+    {
+      "weapon": "MP9",
+      "name": "Rose Iron",
+      "price": 3.0
+    },
+    {
+      "weapon": "MP9",
+      "name": "Starlight Protector",
+      "price": 25.0
+    },
+    {
+      "weapon": "MP9",
+      "name": "Hypnotic",
+      "price": 18.0
+    },
+    {
+      "weapon": "MP9",
+      "name": "Airlock",
+      "price": 6.0
+    },
+    {
+      "weapon": "MP7",
+      "name": "Nemesis",
+      "price": 12.0
+    },
+    {
+      "weapon": "MP7",
+      "name": "Bloodsport",
+      "price": 18.0
+    },
+    {
+      "weapon": "MP7",
+      "name": "Neon Ply",
+      "price": 6.0
+    },
+    {
+      "weapon": "MP7",
+      "name": "Cirrus",
+      "price": 4.0
+    },
+    {
+      "weapon": "MP7",
+      "name": "Urban Hazard",
+      "price": 3.0
+    },
+    {
+      "weapon": "MP7",
+      "name": "Fade",
+      "price": 40.0
+    },
+    {
+      "weapon": "MP5-SD",
+      "name": "Phosphor",
+      "price": 5.0
+    },
+    {
+      "weapon": "MP5-SD",
+      "name": "Lab Rats",
+      "price": 4.0
+    },
+    {
+      "weapon": "MP5-SD",
+      "name": "Gauss",
+      "price": 3.0
+    },
+    {
+      "weapon": "UMP-45",
+      "name": "Primal Saber",
+      "price": 8.0
+    },
+    {
+      "weapon": "UMP-45",
+      "name": "Momentum",
+      "price": 9.0
+    },
+    {
+      "weapon": "UMP-45",
+      "name": "Arctic Wolf",
+      "price": 14.0
+    },
+    {
+      "weapon": "UMP-45",
+      "name": "Exposure",
+      "price": 5.0
+    },
+    {
+      "weapon": "UMP-45",
+      "name": "Scaffold",
+      "price": 4.0
+    },
+    {
+      "weapon": "UMP-45",
+      "name": "Moonrise",
+      "price": 6.0
+    },
+    {
+      "weapon": "P90",
+      "name": "Asiimov",
+      "price": 22.0
+    },
+    {
+      "weapon": "P90",
+      "name": "Death by Kitty",
+      "price": 40.0
+    },
+    {
+      "weapon": "P90",
+      "name": "Module",
+      "price": 4.0
+    },
+    {
+      "weapon": "P90",
+      "name": "Trigon",
+      "price": 3.0
+    },
+    {
+      "weapon": "P90",
+      "name": "Emerald Dragon",
+      "price": 55.0
+    },
+    {
+      "weapon": "P90",
+      "name": "Cold Blooded",
+      "price": 11.0
+    },
+    {
+      "weapon": "P90",
+      "name": "Shapewood",
+      "price": 5.0
+    },
+    {
+      "weapon": "PP-Bizon",
+      "name": "Judgement of Anubis",
+      "price": 10.0
+    },
+    {
+      "weapon": "PP-Bizon",
+      "name": "Blue Streak",
+      "price": 4.0
+    },
+    {
+      "weapon": "PP-Bizon",
+      "name": "Fuel Rod",
+      "price": 6.0
+    },
+    {
+      "weapon": "PP-Bizon",
+      "name": "Osiris",
+      "price": 5.0
+    },
+    {
+      "weapon": "MAC-10",
+      "name": "Heat",
+      "price": 6.0
+    },
+    {
+      "weapon": "MAC-10",
+      "name": "Disco Tech",
+      "price": 8.0
+    },
+    {
+      "weapon": "MAC-10",
+      "name": "Stalker",
+      "price": 3.0
+    },
+    {
+      "weapon": "MAC-10",
+      "name": "Hot Snakes",
+      "price": 7.0
+    },
+    {
+      "weapon": "MAC-10",
+      "name": "Last Dive",
+      "price": 4.0
+    },
+    {
+      "weapon": "Nova",
+      "name": "Hyper Beast",
+      "price": 20.0
+    },
+    {
+      "weapon": "Nova",
+      "name": "Bloomstick",
+      "price": 14.0
+    },
+    {
+      "weapon": "Nova",
+      "name": "Antique",
+      "price": 7.0
+    },
+    {
+      "weapon": "Nova",
+      "name": "Graphite",
+      "price": 22.0
+    },
+    {
+      "weapon": "Nova",
+      "name": "Wild Six",
+      "price": 5.0
+    },
+    {
+      "weapon": "Nova",
+      "name": "Koi",
+      "price": 3.0
+    },
+    {
+      "weapon": "XM1014",
+      "name": "Tranquility",
+      "price": 7.0
+    },
+    {
+      "weapon": "XM1014",
+      "name": "Seasons",
+      "price": 5.0
+    },
+    {
+      "weapon": "XM1014",
+      "name": "Red Python",
+      "price": 9.0
+    },
+    {
+      "weapon": "XM1014",
+      "name": "Ziggy",
+      "price": 4.0
+    },
+    {
+      "weapon": "XM1014",
+      "name": "Slipstream",
+      "price": 3.0
+    },
+    {
+      "weapon": "MAG-7",
+      "name": "Bulldozer",
+      "price": 14.0
+    },
+    {
+      "weapon": "MAG-7",
+      "name": "Heat",
+      "price": 5.0
+    },
+    {
+      "weapon": "MAG-7",
+      "name": "Cobalt Core",
+      "price": 4.0
+    },
+    {
+      "weapon": "MAG-7",
+      "name": "Memento",
+      "price": 3.0
+    },
+    {
+      "weapon": "Sawed-Off",
+      "name": "The Kraken",
+      "price": 16.0
+    },
+    {
+      "weapon": "Sawed-Off",
+      "name": "Wasteland Princess",
+      "price": 6.0
+    },
+    {
+      "weapon": "Sawed-Off",
+      "name": "Origami",
+      "price": 4.0
+    },
+    {
+      "weapon": "Sawed-Off",
+      "name": "Serenity",
+      "price": 3.0
+    },
+    {
+      "weapon": "M249",
+      "name": "Nebula Crusader",
+      "price": 11.0
+    },
+    {
+      "weapon": "M249",
+      "name": "Magma",
+      "price": 4.0
+    },
+    {
+      "weapon": "Negev",
+      "name": "Power Loader",
+      "price": 5.0
+    },
+    {
+      "weapon": "Negev",
+      "name": "Man-o'-war",
+      "price": 4.0
+    },
+    {
+      "weapon": "Zeus x27",
+      "name": "Olympus",
+      "price": 12.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Fade",
+      "price": 3800.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Doppler",
+      "price": 1450.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Marble Fade",
+      "price": 3600.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Tiger Tooth",
+      "price": 1500.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Crimson Web",
+      "price": 2800.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Case Hardened",
+      "price": 1700.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Gamma Doppler",
+      "price": 1900.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Slaughter",
+      "price": 1300.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Autotronic",
+      "price": 1450.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Lore",
+      "price": 2600.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Damascus Steel",
+      "price": 1100.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Ultraviolet",
+      "price": 950.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Night",
+      "price": 1050.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Vanilla",
+      "price": 1200.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Sapphire",
+      "price": 95000.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Ruby",
+      "price": 80000.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Black Pearl",
+      "price": 70000.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Case Hardened (Blue Gem)",
+      "price": 38000.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Fade",
+      "price": 2400.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Doppler",
+      "price": 1100.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Marble Fade",
+      "price": 2300.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Tiger Tooth",
+      "price": 1050.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Crimson Web",
+      "price": 2000.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Case Hardened",
+      "price": 1200.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Lore",
+      "price": 1800.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Autotronic",
+      "price": 1000.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Vanilla",
+      "price": 800.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Ruby",
+      "price": 55000.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Sapphire",
+      "price": 60000.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Fade",
+      "price": 3100.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Doppler",
+      "price": 1500.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Marble Fade",
+      "price": 3000.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Tiger Tooth",
+      "price": 1550.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Crimson Web",
+      "price": 3400.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Case Hardened",
+      "price": 1800.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Slaughter",
+      "price": 1300.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Vanilla",
+      "price": 1100.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Lore",
+      "price": 2700.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Sapphire",
+      "price": 90000.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Case Hardened (Blue Gem)",
+      "price": 42000.0
+    },
+    {
+      "weapon": "★ Talon Knife",
+      "name": "Fade",
+      "price": 2100.0
+    },
+    {
+      "weapon": "★ Talon Knife",
+      "name": "Doppler",
+      "price": 1300.0
+    },
+    {
+      "weapon": "★ Talon Knife",
+      "name": "Marble Fade",
+      "price": 2000.0
+    },
+    {
+      "weapon": "★ Talon Knife",
+      "name": "Tiger Tooth",
+      "price": 1250.0
+    },
+    {
+      "weapon": "★ Talon Knife",
+      "name": "Slaughter",
+      "price": 1250.0
+    },
+    {
+      "weapon": "★ Talon Knife",
+      "name": "Crimson Web",
+      "price": 3200.0
+    },
+    {
+      "weapon": "★ Talon Knife",
+      "name": "Ruby",
+      "price": 48000.0
+    },
+    {
+      "weapon": "★ Skeleton Knife",
+      "name": "Fade",
+      "price": 1600.0
+    },
+    {
+      "weapon": "★ Skeleton Knife",
+      "name": "Doppler",
+      "price": 1000.0
+    },
+    {
+      "weapon": "★ Skeleton Knife",
+      "name": "Crimson Web",
+      "price": 1700.0
+    },
+    {
+      "weapon": "★ Skeleton Knife",
+      "name": "Case Hardened",
+      "price": 1100.0
+    },
+    {
+      "weapon": "★ Skeleton Knife",
+      "name": "Vanilla",
+      "price": 900.0
+    },
+    {
+      "weapon": "★ Bayonet",
+      "name": "Fade",
+      "price": 1300.0
+    },
+    {
+      "weapon": "★ Bayonet",
+      "name": "Doppler",
+      "price": 650.0
+    },
+    {
+      "weapon": "★ Bayonet",
+      "name": "Marble Fade",
+      "price": 1250.0
+    },
+    {
+      "weapon": "★ Bayonet",
+      "name": "Tiger Tooth",
+      "price": 700.0
+    },
+    {
+      "weapon": "★ Bayonet",
+      "name": "Lore",
+      "price": 1200.0
+    },
+    {
+      "weapon": "★ Flip Knife",
+      "name": "Fade",
+      "price": 700.0
+    },
+    {
+      "weapon": "★ Flip Knife",
+      "name": "Doppler",
+      "price": 400.0
+    },
+    {
+      "weapon": "★ Flip Knife",
+      "name": "Marble Fade",
+      "price": 650.0
+    },
+    {
+      "weapon": "★ Flip Knife",
+      "name": "Tiger Tooth",
+      "price": 420.0
+    },
+    {
+      "weapon": "★ Flip Knife",
+      "name": "Gamma Doppler",
+      "price": 450.0
+    },
+    {
+      "weapon": "★ Huntsman Knife",
+      "name": "Fade",
+      "price": 700.0
+    },
+    {
+      "weapon": "★ Huntsman Knife",
+      "name": "Doppler",
+      "price": 420.0
+    },
+    {
+      "weapon": "★ Huntsman Knife",
+      "name": "Slaughter",
+      "price": 380.0
+    },
+    {
+      "weapon": "★ Stiletto Knife",
+      "name": "Fade",
+      "price": 550.0
+    },
+    {
+      "weapon": "★ Stiletto Knife",
+      "name": "Doppler",
+      "price": 480.0
+    },
+    {
+      "weapon": "★ Ursus Knife",
+      "name": "Fade",
+      "price": 500.0
+    },
+    {
+      "weapon": "★ Ursus Knife",
+      "name": "Doppler",
+      "price": 420.0
+    },
+    {
+      "weapon": "★ Nomad Knife",
+      "name": "Fade",
+      "price": 550.0
+    },
+    {
+      "weapon": "★ Nomad Knife",
+      "name": "Doppler",
+      "price": 400.0
+    },
+    {
+      "weapon": "★ Gut Knife",
+      "name": "Doppler",
+      "price": 200.0
+    },
+    {
+      "weapon": "★ Gut Knife",
+      "name": "Fade",
+      "price": 260.0
+    },
+    {
+      "weapon": "★ Falchion Knife",
+      "name": "Fade",
+      "price": 300.0
+    },
+    {
+      "weapon": "★ Falchion Knife",
+      "name": "Doppler",
+      "price": 250.0
+    },
+    {
+      "weapon": "★ Shadow Daggers",
+      "name": "Fade",
+      "price": 260.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Pandora's Box",
+      "price": 6500.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Superconductor",
+      "price": 3800.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Vice",
+      "price": 3200.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Hedge Maze",
+      "price": 2400.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Omega",
+      "price": 1900.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Amphibious",
+      "price": 1600.0
+    },
+    {
+      "weapon": "★ Specialist Gloves",
+      "name": "Crimson Kimono",
+      "price": 3500.0
+    },
+    {
+      "weapon": "★ Specialist Gloves",
+      "name": "Emerald Web",
+      "price": 2200.0
+    },
+    {
+      "weapon": "★ Specialist Gloves",
+      "name": "Fade",
+      "price": 2500.0
+    },
+    {
+      "weapon": "★ Specialist Gloves",
+      "name": "Foundation",
+      "price": 1500.0
+    },
+    {
+      "weapon": "★ Specialist Gloves",
+      "name": "Marble Fade",
+      "price": 1800.0
+    },
+    {
+      "weapon": "★ Driver Gloves",
+      "name": "King Snake",
+      "price": 2900.0
+    },
+    {
+      "weapon": "★ Driver Gloves",
+      "name": "Crimson Weave",
+      "price": 2000.0
+    },
+    {
+      "weapon": "★ Driver Gloves",
+      "name": "Lunar Weave",
+      "price": 1100.0
+    },
+    {
+      "weapon": "★ Driver Gloves",
+      "name": "Imperial Plaid",
+      "price": 900.0
+    },
+    {
+      "weapon": "★ Moto Gloves",
+      "name": "Spearmint",
+      "price": 1000.0
+    },
+    {
+      "weapon": "★ Moto Gloves",
+      "name": "Cool Mint",
+      "price": 850.0
+    },
+    {
+      "weapon": "★ Moto Gloves",
+      "name": "POW!",
+      "price": 800.0
+    },
+    {
+      "weapon": "★ Moto Gloves",
+      "name": "Eclipse",
+      "price": 600.0
+    },
+    {
+      "weapon": "★ Hand Wraps",
+      "name": "Cobalt Skulls",
+      "price": 1700.0
+    },
+    {
+      "weapon": "★ Hand Wraps",
+      "name": "Slaughter",
+      "price": 900.0
+    },
+    {
+      "weapon": "★ Hand Wraps",
+      "name": "Duct Tape",
+      "price": 450.0
+    },
+    {
+      "weapon": "★ Bloodhound Gloves",
+      "name": "Bronzed",
+      "price": 700.0
+    },
+    {
+      "weapon": "★ Bloodhound Gloves",
+      "name": "Snakebite",
+      "price": 650.0
+    },
+    {
+      "weapon": "★ Hydra Gloves",
+      "name": "Emerald",
+      "price": 1400.0
+    },
+    {
+      "weapon": "★ Hydra Gloves",
+      "name": "Case Hardened",
+      "price": 1100.0
+    },
+    {
+      "weapon": "★ Hydra Gloves",
+      "name": "Rattler",
+      "price": 900.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Gold Arabesque",
+      "price": 9500.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Wild Lotus",
+      "price": 18000.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "X-Ray",
+      "price": 140.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Fire Serpent (StatTrak)",
+      "price": 4800.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Vulcan (StatTrak)",
+      "price": 3200.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Neon Rider (StatTrak)",
+      "price": 190.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Case Hardened (Blue Gem)",
+      "price": 25000.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Desert Hydra",
+      "price": 7500.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Dragon Lore (StatTrak)",
+      "price": 14500.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Medusa (StatTrak)",
+      "price": 6800.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Lightning Strike (StatTrak)",
+      "price": 2100.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Gungnir (StatTrak)",
+      "price": 12500.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Icarus Fell",
+      "price": 1400.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Welcome to the Jungle",
+      "price": 1100.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Printstream (StatTrak)",
+      "price": 420.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Howl (StatTrak)",
+      "price": 9800.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Poseidon (StatTrak)",
+      "price": 650.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Blaze (StatTrak)",
+      "price": 1100.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Printstream (StatTrak)",
+      "price": 3700.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Fade (StatTrak)",
+      "price": 1600.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Neo-Noir (StatTrak)",
+      "price": 70.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Jaguar",
+      "price": 45.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Blue Laminate",
+      "price": 25.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Orbit Mk01",
+      "price": 30.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Uncharted",
+      "price": 12.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Legion of Anubis",
+      "price": 150.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Panthera onca",
+      "price": 8.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Searing Rage",
+      "price": 10.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Inheritance",
+      "price": 110.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Nightwish",
+      "price": 70.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Ice Coaled",
+      "price": 60.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Leet Museo",
+      "price": 22.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Aquamarine Revenge (StatTrak)",
+      "price": 210.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Spider Lily",
+      "price": 8.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "The Coalition",
+      "price": 30.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Temukau",
+      "price": 150.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Cyber Security",
+      "price": 8.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Hellfire",
+      "price": 55.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Tooth Fairy",
+      "price": 35.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Neo-Noir (StatTrak)",
+      "price": 150.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "In Living Color",
+      "price": 65.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Daybreak",
+      "price": 10.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Player Two",
+      "price": 20.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Imminent Danger",
+      "price": 12.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Cyrex (StatTrak)",
+      "price": 260.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Hyper Beast (StatTrak)",
+      "price": 180.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Golden Coil (StatTrak)",
+      "price": 130.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Mecha Industries (StatTrak)",
+      "price": 55.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Mortis",
+      "price": 12.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Phobos",
+      "price": 9.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Duality",
+      "price": 20.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Silk Tiger",
+      "price": 40.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "The Prince",
+      "price": 650.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Fade",
+      "price": 700.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Exoskeleton",
+      "price": 3.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "POP AWP",
+      "price": 7.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Neo-Noir (StatTrak)",
+      "price": 140.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Hyper Beast (StatTrak)",
+      "price": 270.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Redline (StatTrak)",
+      "price": 70.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Containment Breach (StatTrak)",
+      "price": 120.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Elite Build (StatTrak)",
+      "price": 70.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Oni Taiji (StatTrak)",
+      "price": 400.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Ocean Drive",
+      "price": 18.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Trigger Discipline",
+      "price": 9.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Emerald Jörmungandr",
+      "price": 250.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Directive",
+      "price": 4.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Mulberry",
+      "price": 3.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Code Red (StatTrak)",
+      "price": 300.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Golden Koi (StatTrak)",
+      "price": 120.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Hypnotic (StatTrak)",
+      "price": 95.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Snack Attack",
+      "price": 35.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Ramese's Reach",
+      "price": 9.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Water Elemental (StatTrak)",
+      "price": 55.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Bunsen Burner (StatTrak)",
+      "price": 70.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Neo-Noir (StatTrak)",
+      "price": 100.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Twilight Galaxy (StatTrak)",
+      "price": 150.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Gamma Doppler (StatTrak)",
+      "price": 620.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Printstream",
+      "price": 120.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Overgrowth",
+      "price": 45.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Monster Mashup",
+      "price": 14.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "The Traitor",
+      "price": 20.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Orion (StatTrak)",
+      "price": 85.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Cortex (StatTrak)",
+      "price": 35.0
+    },
+    {
+      "weapon": "★ Navaja Knife",
+      "name": "Doppler",
+      "price": 250.0
+    },
+    {
+      "weapon": "★ Navaja Knife",
+      "name": "Slaughter",
+      "price": 300.0
+    },
+    {
+      "weapon": "★ Navaja Knife",
+      "name": "Fade",
+      "price": 300.0
+    },
+    {
+      "weapon": "★ Classic Knife",
+      "name": "Fade",
+      "price": 800.0
+    },
+    {
+      "weapon": "★ Classic Knife",
+      "name": "Vanilla",
+      "price": 400.0
+    },
+    {
+      "weapon": "★ Classic Knife",
+      "name": "Slaughter",
+      "price": 600.0
+    },
+    {
+      "weapon": "★ Paracord Knife",
+      "name": "Fade",
+      "price": 550.0
+    },
+    {
+      "weapon": "★ Paracord Knife",
+      "name": "Doppler",
+      "price": 420.0
+    },
+    {
+      "weapon": "★ Survival Knife",
+      "name": "Fade",
+      "price": 520.0
+    },
+    {
+      "weapon": "★ Survival Knife",
+      "name": "Doppler",
+      "price": 400.0
+    },
+    {
+      "weapon": "★ Kukri Knife",
+      "name": "Fade",
+      "price": 450.0
+    },
+    {
+      "weapon": "★ Kukri Knife",
+      "name": "Doppler",
+      "price": 350.0
+    },
+    {
+      "weapon": "★ Bowie Knife",
+      "name": "Fade",
+      "price": 900.0
+    },
+    {
+      "weapon": "★ Bowie Knife",
+      "name": "Doppler",
+      "price": 650.0
+    },
+    {
+      "weapon": "★ Bowie Knife",
+      "name": "Slaughter",
+      "price": 700.0
+    },
+    {
+      "weapon": "★ Huntsman Knife",
+      "name": "Marble Fade",
+      "price": 700.0
+    },
+    {
+      "weapon": "★ Huntsman Knife",
+      "name": "Tiger Tooth",
+      "price": 450.0
+    },
+    {
+      "weapon": "★ Gut Knife",
+      "name": "Marble Fade",
+      "price": 300.0
+    },
+    {
+      "weapon": "★ Gut Knife",
+      "name": "Tiger Tooth",
+      "price": 230.0
+    },
+    {
+      "weapon": "★ Falchion Knife",
+      "name": "Marble Fade",
+      "price": 350.0
+    },
+    {
+      "weapon": "★ Falchion Knife",
+      "name": "Tiger Tooth",
+      "price": 270.0
+    },
+    {
+      "weapon": "★ Shadow Daggers",
+      "name": "Doppler",
+      "price": 250.0
+    },
+    {
+      "weapon": "★ Shadow Daggers",
+      "name": "Tiger Tooth",
+      "price": 270.0
+    },
+    {
+      "weapon": "★ Shadow Daggers",
+      "name": "Marble Fade",
+      "price": 300.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Emerald",
+      "price": 75000.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Gold Gem",
+      "price": 60000.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Ruby",
+      "price": 85000.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Black Pearl",
+      "price": 78000.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Black Pearl",
+      "price": 52000.0
+    },
+    {
+      "weapon": "★ Talon Knife",
+      "name": "Sapphire",
+      "price": 58000.0
+    },
+    {
+      "weapon": "★ Talon Knife",
+      "name": "Black Pearl",
+      "price": 45000.0
+    },
+    {
+      "weapon": "★ Skeleton Knife",
+      "name": "Ruby",
+      "price": 30000.0
+    },
+    {
+      "weapon": "★ Skeleton Knife",
+      "name": "Sapphire",
+      "price": 34000.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Nocts",
+      "price": 800.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Bronze Morph",
+      "price": 700.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Slingshot",
+      "price": 1100.0
+    },
+    {
+      "weapon": "★ Specialist Gloves",
+      "name": "Mogul",
+      "price": 600.0
+    },
+    {
+      "weapon": "★ Specialist Gloves",
+      "name": "Forest DDPAT",
+      "price": 450.0
+    },
+    {
+      "weapon": "★ Specialist Gloves",
+      "name": "Tiger Strike",
+      "price": 1300.0
+    },
+    {
+      "weapon": "★ Specialist Gloves",
+      "name": "Buckshot",
+      "price": 500.0
+    },
+    {
+      "weapon": "★ Driver Gloves",
+      "name": "Overtake",
+      "price": 700.0
+    },
+    {
+      "weapon": "★ Driver Gloves",
+      "name": "Racing Green",
+      "price": 650.0
+    },
+    {
+      "weapon": "★ Driver Gloves",
+      "name": "Black Tie",
+      "price": 650.0
+    },
+    {
+      "weapon": "★ Driver Gloves",
+      "name": "Diamondback",
+      "price": 1700.0
+    },
+    {
+      "weapon": "★ Moto Gloves",
+      "name": "Turtle",
+      "price": 500.0
+    },
+    {
+      "weapon": "★ Moto Gloves",
+      "name": "Transport",
+      "price": 500.0
+    },
+    {
+      "weapon": "★ Moto Gloves",
+      "name": "Polygon",
+      "price": 900.0
+    },
+    {
+      "weapon": "★ Moto Gloves",
+      "name": "Boom!",
+      "price": 1400.0
+    },
+    {
+      "weapon": "★ Hand Wraps",
+      "name": "Leather",
+      "price": 300.0
+    },
+    {
+      "weapon": "★ Hand Wraps",
+      "name": "Arboreal",
+      "price": 600.0
+    },
+    {
+      "weapon": "★ Hand Wraps",
+      "name": "Overprint",
+      "price": 1000.0
+    },
+    {
+      "weapon": "★ Hand Wraps",
+      "name": "Constrictor",
+      "price": 700.0
+    },
+    {
+      "weapon": "★ Bloodhound Gloves",
+      "name": "Guerrilla",
+      "price": 350.0
+    },
+    {
+      "weapon": "★ Bloodhound Gloves",
+      "name": "Charred",
+      "price": 450.0
+    },
+    {
+      "weapon": "★ Hydra Gloves",
+      "name": "Mangrove",
+      "price": 550.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Gold Gem",
+      "price": 60000.0
+    },
+    {
+      "weapon": "P90",
+      "name": "Sand Spray (StatTrak)",
+      "price": 86.92
+    },
+    {
+      "weapon": "SG 553",
+      "name": "Army Shine (StatTrak)",
+      "price": 104.26
+    },
+    {
+      "weapon": "FAMAS",
+      "name": "Colony (StatTrak)",
+      "price": 124.7
+    },
+    {
+      "weapon": "CZ75-Auto",
+      "name": "Imprint (StatTrak)",
+      "price": 128.7
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Forest Leaves (StatTrak)",
+      "price": 145.71
+    },
+    {
+      "weapon": "Five-SeveN",
+      "name": "Coolant (StatTrak)",
+      "price": 163.37
+    },
+    {
+      "weapon": "Nova",
+      "name": "Forest Leaves (StatTrak)",
+      "price": 180.03
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Lead Conduit (StatTrak)",
+      "price": 196.92
+    },
+    {
+      "weapon": "PP-Bizon",
+      "name": "Candy Apple (StatTrak)",
+      "price": 205.37
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Off-World (StatTrak)",
+      "price": 250.65
+    },
+    {
+      "weapon": "Dual Berettas",
+      "name": "Colony (StatTrak)",
+      "price": 251.9
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Fuel Injector (StatTrak)",
+      "price": 352.44
+    },
+    {
+      "weapon": "AWP",
+      "name": "Wildfire (StatTrak)",
+      "price": 924.88
+    },
+    {
+      "weapon": "M4A4",
+      "name": "The Emperor (StatTrak)",
+      "price": 1342.0
+    },
+    {
+      "weapon": "FAMAS",
+      "name": "Roll Cage (StatTrak)",
+      "price": 550.66
+    },
+    {
+      "weapon": "Galil AR",
+      "name": "Sugar Rush (StatTrak)",
+      "price": 61.16
+    },
+    {
+      "weapon": "MP9",
+      "name": "Hot Rod (StatTrak)",
+      "price": 68.42
+    },
+    {
+      "weapon": "SSG 08",
+      "name": "Blood in the Water (StatTrak)",
+      "price": 98.78
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Redline (StatTrak)",
+      "price": 209.66
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Kill Confirmed (StatTrak)",
+      "price": 748.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Asiimov (StatTrak)",
+      "price": 793.1
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Wasteland Rebel (StatTrak)",
+      "price": 187.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Dragon Tattoo (StatTrak)",
+      "price": 92.4
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Serum (StatTrak)",
+      "price": 72.6
+    },
+    {
+      "weapon": "P250",
+      "name": "Nuclear Threat (StatTrak)",
+      "price": 352.0
+    },
+    {
+      "weapon": "P250",
+      "name": "See Ya Later (StatTrak)",
+      "price": 88.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Kumicho Dragon (StatTrak)",
+      "price": 57.2
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Cobalt Disruption (StatTrak)",
+      "price": 66.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Sunset Storm (StatTrak)",
+      "price": 77.0
+    },
+    {
+      "weapon": "Five-SeveN",
+      "name": "Case Hardened (StatTrak)",
+      "price": 88.0
+    },
+    {
+      "weapon": "Five-SeveN",
+      "name": "Neon Kimono (StatTrak)",
+      "price": 83.6
+    },
+    {
+      "weapon": "Tec-9",
+      "name": "Nuclear Threat (StatTrak)",
+      "price": 242.0
+    },
+    {
+      "weapon": "R8 Revolver",
+      "name": "Fade (StatTrak)",
+      "price": 187.0
+    },
+    {
+      "weapon": "R8 Revolver",
+      "name": "Crimson Web (StatTrak)",
+      "price": 110.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Asiimov (StatTrak)",
+      "price": 418.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Neon Revolution (StatTrak)",
+      "price": 99.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Bloodsport (StatTrak)",
+      "price": 132.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Hydroponic (StatTrak)",
+      "price": 1650.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Case Hardened (StatTrak)",
+      "price": 264.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Wasteland Rebel (StatTrak)",
+      "price": 187.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Point Disarray (StatTrak)",
+      "price": 61.6
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Head Shot (StatTrak)",
+      "price": 374.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Frontside Misty (StatTrak)",
+      "price": 70.4
+    },
+    {
+      "weapon": "AK-47",
+      "name": "The Empress (StatTrak)",
+      "price": 264.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Asiimov (StatTrak)",
+      "price": 660.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Buzz Kill (StatTrak)",
+      "price": 61.6
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Dragon King (StatTrak)",
+      "price": 66.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Chantico's Fire (StatTrak)",
+      "price": 70.4
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Knight (StatTrak)",
+      "price": 1540.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Blue Phosphor (StatTrak)",
+      "price": 83.6
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Hot Rod (StatTrak)",
+      "price": 286.0
+    },
+    {
+      "weapon": "AUG",
+      "name": "Akihabara Accept (StatTrak)",
+      "price": 286.0
+    },
+    {
+      "weapon": "AUG",
+      "name": "Bengal Tiger (StatTrak)",
+      "price": 61.6
+    },
+    {
+      "weapon": "AUG",
+      "name": "Hot Rod (StatTrak)",
+      "price": 88.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Man-o'-war (StatTrak)",
+      "price": 114.4
+    },
+    {
+      "weapon": "AWP",
+      "name": "Graphite (StatTrak)",
+      "price": 330.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Fever Dream (StatTrak)",
+      "price": 66.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Corticera (StatTrak)",
+      "price": 55.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Electric Hive (StatTrak)",
+      "price": 198.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Chromatic Aberration (StatTrak)",
+      "price": 154.0
+    },
+    {
+      "weapon": "MP9",
+      "name": "Starlight Protector (StatTrak)",
+      "price": 55.0
+    },
+    {
+      "weapon": "MP7",
+      "name": "Fade (StatTrak)",
+      "price": 88.0
+    },
+    {
+      "weapon": "P90",
+      "name": "Death by Kitty (StatTrak)",
+      "price": 88.0
+    },
+    {
+      "weapon": "P90",
+      "name": "Emerald Dragon (StatTrak)",
+      "price": 121.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Fade (StatTrak)",
+      "price": 5700.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Doppler (StatTrak)",
+      "price": 2175.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Marble Fade (StatTrak)",
+      "price": 5400.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Tiger Tooth (StatTrak)",
+      "price": 2250.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Crimson Web (StatTrak)",
+      "price": 4200.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Case Hardened (StatTrak)",
+      "price": 2550.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Gamma Doppler (StatTrak)",
+      "price": 2850.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Slaughter (StatTrak)",
+      "price": 1950.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Autotronic (StatTrak)",
+      "price": 2175.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Lore (StatTrak)",
+      "price": 3900.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Damascus Steel (StatTrak)",
+      "price": 1650.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Ultraviolet (StatTrak)",
+      "price": 1425.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Night (StatTrak)",
+      "price": 1575.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Vanilla (StatTrak)",
+      "price": 1800.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Fade (StatTrak)",
+      "price": 3600.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Doppler (StatTrak)",
+      "price": 1650.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Marble Fade (StatTrak)",
+      "price": 3450.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Tiger Tooth (StatTrak)",
+      "price": 1575.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Crimson Web (StatTrak)",
+      "price": 3000.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Case Hardened (StatTrak)",
+      "price": 1800.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Lore (StatTrak)",
+      "price": 2700.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Autotronic (StatTrak)",
+      "price": 1500.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Vanilla (StatTrak)",
+      "price": 1200.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Fade (StatTrak)",
+      "price": 4650.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Doppler (StatTrak)",
+      "price": 2250.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Marble Fade (StatTrak)",
+      "price": 4500.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Tiger Tooth (StatTrak)",
+      "price": 2325.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Crimson Web (StatTrak)",
+      "price": 5100.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Case Hardened (StatTrak)",
+      "price": 2700.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Slaughter (StatTrak)",
+      "price": 1950.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Vanilla (StatTrak)",
+      "price": 1650.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Lore (StatTrak)",
+      "price": 4050.0
+    },
+    {
+      "weapon": "★ Talon Knife",
+      "name": "Fade (StatTrak)",
+      "price": 3150.0
+    },
+    {
+      "weapon": "★ Talon Knife",
+      "name": "Doppler (StatTrak)",
+      "price": 1950.0
+    },
+    {
+      "weapon": "★ Talon Knife",
+      "name": "Marble Fade (StatTrak)",
+      "price": 3000.0
+    },
+    {
+      "weapon": "★ Talon Knife",
+      "name": "Tiger Tooth (StatTrak)",
+      "price": 1875.0
+    },
+    {
+      "weapon": "★ Talon Knife",
+      "name": "Slaughter (StatTrak)",
+      "price": 1875.0
+    },
+    {
+      "weapon": "★ Talon Knife",
+      "name": "Crimson Web (StatTrak)",
+      "price": 4800.0
+    },
+    {
+      "weapon": "★ Skeleton Knife",
+      "name": "Fade (StatTrak)",
+      "price": 2400.0
+    },
+    {
+      "weapon": "★ Skeleton Knife",
+      "name": "Doppler (StatTrak)",
+      "price": 1500.0
+    },
+    {
+      "weapon": "★ Skeleton Knife",
+      "name": "Crimson Web (StatTrak)",
+      "price": 2550.0
+    },
+    {
+      "weapon": "★ Skeleton Knife",
+      "name": "Case Hardened (StatTrak)",
+      "price": 1650.0
+    },
+    {
+      "weapon": "★ Skeleton Knife",
+      "name": "Vanilla (StatTrak)",
+      "price": 1350.0
+    },
+    {
+      "weapon": "★ Bayonet",
+      "name": "Fade (StatTrak)",
+      "price": 1950.0
+    },
+    {
+      "weapon": "★ Bayonet",
+      "name": "Doppler (StatTrak)",
+      "price": 975.0
+    },
+    {
+      "weapon": "★ Bayonet",
+      "name": "Marble Fade (StatTrak)",
+      "price": 1875.0
+    },
+    {
+      "weapon": "★ Bayonet",
+      "name": "Tiger Tooth (StatTrak)",
+      "price": 1050.0
+    },
+    {
+      "weapon": "★ Bayonet",
+      "name": "Lore (StatTrak)",
+      "price": 1800.0
+    },
+    {
+      "weapon": "★ Flip Knife",
+      "name": "Fade (StatTrak)",
+      "price": 1050.0
+    },
+    {
+      "weapon": "★ Flip Knife",
+      "name": "Marble Fade (StatTrak)",
+      "price": 975.0
+    },
+    {
+      "weapon": "★ Huntsman Knife",
+      "name": "Fade (StatTrak)",
+      "price": 1050.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Pandora's Box (StatTrak)",
+      "price": 9750.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Superconductor (StatTrak)",
+      "price": 5700.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Vice (StatTrak)",
+      "price": 4800.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Hedge Maze (StatTrak)",
+      "price": 3600.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Omega (StatTrak)",
+      "price": 2850.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Amphibious (StatTrak)",
+      "price": 2400.0
+    },
+    {
+      "weapon": "★ Specialist Gloves",
+      "name": "Crimson Kimono (StatTrak)",
+      "price": 5250.0
+    },
+    {
+      "weapon": "★ Specialist Gloves",
+      "name": "Emerald Web (StatTrak)",
+      "price": 3300.0
+    },
+    {
+      "weapon": "★ Specialist Gloves",
+      "name": "Fade (StatTrak)",
+      "price": 3750.0
+    },
+    {
+      "weapon": "★ Specialist Gloves",
+      "name": "Foundation (StatTrak)",
+      "price": 2250.0
+    },
+    {
+      "weapon": "★ Specialist Gloves",
+      "name": "Marble Fade (StatTrak)",
+      "price": 2700.0
+    },
+    {
+      "weapon": "★ Driver Gloves",
+      "name": "King Snake (StatTrak)",
+      "price": 4350.0
+    },
+    {
+      "weapon": "★ Driver Gloves",
+      "name": "Crimson Weave (StatTrak)",
+      "price": 3000.0
+    },
+    {
+      "weapon": "★ Driver Gloves",
+      "name": "Lunar Weave (StatTrak)",
+      "price": 1650.0
+    },
+    {
+      "weapon": "★ Driver Gloves",
+      "name": "Imperial Plaid (StatTrak)",
+      "price": 1350.0
+    },
+    {
+      "weapon": "★ Moto Gloves",
+      "name": "Spearmint (StatTrak)",
+      "price": 1500.0
+    },
+    {
+      "weapon": "★ Moto Gloves",
+      "name": "Cool Mint (StatTrak)",
+      "price": 1275.0
+    },
+    {
+      "weapon": "★ Moto Gloves",
+      "name": "POW! (StatTrak)",
+      "price": 1200.0
+    },
+    {
+      "weapon": "★ Moto Gloves",
+      "name": "Eclipse (StatTrak)",
+      "price": 900.0
+    },
+    {
+      "weapon": "★ Hand Wraps",
+      "name": "Cobalt Skulls (StatTrak)",
+      "price": 2550.0
+    },
+    {
+      "weapon": "★ Hand Wraps",
+      "name": "Slaughter (StatTrak)",
+      "price": 1350.0
+    },
+    {
+      "weapon": "★ Bloodhound Gloves",
+      "name": "Bronzed (StatTrak)",
+      "price": 1050.0
+    },
+    {
+      "weapon": "★ Bloodhound Gloves",
+      "name": "Snakebite (StatTrak)",
+      "price": 975.0
+    },
+    {
+      "weapon": "★ Hydra Gloves",
+      "name": "Emerald (StatTrak)",
+      "price": 2100.0
+    },
+    {
+      "weapon": "★ Hydra Gloves",
+      "name": "Case Hardened (StatTrak)",
+      "price": 1650.0
+    },
+    {
+      "weapon": "★ Hydra Gloves",
+      "name": "Rattler (StatTrak)",
+      "price": 1350.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "X-Ray (StatTrak)",
+      "price": 308.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Icarus Fell (StatTrak)",
+      "price": 3080.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Welcome to the Jungle (StatTrak)",
+      "price": 2420.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Jaguar (StatTrak)",
+      "price": 99.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Blue Laminate (StatTrak)",
+      "price": 55.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Orbit Mk01 (StatTrak)",
+      "price": 66.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Legion of Anubis (StatTrak)",
+      "price": 330.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Inheritance (StatTrak)",
+      "price": 242.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Nightwish (StatTrak)",
+      "price": 154.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Ice Coaled (StatTrak)",
+      "price": 132.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "The Coalition (StatTrak)",
+      "price": 66.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Temukau (StatTrak)",
+      "price": 330.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Hellfire (StatTrak)",
+      "price": 121.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Tooth Fairy (StatTrak)",
+      "price": 77.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "In Living Color (StatTrak)",
+      "price": 143.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Silk Tiger (StatTrak)",
+      "price": 88.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "The Prince (StatTrak)",
+      "price": 1430.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Fade (StatTrak)",
+      "price": 1540.0
+    },
+    {
+      "weapon": "Desert Eagle",
+      "name": "Emerald Jörmungandr (StatTrak)",
+      "price": 550.0
+    },
+    {
+      "weapon": "Glock-18",
+      "name": "Snack Attack (StatTrak)",
+      "price": 77.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Printstream (StatTrak)",
+      "price": 264.0
+    },
+    {
+      "weapon": "USP-S",
+      "name": "Overgrowth (StatTrak)",
+      "price": 99.0
+    },
+    {
+      "weapon": "★ Classic Knife",
+      "name": "Fade (StatTrak)",
+      "price": 1200.0
+    },
+    {
+      "weapon": "★ Classic Knife",
+      "name": "Slaughter (StatTrak)",
+      "price": 900.0
+    },
+    {
+      "weapon": "★ Bowie Knife",
+      "name": "Fade (StatTrak)",
+      "price": 1350.0
+    },
+    {
+      "weapon": "★ Bowie Knife",
+      "name": "Doppler (StatTrak)",
+      "price": 975.0
+    },
+    {
+      "weapon": "★ Bowie Knife",
+      "name": "Slaughter (StatTrak)",
+      "price": 1050.0
+    },
+    {
+      "weapon": "★ Huntsman Knife",
+      "name": "Marble Fade (StatTrak)",
+      "price": 1050.0
+    },
+    {
+      "weapon": "★ Skeleton Knife",
+      "name": "Ruby (StatTrak)",
+      "price": 45000.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Nocts (StatTrak)",
+      "price": 1200.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Bronze Morph (StatTrak)",
+      "price": 1050.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Slingshot (StatTrak)",
+      "price": 1650.0
+    },
+    {
+      "weapon": "★ Specialist Gloves",
+      "name": "Mogul (StatTrak)",
+      "price": 900.0
+    },
+    {
+      "weapon": "★ Specialist Gloves",
+      "name": "Tiger Strike (StatTrak)",
+      "price": 1950.0
+    },
+    {
+      "weapon": "★ Driver Gloves",
+      "name": "Overtake (StatTrak)",
+      "price": 1050.0
+    },
+    {
+      "weapon": "★ Driver Gloves",
+      "name": "Racing Green (StatTrak)",
+      "price": 975.0
+    },
+    {
+      "weapon": "★ Driver Gloves",
+      "name": "Black Tie (StatTrak)",
+      "price": 975.0
+    },
+    {
+      "weapon": "★ Driver Gloves",
+      "name": "Diamondback (StatTrak)",
+      "price": 2550.0
+    },
+    {
+      "weapon": "★ Moto Gloves",
+      "name": "Polygon (StatTrak)",
+      "price": 1350.0
+    },
+    {
+      "weapon": "★ Moto Gloves",
+      "name": "Boom! (StatTrak)",
+      "price": 2100.0
+    },
+    {
+      "weapon": "★ Hand Wraps",
+      "name": "Arboreal (StatTrak)",
+      "price": 900.0
+    },
+    {
+      "weapon": "★ Hand Wraps",
+      "name": "Overprint (StatTrak)",
+      "price": 1500.0
+    },
+    {
+      "weapon": "★ Hand Wraps",
+      "name": "Constrictor (StatTrak)",
+      "price": 1050.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Doppler Sapphire",
+      "price": 105000.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Doppler Ruby",
+      "price": 92000.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Doppler Black Pearl",
+      "price": 82000.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Doppler Sapphire",
+      "price": 110000.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Doppler Ruby",
+      "price": 98000.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Doppler Black Pearl",
+      "price": 88000.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Doppler Emerald",
+      "price": 88000.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Doppler Sapphire",
+      "price": 76000.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Doppler Ruby",
+      "price": 69000.0
+    },
+    {
+      "weapon": "★ Talon Knife",
+      "name": "Doppler Ruby",
+      "price": 62000.0
+    },
+    {
+      "weapon": "★ Talon Knife",
+      "name": "Doppler Emerald",
+      "price": 64000.0
+    },
+    {
+      "weapon": "★ Skeleton Knife",
+      "name": "Doppler Black Pearl",
+      "price": 39000.0
+    },
+    {
+      "weapon": "★ Skeleton Knife",
+      "name": "Case Hardened (Blue Gem)",
+      "price": 27000.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Pandora's Box (Factory New)",
+      "price": 12000.0
+    },
+    {
+      "weapon": "★ Sport Gloves",
+      "name": "Vice (Factory New)",
+      "price": 8500.0
+    },
+    {
+      "weapon": "★ Specialist Gloves",
+      "name": "Crimson Kimono (Factory New)",
+      "price": 9000.0
+    },
+    {
+      "weapon": "★ Driver Gloves",
+      "name": "King Snake (Factory New)",
+      "price": 7200.0
+    },
+    {
+      "weapon": "★ Moto Gloves",
+      "name": "Spearmint (Factory New)",
+      "price": 6800.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Wild Lotus (StatTrak)",
+      "price": 42000.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Gold Arabesque (Souvenir)",
+      "price": 26000.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Dragon Lore (Souvenir)",
+      "price": 52000.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Gungnir (Souvenir)",
+      "price": 28000.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "Desert Hydra (Souvenir)",
+      "price": 18000.0
+    },
+    {
+      "weapon": "M4A4",
+      "name": "Howl (Souvenir)",
+      "price": 24000.0
+    },
+    {
+      "weapon": "M4A1-S",
+      "name": "Welcome to the Jungle (Souvenir)",
+      "price": 13500.0
+    },
+    {
+      "weapon": "AWP",
+      "name": "The Prince (Souvenir)",
+      "price": 11500.0
+    },
+    {
+      "weapon": "AK-47",
+      "name": "Fire Serpent (Souvenir)",
+      "price": 9800.0
+    },
+    {
+      "weapon": "★ M9 Bayonet",
+      "name": "Case Hardened (Blue Gem)",
+      "price": 36000.0
+    },
+    {
+      "weapon": "★ Karambit",
+      "name": "Lore (Factory New)",
+      "price": 6200.0
+    },
+    {
+      "weapon": "★ Butterfly Knife",
+      "name": "Fade (Factory New)",
+      "price": 7400.0
+    }
   ]
 }
