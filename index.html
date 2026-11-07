@@ -111,6 +111,8 @@ input[type=range]{width:100%;accent-color:var(--y)}
 .sk i{font-style:normal;color:var(--y);font-weight:700;font-size:11px}
 .sk.on{border-color:var(--y);background:linear-gradient(180deg,#2a2208,var(--card));box-shadow:inset 0 0 18px #ffcc0022}
 .sk.empty{opacity:.35;pointer-events:none}
+.sellbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;padding:10px;background:var(--card);border:1px solid var(--line);border-radius:8px;font-size:11px;color:var(--mut)}
+.sellbar b{color:var(--y)}.sellbar button{background:var(--y);color:#241a00;border-radius:6px;padding:9px 12px;font-size:11px;font-weight:800;white-space:nowrap}.sellbar button:disabled{background:#34343a;color:#777;cursor:not-allowed}
 .pg{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:14px;font-size:12px;color:var(--mut)}
 .pg button{background:var(--card);border-radius:5px;padding:6px 14px;color:var(--tx)}
 .toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,40px);opacity:0;background:var(--card);border:1px solid var(--line);padding:12px 20px;border-radius:10px;font-weight:600;font-size:13px;transition:.3s;pointer-events:none}
@@ -148,7 +150,7 @@ input[type=range]{width:100%;accent-color:var(--y)}
 </section>
 
 <section class="lists">
-<div class="pn"><div class="ph"><span class="sw"><svg width="22" height="14" viewBox="0 0 22 14" fill="none" stroke="#ffcc00" stroke-width="3"><path d="M2 12C6 3 16 3 20 12"/></svg></span>MY SKINS</div><div class="grid" id="inv"></div><div class="pg"><button id="ip">&lsaquo;</button><span id="ipn">1 / 1</span><button id="in">&rsaquo;</button></div></div>
+<div class="pn"><div class="ph"><span class="sw"><svg width="22" height="14" viewBox="0 0 22 14" fill="none" stroke="#ffcc00" stroke-width="3"><path d="M2 12C6 3 16 3 20 12"/></svg></span>MY SKINS</div><div class="grid" id="inv"></div><div class="sellbar"><span>Selected skin value: <b id="sellvalue">0.00</b><i class="coin"></i></span><button id="sellSelected" disabled>Sell selected</button></div><div class="pg"><button id="ip">&lsaquo;</button><span id="ipn">1 / 1</span><button id="in">&rsaquo;</button></div></div>
 <div class="pn"><div class="ph">CHOOSE AN ITEM<div class="f"><input id="q" placeholder="Search"><input id="lo" placeholder="from" type="number" min="0"><input id="hi" placeholder="to" type="number" min="0"></div><button class="sw" id="sort" aria-label="Sort"><svg width="20" height="16" viewBox="0 0 24 20" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h17M16 2l4 4-4 4M21 14H4M8 10l-4 4 4 4"/></svg></button></div><div class="grid" id="cat"></div><div class="pg"><button id="cp">&lsaquo;</button><span id="cpn">1 / 1</span><button id="cn">&rsaquo;</button></div></div>
 </section>
 <section id="shop"><div class="pn"><div class="ph">SHOP <span id="scount" style="color:var(--mut);font-weight:500"></span><div class="f"><input id="sq" placeholder="Search"><button class="sw" id="ssort" aria-label="Sort"><svg width="20" height="16" viewBox="0 0 24 20" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h17M16 2l4 4-4 4M21 14H4M8 10l-4 4 4 4"/></svg></button></div></div><div id="stabs" class="chips"></div><div class="shopgrid" id="sgrid"></div><div class="pg"><button id="sp">&lsaquo;</button><span id="spn">1 / 1</span><button id="sn">&rsaquo;</button></div></div></section>
@@ -178,6 +180,8 @@ save();
 $("bal").textContent=fmt(S.bal);
 const sl=$("amt");sl.max=Math.max(0,S.bal).toFixed(2);if(S.amt>S.bal)S.amt=S.bal;sl.value=S.amt;$("amtv").textContent=fmt(S.amt);
 // inventory
+const selectedWorth=S.inv.filter(i=>S.sel.has(i.u)).reduce((sum,i)=>sum+i.p,0);
+$("sellvalue").textContent=fmt(selectedWorth);$("sellSelected").disabled=S.spin||selectedWorth<=0;
 const ic=Math.max(1,Math.ceil(S.inv.length/PER));S.ip=Math.min(S.ip,ic-1);
 const g=$("inv");g.innerHTML="";
 S.inv.slice(S.ip*PER,S.ip*PER+PER).forEach(it=>g.append(card(it,S.sel.has(it.u),()=>{if(S.spin)return;S.sel.has(it.u)?S.sel.delete(it.u):S.sel.add(it.u);render()})));
@@ -309,6 +313,8 @@ d.innerHTML=`<small>${it.w}</small>${pic(it)}<b>${it.n}</b><button class='buy' $
 d.querySelector(".buy").onclick=()=>buy(it);g.append(d)});
 $("spn").textContent=`${SH.pg+1} / ${pc}`;$("scount").textContent=list.length+" skins";
 }
+function sellSelected(){if(S.spin)return;const sold=S.inv.filter(i=>S.sel.has(i.u));if(!sold.length){toast("Select skins to sell first");return}const value=sold.reduce((sum,i)=>sum+i.p,0);S.bal=Math.round((S.bal+value)*100)/100;const ids=new Set(sold.map(i=>i.u));S.inv=S.inv.filter(i=>!ids.has(i.u));S.sel.clear();render();toast(`Sold ${sold.length} skin${sold.length===1?"":"s"} for ${fmt(value)}`);tick(880,.12,.06,"triangle")}
+$("sellSelected").onclick=sellSelected;
 function buy(it){if(S.bal<it.p){toast("Not enough balance");return}S.bal=Math.round((S.bal-it.p)*100)/100;S.inv.unshift({...it,u:++S.uid});render();toast(`Bought ${it.w} ${it.n}`);tick(880,.12,.06,"triangle")}
 document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("on",x===b));document.body.classList.toggle("onshop",b.dataset.t==="shop");if(b.dataset.t==="shop")drawShop()});
 $("stabs").onclick=e=>{const b=e.target.closest("button");if(b){SH.t=b.dataset.t;SH.pg=0;drawShop()}};
